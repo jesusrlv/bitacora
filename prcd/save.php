@@ -65,13 +65,19 @@ $queryBitacora = "INSERT INTO bitacora(
     sopletear_fpoder,
     limpiar_gab,
     sopletear_tec_mouse,
+    limpiar_teclado_mouse,
     limpiar_pantalla,
     limpiar_comp_monitor,
-    activar_so,
-    formateo_completo,
-    limpieza_virus,
     otra,
     otra_descripcion,
+    activacion_office,
+    activar_so,
+    activar_software,
+    activar_software2,
+    formateo_completo,
+    limpieza_virus,
+    otra3,
+    otra4,
     observaciones,
     realizo_mantenimiento,
     solicita,
@@ -83,10 +89,19 @@ $queryBitacora = "INSERT INTO bitacora(
         '$sop_fp',
         '$limp_gab',
         '$sop_tec_mouse',
+        '$limp_tec_mouse',
         '$limp_pantalla',
         '$limp_comp_monitor',
         '$otra1',
         '$otra2',
+        '$act_office',
+        '$act_so',
+        '$actualizar_software1',
+        '$actualizar_software2',
+        '$formateo_completo',
+        '$limpieza_virus',
+        '$otra3',
+        '$otra4',
         '$observaciones',
         '$realizo_serv_tec',
         '$quien_solicita',
@@ -94,7 +109,6 @@ $queryBitacora = "INSERT INTO bitacora(
 $resultadoBitacora = $conn->query($queryBitacora);
 
 if($resultadoBitacora){
-
 
     echo "<script type=\"text/javascript\">
     Swal.fire({
