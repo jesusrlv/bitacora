@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-01-2023 a las 21:21:43
+-- Tiempo de generación: 11-01-2023 a las 22:09:51
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -35,13 +35,18 @@ CREATE TABLE `bitacora` (
   `sopletear_fpoder` int(11) DEFAULT NULL,
   `limpiar_gab` int(11) DEFAULT NULL,
   `sopletear_tec_mouse` int(11) DEFAULT NULL,
+  `limpiar_teclado_mouse` int(11) NOT NULL,
   `limpiar_pantalla` int(11) DEFAULT NULL,
   `limpiar_comp_monitor` int(11) DEFAULT NULL,
-  `activar_so` int(11) DEFAULT NULL,
-  `formateo_completo` int(11) DEFAULT NULL,
-  `limpieza_virus` int(11) DEFAULT NULL,
   `otra` int(11) DEFAULT NULL,
   `otra_descripcion` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `activacion_office` int(11) NOT NULL,
+  `activar_so` int(11) DEFAULT NULL,
+  `activar_software` int(11) NOT NULL,
+  `formateo_completo` int(11) DEFAULT NULL,
+  `limpieza_virus` int(11) DEFAULT NULL,
+  `otra3` int(11) NOT NULL,
+  `otra4` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `observaciones` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `realizo_mantenimiento` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `solicita` varchar(100) COLLATE utf8_unicode_ci NOT NULL,

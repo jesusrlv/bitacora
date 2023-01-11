@@ -45,12 +45,52 @@ $limp_pantalla = $_POST['limp_pantalla'];
 $limp_comp_monitor = $_POST['limp_comp_monitor'];
 $otra1 = $_POST['otra1'];
 $otra2 = $_POST['otra2'];
+$act_office = $_POST['act_office'];
+$act_so = $_POST['act_so'];
+$actualizar_software1 = $_POST['actualizar_software1'];
+$actualizar_software2 = $_POST['actualizar_software2'];
+$formateo_completo = $_POST['formateo_completo'];
+$limpieza_virus = $_POST['limpieza_virus'];
+$otra3 = $_POST['otra3'];
+$otra4 = $_POST['otra4'];
 $observaciones = $_POST['observaciones'];
 $realizo_serv_tec = $_POST['realizo_serv_tec'];
 $quien_solicita = $_POST['quien_solicita'];
 $solucionado = 0;
 
-$queryBitacora = "INSERT INTO bitacora(fecha,datos_equipo,sopletear_pc,sopletear_fpoder,limpiar_gab,sopletear_tec_mouse,limpiar_pantalla,limpiar_comp_monitor,activar_so,formateo_completo,limpieza_virus,otra,otra_descripcion,observaciones,realizo_mantenimiento,solicita,solucionado) VALUES('$fecha_sistema','$datos_pc','$sop_comp','$sop_fp','$limp_gab','$sop_tec_mouse','$limp_tec_mouse','$limp_pantalla','$limp_comp_monitor','$otra1','$otra2','$observaciones','$realizo_serv_tec','$quien_solicita','$solucionado')";
+$queryBitacora = "INSERT INTO bitacora(
+    fecha,
+    datos_equipo,
+    sopletear_pc,
+    sopletear_fpoder,
+    limpiar_gab,
+    sopletear_tec_mouse,
+    limpiar_pantalla,
+    limpiar_comp_monitor,
+    activar_so,
+    formateo_completo,
+    limpieza_virus,
+    otra,
+    otra_descripcion,
+    observaciones,
+    realizo_mantenimiento,
+    solicita,
+    solucionado
+    ) VALUES(
+        '$fecha_sistema',
+        '$datos_pc',
+        '$sop_comp',
+        '$sop_fp',
+        '$limp_gab',
+        '$sop_tec_mouse',
+        '$limp_pantalla',
+        '$limp_comp_monitor',
+        '$otra1',
+        '$otra2',
+        '$observaciones',
+        '$realizo_serv_tec',
+        '$quien_solicita',
+        '$solucionado')";
 $resultadoBitacora = $conn->query($queryBitacora);
 
 if($resultadoBitacora){
