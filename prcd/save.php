@@ -34,7 +34,8 @@ include('qc.php');
     setlocale(LC_TIME, 'es_MX.UTF-8');
     $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
 
-
+$ticket = $_POST['ticket'];
+$datos_usr = $_POST['datos_usr'];
 $datos_pc = $_POST['datos_pc'];
 $sop_comp = $_POST['sop_comp'];
 $sop_fp = $_POST['sop_fp'];
