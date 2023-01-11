@@ -6,11 +6,13 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
+    <link rel="icon" type="image/png" href="img/inclusion.ico"/>
     <title>Bitácora | INCLUSIÓN</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -91,7 +93,7 @@
     <div class="row g-5 border rounded-2 bg-white p-2">
       
       <div class="col-md-12 col-lg-12">
-        <form class="needs-validation" action="prcd/save.php" method="post" novalidate>
+        <form action="prcd/save.php" method="post" novalidate>
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label"><i class="bi bi-pc-display"></i> Datos del equipo</label>
@@ -110,42 +112,42 @@
           <h5>Mantenimimiento preventivo y correctivo de hardware</h5>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address" name="sop_comp" value="1">
+            <input type="checkbox" class="form-check-input" id="same-address" name="sop_comp"  onchange="valorCheckbox()">
             <label class="form-check-label" for="same-address">Sopletear computadora</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address" name="sop_fp" value="1">
+            <input type="checkbox" class="form-check-input" id="same-address" name="sop_fp"  onchange="valorCheckbox()">
             <label class="form-check-label" for="same-address">Sopletear fuente de poder</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="limp_gab" value="1">
+            <input type="checkbox" class="form-check-input" id="save-info" name="limp_gab"  onchange="valorCheckbox()">
             <label class="form-check-label" for="save-info">Limpiar gabinete</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="sop_tec_mouse" value="1">
+            <input type="checkbox" class="form-check-input" id="save-info" name="sop_tec_mouse" value="1" onchange="valorCheckbox()">
             <label class="form-check-label" for="save-info">Sopletear teclado y mouse</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="limp_tec_mouse" value="1">
+            <input type="checkbox" class="form-check-input" id="save-info" name="limp_tec_mouse" onchange="valorCheckbox()">
             <label class="form-check-label" for="save-info">Limpiar teclado y mouse</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="limp_pantalla" value="1">
+            <input type="checkbox" class="form-check-input" id="save-info" name="limp_pantalla" onchange="valorCheckbox()">
             <label class="form-check-label" for="save-info">Limpiar pantalla del monitor</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="limp_comp_monitor" value="1">
+            <input type="checkbox" class="form-check-input" id="save-info" name="limp_comp_monitor" onchange="valorCheckbox()">
             <label class="form-check-label" for="save-info">Limpiar componentes del monitor</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="otra1" value="1">
+            <input type="checkbox" class="form-check-input" id="save-info" name="otra1" onchange="valorCheckbox()">
             <label class="form-check-label" for="save-info">Otra:</label>
           </div>
           <div class="form-check">
@@ -222,8 +224,6 @@
               </div>
             </div>
 
-           
-
           <hr class="my-4">
 
           <button class="w-100 btn btn-primary btn-lg" type="submit"><i class="bi bi-cloud-check-fill"></i> Realizar solicitud</button>
@@ -248,3 +248,4 @@
       <script src="form-validation.js"></script>
   </body>
 </html>
+
