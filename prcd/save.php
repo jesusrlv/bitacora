@@ -13,7 +13,22 @@
 </style>
 
 <?php
+// Motrar todos los errores de PHP
+error_reporting(-1);
+
+// No mostrar los errores de PHP
+error_reporting(0);
+
+// Motrar todos los errores de PHP
+error_reporting(E_ALL);
+
+// Motrar todos los errores de PHP
+ini_set('error_reporting', E_ALL);
+
 include('qc.php');
+
+
+
 
     date_default_timezone_set('America/Mexico_City');
     setlocale(LC_TIME, 'es_MX.UTF-8');
@@ -55,7 +70,9 @@ if($resultadoBitacora){
         }
 else{
     echo 'No se registró ningún cambio';
+    printf("Errormessage: %s\n", $conn->error);
 }
+
 
 ?>
 
