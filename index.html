@@ -87,7 +87,7 @@
       <img class="d-block mx-auto mb-4" src="img/logo_completo.png" alt="" width="300" height="">
       <h2>Departamento de Tecnologías de la Información</h2>
       
-      <p class="lead">Formato de servicio, apoyo y/o soporte técnico</p>
+      <p class="lead">Sistema de Tickets para servicio, apoyo y/o soporte técnico</p>
     </div>
 
     <div class="row g-5 border rounded-2 bg-white p-2">
@@ -95,16 +95,28 @@
       <div class="col-md-12 col-lg-12">
         <form action="prcd/save.php" method="post" novalidate>
           <div class="row g-3">
+            <div class="col-sm-12 mb-3" style="text-align: end;">
+              <label for="ticket" class="form-label">Número de Ticket:</label>
+              <input type="text" class="form-control" id="ticket" name="ticket" placeholder="" required>
+            </div>
+            
+            <hr>
             <div class="col-sm-6">
-              <label for="firstName" class="form-label"><i class="bi bi-pc-display"></i> Datos del equipo</label>
-              <input type="text" class="form-control" id="datos_pc" name="datos_pc" placeholder="Marca y/o modelo del equipo" required>
+              <label for="firstName" class="form-label"><i class="bi bi-person"></i> Nombre del Usuario:</label>
+              <input type="text" class="form-control" id="datos_usr" name="datos_usr" placeholder="Nombre del Usuario solicitante" required>
               <div class="invalid-feedback">
-                Valid first name is required.
+                * Campo requerido.
               </div>
             </div>
-
             <div class="col-sm-6">
-             
+              <label for="firstName" class="form-label"><i class="bi bi-pc-display"></i> Datos del equipo:</label>
+              <input type="text" class="form-control" id="datos_pc" name="datos_pc" placeholder="Marca y/o modelo del equipo" required>
+              <div class="invalid-feedback">
+                * Campo requerido.
+              </div>
+            </div>
+            <div class="col-sm-6">
+            
             </div>
 
           <hr class="my-4">
