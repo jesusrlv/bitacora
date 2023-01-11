@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-01-2023 a las 21:21:43
+-- Tiempo de generación: 11-01-2023 a las 22:35:48
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -35,18 +35,32 @@ CREATE TABLE `bitacora` (
   `sopletear_fpoder` int(11) DEFAULT NULL,
   `limpiar_gab` int(11) DEFAULT NULL,
   `sopletear_tec_mouse` int(11) DEFAULT NULL,
+  `limpiar_teclado_mouse` int(11) NOT NULL,
   `limpiar_pantalla` int(11) DEFAULT NULL,
   `limpiar_comp_monitor` int(11) DEFAULT NULL,
-  `activar_so` int(11) DEFAULT NULL,
-  `formateo_completo` int(11) DEFAULT NULL,
-  `limpieza_virus` int(11) DEFAULT NULL,
   `otra` int(11) DEFAULT NULL,
   `otra_descripcion` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `activacion_office` int(11) NOT NULL,
+  `activar_so` int(11) DEFAULT NULL,
+  `activar_software` int(11) NOT NULL,
+  `activar_software2` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `formateo_completo` int(11) DEFAULT NULL,
+  `limpieza_virus` int(11) DEFAULT NULL,
+  `otra3` int(11) NOT NULL,
+  `otra4` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `observaciones` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `realizo_mantenimiento` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `solicita` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `solucionado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `bitacora`
+--
+
+INSERT INTO `bitacora` (`id`, `fecha`, `datos_equipo`, `sopletear_pc`, `sopletear_fpoder`, `limpiar_gab`, `sopletear_tec_mouse`, `limpiar_teclado_mouse`, `limpiar_pantalla`, `limpiar_comp_monitor`, `otra`, `otra_descripcion`, `activacion_office`, `activar_so`, `activar_software`, `activar_software2`, `formateo_completo`, `limpieza_virus`, `otra3`, `otra4`, `observaciones`, `realizo_mantenimiento`, `solicita`, `solucionado`) VALUES
+(1, '2023-01-11 15:32:07', 'HP Laser Jet', 1, 1, 1, 1, 1, 1, 1, 1, 'Prueba', 1, 1, 1, 'x', 1, 1, 1, 'x', 'Prueba', 'I.C. Ana Elisa Barba Pinedo', 'TI', 0),
+(2, '2023-01-11 15:32:39', 'HP Laser Jet', 1, 1, 1, 1, 1, 1, 1, 1, 'Prueba', 1, 1, 1, 'x', 1, 1, 1, 'x', 'Prueba', 'I.C. Ana Elisa Barba Pinedo', 'TI', 0);
 
 -- --------------------------------------------------------
 
@@ -84,7 +98,7 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usr`
