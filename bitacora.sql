@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-01-2023 a las 22:41:09
+-- Tiempo de generación: 11-01-2023 a las 23:28:59
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `bitacora` (
   `id` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
+  `ticket` int(11) NOT NULL,
   `datos_equipo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `sopletear_pc` int(11) DEFAULT NULL,
   `sopletear_fpoder` int(11) DEFAULT NULL,
@@ -58,9 +59,9 @@ CREATE TABLE `bitacora` (
 -- Volcado de datos para la tabla `bitacora`
 --
 
-INSERT INTO `bitacora` (`id`, `fecha`, `datos_equipo`, `sopletear_pc`, `sopletear_fpoder`, `limpiar_gab`, `sopletear_tec_mouse`, `limpiar_teclado_mouse`, `limpiar_pantalla`, `limpiar_comp_monitor`, `otra`, `otra_descripcion`, `activacion_office`, `activar_so`, `activar_software`, `activar_software2`, `formateo_completo`, `limpieza_virus`, `otra3`, `otra4`, `observaciones`, `realizo_mantenimiento`, `solicita`, `solucionado`) VALUES
-(1, '2023-01-11 15:32:07', 'HP Laser Jet', 1, 1, 1, 1, 1, 1, 1, 1, 'Prueba', 1, 1, 1, 'x', 1, 1, 1, 'x', 'Prueba', 'I.C. Ana Elisa Barba Pinedo', 'TI', 0),
-(2, '2023-01-11 15:32:39', 'HP Laser Jet', 1, 1, 1, 1, 1, 1, 1, 1, 'Prueba', 1, 1, 1, 'x', 1, 1, 1, 'x', 'Prueba', 'I.C. Ana Elisa Barba Pinedo', 'TI', 0);
+INSERT INTO `bitacora` (`id`, `fecha`, `ticket`, `datos_equipo`, `sopletear_pc`, `sopletear_fpoder`, `limpiar_gab`, `sopletear_tec_mouse`, `limpiar_teclado_mouse`, `limpiar_pantalla`, `limpiar_comp_monitor`, `otra`, `otra_descripcion`, `activacion_office`, `activar_so`, `activar_software`, `activar_software2`, `formateo_completo`, `limpieza_virus`, `otra3`, `otra4`, `observaciones`, `realizo_mantenimiento`, `solicita`, `solucionado`) VALUES
+(1, '2023-01-11 15:32:07', 0, 'HP Laser Jet', 1, 1, 1, 1, 1, 1, 1, 1, 'Prueba', 1, 1, 1, 'x', 1, 1, 1, 'x', 'Prueba', 'I.C. Ana Elisa Barba Pinedo', 'TI', 0),
+(2, '2023-01-11 15:32:39', 0, 'HP Laser Jet', 1, 1, 1, 1, 1, 1, 1, 1, 'Prueba', 1, 1, 1, 'x', 1, 1, 1, 'x', 'Prueba', 'I.C. Ana Elisa Barba Pinedo', 'TI', 0);
 
 -- --------------------------------------------------------
 
