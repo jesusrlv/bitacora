@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 11-01-2023 a las 23:28:59
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.28
+-- Host: 127.0.0.1
+-- Generation Time: Jan 24, 2023 at 08:22 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,55 +18,51 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `bitacora`
+-- Database: `bitacora`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `bitacora`
+-- Table structure for table `bitacora`
 --
 
 CREATE TABLE `bitacora` (
   `id` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
-  `ticket` int(11) NOT NULL,
-  `datos_equipo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `sopletear_pc` int(11) DEFAULT NULL,
-  `sopletear_fpoder` int(11) DEFAULT NULL,
-  `limpiar_gab` int(11) DEFAULT NULL,
-  `sopletear_tec_mouse` int(11) DEFAULT NULL,
-  `limpiar_teclado_mouse` int(11) DEFAULT NULL,
-  `limpiar_pantalla` int(11) DEFAULT NULL,
-  `limpiar_comp_monitor` int(11) DEFAULT NULL,
-  `otra` int(11) DEFAULT NULL,
-  `otra_descripcion` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `activacion_office` int(11) DEFAULT NULL,
+  `datos_pc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `datos_usr` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `internet` int(11) DEFAULT NULL,
+  `inst_periferico` int(11) DEFAULT NULL,
+  `limp_equipo` int(11) DEFAULT NULL,
+  `tec_mouse` int(11) DEFAULT NULL,
+  `falla_monitor` int(11) DEFAULT NULL,
+  `otra1` int(11) DEFAULT NULL,
+  `otra1_desc` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `act_office` int(11) DEFAULT NULL,
   `activar_so` int(11) DEFAULT NULL,
-  `activar_software` int(11) DEFAULT NULL,
-  `activar_software2` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `actualizar_sw` int(11) DEFAULT NULL,
+  `actualizar_sw2` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `formateo_completo` int(11) DEFAULT NULL,
   `limpieza_virus` int(11) DEFAULT NULL,
-  `otra3` int(11) DEFAULT NULL,
-  `otra4` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `instalar_sw` int(11) DEFAULT NULL,
+  `otra_sw` int(11) DEFAULT NULL,
+  `otra_sw_desc` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `escanear` int(11) DEFAULT NULL,
+  `printcolor` int(11) DEFAULT NULL,
+  `rw_cd` int(11) DEFAULT NULL,
+  `web` int(11) DEFAULT NULL,
+  `otra2` int(11) DEFAULT NULL,
+  `otra2_desc` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `observaciones` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `realizo_mantenimiento` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `solicita` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `solucionado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Volcado de datos para la tabla `bitacora`
---
-
-INSERT INTO `bitacora` (`id`, `fecha`, `ticket`, `datos_equipo`, `sopletear_pc`, `sopletear_fpoder`, `limpiar_gab`, `sopletear_tec_mouse`, `limpiar_teclado_mouse`, `limpiar_pantalla`, `limpiar_comp_monitor`, `otra`, `otra_descripcion`, `activacion_office`, `activar_so`, `activar_software`, `activar_software2`, `formateo_completo`, `limpieza_virus`, `otra3`, `otra4`, `observaciones`, `realizo_mantenimiento`, `solicita`, `solucionado`) VALUES
-(1, '2023-01-11 15:32:07', 0, 'HP Laser Jet', 1, 1, 1, 1, 1, 1, 1, 1, 'Prueba', 1, 1, 1, 'x', 1, 1, 1, 'x', 'Prueba', 'I.C. Ana Elisa Barba Pinedo', 'TI', 0),
-(2, '2023-01-11 15:32:39', 0, 'HP Laser Jet', 1, 1, 1, 1, 1, 1, 1, 1, 'Prueba', 1, 1, 1, 'x', 1, 1, 1, 'x', 'Prueba', 'I.C. Ana Elisa Barba Pinedo', 'TI', 0);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usr`
+-- Table structure for table `usr`
 --
 
 CREATE TABLE `usr` (
@@ -76,33 +72,33 @@ CREATE TABLE `usr` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `bitacora`
+-- Indexes for table `bitacora`
 --
 ALTER TABLE `bitacora`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usr`
+-- Indexes for table `usr`
 --
 ALTER TABLE `usr`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `bitacora`
+-- AUTO_INCREMENT for table `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `usr`
+-- AUTO_INCREMENT for table `usr`
 --
 ALTER TABLE `usr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
