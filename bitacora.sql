@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 24, 2023 at 08:22 PM
+-- Generation Time: Jan 25, 2023 at 05:02 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `bitacora` (
   `id` int(11) NOT NULL,
+  `folio` int(4) NOT NULL,
   `fecha` datetime NOT NULL,
   `datos_pc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `datos_usr` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
