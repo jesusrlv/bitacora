@@ -126,14 +126,49 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Schedule
+                    <i class="bi bi-pc-display-horizontal" style="font-size: larger;"> </i> Hardware
                   </button>
                   <form class="needs-validation" enctype="multipart/form-data" name="formSchedule" id="formSchedule">
                 </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">
 
-                <div class="input-group mb-3">
+                <h5>Mantenimimiento preventivo y/o correctivo de hardware</h5>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address" name="internet"  onchange="valorCheckbox()">
+            <label class="form-check-label" for="same-address">Revisar conexión a internet</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="same-address" name="inst_periferico"  onchange="valorCheckbox()">
+            <label class="form-check-label" for="same-address">Instalar impresora/scanner</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="limp_equipo"  onchange="valorCheckbox()">
+            <label class="form-check-label" for="save-info">Limpiar equipo</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="tec_mouse" onchange="valorCheckbox()">
+            <label class="form-check-label" for="save-info">Mouse/teclado no funciona</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="falla_monitor" onchange="valorCheckbox()">
+            <label class="form-check-label" for="save-info">Falla del monitor/pantalla</label>
+          </div>
+          
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="otra1" onchange="valorCheckbox()">
+            <label class="form-check-label" for="save-info">Otra:</label>
+          </div>
+          <div class="form-check">
+            <input type="text" class="form-control" id="save-info" placeholder="Especifique..." name="otra1_desc">
+          </div>
+
+                <!-- <div class="input-group mb-3">
                   <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-calendar2-event-fill"></i></span>
                   <input type="date" id="scheduleDate" name="scheduleDate" onchange="dateTime()" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
                 </div>
@@ -156,70 +191,70 @@
                     <option value="20">20:00</option>
                     <option value="21">21:00</option>
                   </select>
-                </div>
+                </div> -->
                 <div id="scheduleId"></div>
               </div>
-                <div class="d-grid gap-2 mb-2">
+<!--                 <div class="d-grid gap-2 mb-2">
                   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" id="button1" disabled>Next</button>
-                </div>
+                </div> -->
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header border-bottom" id="flush-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapseTwo">
-                Billing
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapseTwo"><i class="bi bi-windows" style="font-size: larger;"></i>
+                Software
               </button>
             </h2>
             <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">
-                <div class="col-md-12 col-lg-12">
-                  <h4 class="mb-3">Billing address</h4>
+                <h5>Mantenimimiento preventivo y/o correctivo de software</h5>
 
-                    <div class="row g-3">
-                      
-                      <div class="col-sm-6">
-                        <label for="lastName" class="form-label">Last name</label>
-                        <input type="text" class="form-control" name="lastname" id="lastName" placeholder="" value="" onchange="validarInputs()" required>
-                        <div class="invalid-feedback">
-                          Valid last name is required.
-                        </div>
-                      </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="act_office" value="1">
+            <label class="form-check-label" for="save-info">Activación office</label>
+          </div>
 
-                      <div class="col-sm-6">
-                        <label for="firstName" class="form-label">First name</label>
-                        <input type="text" class="form-control" name="firtsname" id="firstName" placeholder="" value="" onchange="validarInputs()" required>
-                        <div class="invalid-feedback">
-                          Valid first name is required.
-                        </div>
-                      </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="activar_so" value="1">
+            <label class="form-check-label" for="save-info">Activación Sistema Operativo</label>
+          </div>
 
-                      <div class="col-12">
-                        <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-                        <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" onchange="validarInputs()">
-                        <div class="invalid-feedback">
-                          Please enter a valid email address for shipping updates.
-                        </div>
-                      </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="actualizar_sw" value="1">
+            <label class="form-check-label" for="save-info">Actualizar software</label>
+          </div>
+          <div class="form-check">
+            <input type="text" class="form-control" id="save-info" placeholder="Especifique..." name="actualizar_sw2">
+          </div>
 
-                      <div class="col-12">
-                        <label for="address" class="form-label">Address</label>
-                        <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" onchange="validarInputs()" onkeypress="validarInputs()" required>
-                        <div class="invalid-feedback">
-                          Please enter your shipping address.
-                        </div>
-                      </div>
-                    </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="formateo_completo" value="1">
+            <label class="form-check-label" for="save-info">Formateo completo</label>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="limpieza_virus" value="1">
+            <label class="form-check-label" for="save-info">Limpieza de virus</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="instalar_sw" value="1">
+            <label class="form-check-label" for="save-info">Instalación de software</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="save-info" name="otra_sw" value="1">
+            <label class="form-check-label" for="save-info">Otra:</label>
+          </div>
+          <div class="form-check">
+            <input type="text" class="form-control" id="save-info" placeholder="Especifique..." name="otra_sw_desc">
+          </div>
               </div>
-            </div>
-            <div class="d-grid gap-2 mb-2">
-                  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" id="button2" disabled>Next</button>
-                </div>
+
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapseThree">
-                Payment
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapseThree"><i class="bi bi-file-earmark-break" style="font-size: larger;"></i>
+                Otros
               </button>
             </h2>
             <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -298,97 +333,10 @@
 
           <hr class="my-4">
 
-          <h5>Mantenimimiento preventivo y/o correctivo de hardware</h5>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address" name="internet"  onchange="valorCheckbox()">
-            <label class="form-check-label" for="same-address">Revisar conexión a internet</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address" name="inst_periferico"  onchange="valorCheckbox()">
-            <label class="form-check-label" for="same-address">Instalar impresora/scanner</label>
-          </div>
-
-<!--           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address" name="sop_fp"  onchange="valorCheckbox()">
-            <label class="form-check-label" for="same-address">Sopletear fuente de poder</label>
-          </div>
- -->
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="limp_equipo"  onchange="valorCheckbox()">
-            <label class="form-check-label" for="save-info">Limpiar equipo</label>
-          </div>
-
-<!--           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="sop_tec_mouse" value="1" onchange="valorCheckbox()">
-            <label class="form-check-label" for="save-info">Sopletear teclado y mouse</label>
-          </div> -->
-
-<!--           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="limp_tec_mouse" onchange="valorCheckbox()">
-            <label class="form-check-label" for="save-info">Limpiar teclado y mouse</label>
-          </div> -->
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="tec_mouse" onchange="valorCheckbox()">
-            <label class="form-check-label" for="save-info">Mouse/teclado no funciona</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="falla_monitor" onchange="valorCheckbox()">
-            <label class="form-check-label" for="save-info">Falla del monitor/pantalla</label>
-          </div>
           
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="otra1" onchange="valorCheckbox()">
-            <label class="form-check-label" for="save-info">Otra:</label>
-          </div>
-          <div class="form-check">
-            <input type="text" class="form-control" id="save-info" placeholder="Especifique..." name="otra1_desc">
-          </div>
 
           <hr>
-          <h5>Mantenimimiento preventivo y/o correctivo de software</h5>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="act_office" value="1">
-            <label class="form-check-label" for="save-info">Activación office</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="activar_so" value="1">
-            <label class="form-check-label" for="save-info">Activación Sistema Operativo</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="actualizar_sw" value="1">
-            <label class="form-check-label" for="save-info">Actualizar software</label>
-          </div>
-          <div class="form-check">
-            <input type="text" class="form-control" id="save-info" placeholder="Especifique..." name="actualizar_sw2">
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="formateo_completo" value="1">
-            <label class="form-check-label" for="save-info">Formateo completo</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="limpieza_virus" value="1">
-            <label class="form-check-label" for="save-info">Limpieza de virus</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="instalar_sw" value="1">
-            <label class="form-check-label" for="save-info">Instalación de software</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="otra_sw" value="1">
-            <label class="form-check-label" for="save-info">Otra:</label>
-          </div>
-          <div class="form-check">
-            <input type="text" class="form-control" id="save-info" placeholder="Especifique..." name="otra_sw_desc">
-          </div>
+          
           <hr>
           <h5>Otros</h5>
 
@@ -450,7 +398,7 @@
 
           <hr class="my-4"> -->
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit"><i class="bi bi-cloud-check-fill"></i> Realizar solicitud</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit" id="solicitudbtn"><i class="bi bi-cloud-check-fill"></i> Realizar solicitud</button>
         </form>
       </div>
     </div>
