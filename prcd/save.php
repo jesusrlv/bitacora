@@ -34,84 +34,97 @@ include('qc.php');
     setlocale(LC_TIME, 'es_MX.UTF-8');
     $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
 
-$ticket = $_POST['ticket'];
+$folio = $_POST['folio'];
 $datos_usr = $_POST['datos_usr'];
 $datos_pc = $_POST['datos_pc'];
-$sop_comp = $_POST['sop_comp'];
-$sop_fp = $_POST['sop_fp'];
-$limp_gab = $_POST['limp_gab'];
-$sop_tec_mouse = $_POST['sop_tec_mouse'];
-$limp_tec_mouse = $_POST['limp_tec_mouse'];
+$sop_comp = $_POST['internet'];
+$inst_periferico = $_POST['inst_periferico'];
+$limp_equipo = $_POST['limp_equipo'];
+$tec_mouse = $_POST['tec_mouse'];
+$falla_monitor = $_POST['falla_monitor'];
 $limp_pantalla = $_POST['limp_pantalla'];
-$limp_comp_monitor = $_POST['limp_comp_monitor'];
 $otra1 = $_POST['otra1'];
-$otra2 = $_POST['otra2'];
+$otra1_desc = $_POST['otra1_desc'];
 $act_office = $_POST['act_office'];
-$act_so = $_POST['act_so'];
-$actualizar_software1 = $_POST['actualizar_software1'];
-$actualizar_software2 = $_POST['actualizar_software2'];
+$activar_so = $_POST['activar_so'];
+$actualizar_sw = $_POST['actualizar_sw'];
+$actualizar_sw2 = $_POST['actualizar_sw2'];
 $formateo_completo = $_POST['formateo_completo'];
 $limpieza_virus = $_POST['limpieza_virus'];
-$otra3 = $_POST['otra3'];
-$otra4 = $_POST['otra4'];
+$instalar_sw = $_POST['instalar_sw'];
+$otra_sw = $_POST['otra_sw'];
+$otra_sw_desc = $_POST['otra_sw_desc'];
+$escanear = $_POST['escanear'];
+$printColor = $_POST['printColor'];
+$rw_cd = $_POST['rw_cd'];
+$web = $_POST['web'];
+$otra2 = $_POST['otra2'];
+$otra2_desc = $_POST['otra2_desc'];
 $observaciones = $_POST['observaciones'];
-$realizo_serv_tec = $_POST['realizo_serv_tec'];
-$quien_solicita = $_POST['quien_solicita'];
 $solucionado = 0;
 
 $queryBitacora = "INSERT INTO bitacora(
-    fecha,
-    datos_equipo,
-    sopletear_pc,
-    sopletear_fpoder,
-    limpiar_gab,
-    sopletear_tec_mouse,
-    limpiar_teclado_mouse,
-    limpiar_pantalla,
-    limpiar_comp_monitor,
-    otra,
-    otra_descripcion,
-    activacion_office,
+    folio,
+    datos_usr,
+    datos_pc,
+    sop_comp,
+    inst_periferico,
+    limp_equipo,
+    tec_mouse,
+    falla_monitor,
+    limp_pantalla,
+    otra1,
+    otra1_desc,
+    act_office,
     activar_so,
-    activar_software,
-    activar_software2,
+    actualizar_sw,
+    actualizar_sw2,
     formateo_completo,
     limpieza_virus,
-    otra3,
-    otra4,
+    instalar_sw,
+    otra_sw,
+    otra_sw_desc,
+    escanear,
+    printColor,
+    rw_cd,
+    web,
+    otra2,
+    otra2_desc,
     observaciones,
-    realizo_mantenimiento,
-    solicita,
-    solucionado
+    solucionado,
     ) VALUES(
-        '$fecha_sistema',
+        '$datos_usr',
         '$datos_pc',
         '$sop_comp',
-        '$sop_fp',
-        '$limp_gab',
-        '$sop_tec_mouse',
-        '$limp_tec_mouse',
+        '$inst_periferico',
+        '$limp_equipo',
+        '$tec_mouse',
+        '$falla_monitor',
         '$limp_pantalla',
-        '$limp_comp_monitor',
         '$otra1',
-        '$otra2',
+        '$otra1_desc',
         '$act_office',
-        '$act_so',
-        '$actualizar_software1',
-        '$actualizar_software2',
+        '$activar_so',
+        '$actualizar_sw',
+        '$actualizar_sw2',
         '$formateo_completo',
         '$limpieza_virus',
-        '$otra3',
-        '$otra4',
+        '$instalar_sw',
+        '$otra_sw',
+        '$otra_sw_desc',
+        '$escanear',
+        '$printColor',
+        '$rw_cd',
+        '$web',
+        '$otra2',
+        '$otra2_desc',
         '$observaciones',
-        '$realizo_serv_tec',
-        '$quien_solicita',
-        '$solucionado')";
+        '$solucionado'";
 $resultadoBitacora = $conn->query($queryBitacora);
 
 if($resultadoBitacora){
 
-    echo "<script type=\"text/javascript\">
+    echo "<script>
     Swal.fire({
         icon: 'success',
         imageUrl: '../img/InclusionLogo.png',
@@ -122,7 +135,7 @@ if($resultadoBitacora){
         confirmButtonColor: '#3085d6',
         footer: 'INCLUSIÓN'
     }).then(function(){window.location='../index.html';});</script>";
-        }
+}
 else{
     echo 'No se registró ningún cambio';
     printf("Errormessage: %s\n", $conn->error);

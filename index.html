@@ -126,7 +126,7 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingOne">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    <i class="bi bi-pc-display-horizontal" style="font-size: larger;"> </i> Hardware
+                    <i class="bi bi-pc-display-horizontal me-2" style="font-size: larger;"> </i> Hardware
                   </button>
                   <form class="needs-validation" enctype="multipart/form-data" name="formSchedule" id="formSchedule">
                 </h2>
@@ -168,40 +168,16 @@
             <input type="text" class="form-control" id="save-info" placeholder="Especifique..." name="otra1_desc">
           </div>
 
-                <!-- <div class="input-group mb-3">
-                  <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-calendar2-event-fill"></i></span>
-                  <input type="date" id="scheduleDate" name="scheduleDate" onchange="dateTime()" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
-                </div>
-
-                <div class="input-group mb-3" id="hiddenDiv" hidden>
-                  <span class="input-group-text" id="inputGroup-sizing-default"><i class="bi bi-clock-fill"></i></span>
-                  <select class="form-select" name="scheduleTime" id="scheduleTime" onchange="queryDate()" required>
-                    <option value="">Select hour...</option>
-                    <option value="9">9:00</option>
-                    <option value="10">10:00</option>
-                    <option value="11">11:00</option>
-                    <option value="12">12:00</option>
-                    <option value="13">13:00</option>
-                    <option value="14">14:00</option>
-                    <option value="15">15:00</option>
-                    <option value="16">16:00</option>
-                    <option value="17">17:00</option>
-                    <option value="18">18:00</option>
-                    <option value="19">19:00</option>
-                    <option value="20">20:00</option>
-                    <option value="21">21:00</option>
-                  </select>
-                </div> -->
                 <div id="scheduleId"></div>
               </div>
-<!--                 <div class="d-grid gap-2 mb-2">
+              <div class="d-grid gap-2 mb-2">
                   <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" id="button1" disabled>Next</button>
-                </div> -->
+
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header border-bottom" id="flush-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapseTwo"><i class="bi bi-windows" style="font-size: larger;"></i>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapseTwo"><i class="bi bi-windows me-2" style="font-size: larger;"></i>
                 Software
               </button>
             </h2>
@@ -253,76 +229,38 @@
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header" id="flush-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapseThree"><i class="bi bi-file-earmark-break" style="font-size: larger;"></i>
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse" aria-expanded="false" aria-controls="flush-collapseThree"><i class="bi bi-file-earmark-break me-2" style="font-size: larger;"></i>
                 Otros
               </button>
             </h2>
             <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">
-              <h4 class="mb-3">Payment</h4>
-              <h6 class="mb-3">You can upload your file with your proof of payment</h6>
 
-              <!-- <div class="my-3">
                 <div class="form-check">
-                  <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked>
-                  <label class="form-check-label" for="credit">Credit card</label>
+                  <input type="checkbox" class="form-check-input" id="save-info" name="escanear" value="1">
+                  <label class="form-check-label" for="save-info">Escaneo de documento(s) y/o imágenes</label>
+                </div>
+      
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="save-info" name="printColor" value="1">
+                  <label class="form-check-label" for="save-info">Impresión a color</label>
+                </div>
+      
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="save-info" name="rw_cd" value="1">
+                  <label class="form-check-label" for="save-info">Grabar información en CD's o DVD's</label>
                 </div>
                 <div class="form-check">
-                  <input id="debit" name="paymentMethod" type="radio" class="form-check-input">
-                  <label class="form-check-label" for="debit">Debit card</label>
+                  <input type="checkbox" class="form-check-input" id="save-info" name="web" value="1">
+                  <label class="form-check-label" for="save-info">Publicar información en el sitio web oficial</label>
                 </div>
                 <div class="form-check">
-                  <input id="paypal" name="paymentMethod" type="radio" class="form-check-input">
-                  <label class="form-check-label" for="paypal">PayPal</label>
+                  <input type="checkbox" class="form-check-input" id="save-info" name="otra2" value="1">
+                  <label class="form-check-label" for="save-info">Otra:</label>
                 </div>
-              </div> -->
-
-              <div class="row gy-3">
-                <!-- <div class="col-md-6">
-                  <label for="cc-name" class="form-label">Name on card</label>
-                  <input type="text" class="form-control" id="cc-name" placeholder="" required onchange="validarInputs2()">
-                  <small class="text-muted">Full name as displayed on card</small>
-                  <div class="invalid-feedback">
-                    Name on card is required
-                  </div>
+                <div class="form-check">
+                  <input type="text" class="form-control" id="save-info" placeholder="Especifique..." name="otra2_desc">
                 </div>
-
-                <div class="col-md-6">
-                  <label for="cc-number" class="form-label">Credit card number</label>
-                  <input type="text" class="form-control" id="cc-number" placeholder="" requiredv onchange="validarInputs2()">
-                  <div class="invalid-feedback">
-                    Credit card number is required
-                  </div>
-                </div>
-
-                <div class="col-md-3">
-                  <label for="cc-expiration" class="form-label">Expiration</label>
-                  <input type="month" min="2018-03" class="form-control" id="cc-expiration" placeholder="" required onchange="validarInputs2()">
-                  <div class="invalid-feedback">
-                    Expiration date required
-                  </div>
-                </div>
-
-                <div class="col-md-3">
-                  <label for="cc-cvv" class="form-label">CVV</label>
-                  <input type="text" class="form-control" id="cc-cvv" placeholder="" required onchange="validarInputs2()" onkeypress="validarInputs2()">
-                  <div class="invalid-feedback">
-                    Security code required
-                  </div>
-                </div> -->
-                <div class="input-group mb-3">
-                  <label class="input-group-text" for="inputGroupFile01"><i class="bi bi-folder-plus"></i></label>
-                  <input type="file" class="form-control" id="fileSwimm" name="file1" onchange="validarInputs2()">
-                </div>
-
-              </div>
-              
-              </div>
-              <div class="d-grid gap-2 mb-2">
-                  <button class="btn btn-primary" type="button" id="button3" disabled onclick="checkOut()">Next</button>
-                </div>
-              
-            </div>
             
           </div>
         </div>
@@ -340,31 +278,7 @@
           <hr>
           <h5>Otros</h5>
 
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="escanear" value="1">
-            <label class="form-check-label" for="save-info">Escaneo de documento(s) y/o imágenes</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="printColor" value="1">
-            <label class="form-check-label" for="save-info">Impresión a color</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="rw_cd" value="1">
-            <label class="form-check-label" for="save-info">Grabar información en CD's o DVD's</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="web" value="1">
-            <label class="form-check-label" for="save-info">Publicar información en el sitio web oficial</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info" name="otra2" value="1">
-            <label class="form-check-label" for="save-info">Otra:</label>
-          </div>
-          <div class="form-check">
-            <input type="text" class="form-control" id="save-info" placeholder="Especifique..." name="otra2_desc">
-          </div>
+          
           <hr>
 
           <div class="col-sm-12">
@@ -378,14 +292,14 @@
           <hr class="my-4">
 
           <div class="row gy-3">
-<!--             <div class="col-md-6">
+            <!-- <div class="col-md-6">
               <label for="cc-name" class="form-label">Persona que realiza mantenimiento</label>
               <input type="text" class="form-control" id="" placeholder="" value="I.C. Ana Elisa Barba Pinedo" readonly name="realizo_serv_tec">
               <small class="text-muted">Departamento de Tecnologías de la Información</small>
               <div class="invalid-feedback">
                 Name on card is required
               </div>
-            </div>
+            </div> -->
 
             <div class="col-md-6">
               <label for="cc-number" class="form-label">Persona solicita</label>
@@ -396,7 +310,7 @@
               </div>
             </div>
 
-          <hr class="my-4"> -->
+          <hr class="my-4">
 
           <button class="w-100 btn btn-primary btn-lg" type="submit" id="solicitudbtn"><i class="bi bi-cloud-check-fill"></i> Realizar solicitud</button>
         </form>
