@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 25, 2023 at 05:02 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Servidor: localhost
+-- Tiempo de generación: 27-01-2023 a las 10:05:38
+-- Versión del servidor: 10.1.16-MariaDB
+-- Versión de PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -18,18 +17,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bitacora`
+-- Base de datos: `bitacora`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bitacora`
+-- Estructura de tabla para la tabla `bitacora`
 --
 
 CREATE TABLE `bitacora` (
   `id` int(11) NOT NULL,
-  `folio` int(4) NOT NULL,
+  `folio` int(11) NOT NULL,
   `fecha` datetime NOT NULL,
   `datos_pc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `datos_usr` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -56,14 +55,14 @@ CREATE TABLE `bitacora` (
   `otra2` int(11) DEFAULT NULL,
   `otra2_desc` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `observaciones` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `realizo_mantenimiento` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `realizo_mantenimiento` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `solucionado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usr`
+-- Estructura de tabla para la tabla `usr`
 --
 
 CREATE TABLE `usr` (
@@ -73,38 +72,35 @@ CREATE TABLE `usr` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `bitacora`
+-- Indices de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usr`
+-- Indices de la tabla `usr`
 --
 ALTER TABLE `usr`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `bitacora`
+-- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
--- AUTO_INCREMENT for table `usr`
+-- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

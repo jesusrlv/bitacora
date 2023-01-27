@@ -12,15 +12,13 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-    
+    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript" src="script.js"></script>
-    <script src="js/script.js"></script>
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap');
       body{
@@ -83,7 +81,7 @@
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
   </head>
-  <body class="bg-light" >
+  <body class="bg-light">
     
 <div class="container">
   <main>
@@ -95,8 +93,7 @@
 
     <div class="row g-5 border rounded-2 bg-white p-2">
       <div class="col-md-12 col-lg-12">
-        <!-- <form action="prcd/save.php" method="post"> -->
-        <form id="pwdForm">
+        <form action="prcd/save.php" method="post">
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label"><i class="bi bi-person"></i> Nombre del Usuario:</label>
@@ -123,6 +120,7 @@
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
                     <i class="bi bi-pc-display-horizontal me-2" style="font-size: larger;"> </i> Hardware
                   </button>
+                  <form class="needs-validation" enctype="multipart/form-data" name="formSchedule" id="formSchedule">
                 </h2>
             <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
               <div class="accordion-body">
@@ -130,32 +128,32 @@
                 <h5>Mantenimimiento preventivo y/o correctivo de hardware</h5>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="internet" name="internet[]" >
+            <input type="checkbox" class="form-check-input" id="same-address" name="internet[]" value="1" onchange="valorCheckbox()">
             <label class="form-check-label" for="same-address">Revisar conexión a internet</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="inst_periferico" name="inst_periferico[]"  >
+            <input type="checkbox" class="form-check-input" id="same-address" name="inst_periferico[]" value="1"  onchange="valorCheckbox()">
             <label class="form-check-label" for="same-address">Instalar impresora/scanner</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="limp_equipo" name="limp_equipo[]" >
+            <input type="checkbox" class="form-check-input" id="save-info" name="limp_equipo[]" value="1" onchange="valorCheckbox()">
             <label class="form-check-label" for="save-info">Limpiar equipo</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="tec_mouse" name="tec_mouse[]" >
+            <input type="checkbox" class="form-check-input" id="save-info" name="tec_mouse[]" value="1" onchange="valorCheckbox()">
             <label class="form-check-label" for="save-info">Mouse/teclado no funciona</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="falla_monitor" name="falla_monitor[]" >
+            <input type="checkbox" class="form-check-input" id="save-info" name="falla_monitor[]" value="1" onchange="valorCheckbox()">
             <label class="form-check-label" for="save-info">Falla del monitor/pantalla</label>
           </div>
           
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="checkOtra" name="otra1[]" onchange="cambioCheck1()">
+            <input type="checkbox" class="form-check-input" id="checkOtra" name="otra1[]" value="1" onchange="cambioCheck1()">
             <label class="form-check-label" for="save-info">Otra:</label>
           </div>
           <div class="form-check">
@@ -177,17 +175,17 @@
                 <h5>Mantenimimiento preventivo y/o correctivo de software</h5>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="act_office" name="act_office[]">
+            <input type="checkbox" class="form-check-input" id="save-info" name="act_office[]" value="1">
             <label class="form-check-label" for="save-info">Activación office</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="activar_so" name="activar_so[]">
+            <input type="checkbox" class="form-check-input" id="save-info" name="activar_so[]" value="1">
             <label class="form-check-label" for="save-info">Activación Sistema Operativo</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="checkOtra4" name="actualizar_sw[]" onchange="cambioCheck4()">
+            <input type="checkbox" class="form-check-input" id="checkOtra4" name="actualizar_sw[]" value="1" onchange="cambioCheck4()">
             <label class="form-check-label" for="save-info">Actualizar software</label>
           </div>
           <div class="form-check">
@@ -195,20 +193,20 @@
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="formateo_completo" name="formateo_completo[]">
+            <input type="checkbox" class="form-check-input" id="save-info" name="formateo_completo[]" value="1">
             <label class="form-check-label" for="save-info">Formateo completo</label>
           </div>
 
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="limpieza_virus" name="limpieza_virus[]">
+            <input type="checkbox" class="form-check-input" id="save-info" name="limpieza_virus[]" value="1">
             <label class="form-check-label" for="save-info">Limpieza de virus</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="instalar_sw" name="instalar_sw[]">
+            <input type="checkbox" class="form-check-input" id="save-info" name="instalar_sw[]" value="1">
             <label class="form-check-label" for="save-info">Instalación de software</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="checkOtra2" name="otra_sw[]" onchange="cambioCheck2()">
+            <input type="checkbox" class="form-check-input" id="checkOtra2" name="otra_sw[]" value="1" onchange="cambioCheck2()">
             <label class="form-check-label" for="save-info">Otra:</label>
           </div>
           <div class="form-check">
@@ -228,25 +226,25 @@
               <div class="accordion-body">
 
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="escanear" name="escanear[]">
+                  <input type="checkbox" class="form-check-input" id="save-info" name="escanear[]" value="1">
                   <label class="form-check-label" for="save-info">Escaneo de documento(s) y/o imágenes</label>
                 </div>
       
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="printColor" name="printColor[]">
+                  <input type="checkbox" class="form-check-input" id="save-info" name="printColor[]" value="1">
                   <label class="form-check-label" for="save-info">Impresión a color</label>
                 </div>
       
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="rw_cd" name="rw_cd[]">
+                  <input type="checkbox" class="form-check-input" id="save-info" name="rw_cd[]" value="1">
                   <label class="form-check-label" for="save-info">Grabar información en CD's o DVD's</label>
                 </div>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="web" name="web[]">
+                  <input type="checkbox" class="form-check-input" id="save-info" name="web[]" value="1">
                   <label class="form-check-label" for="save-info">Publicar información en el sitio web oficial</label>
                 </div>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="checkOtra3" name="otra2[]" onchange="cambioCheck3()">
+                  <input type="checkbox" class="form-check-input" id="checkOtra3" name="otra2[]" value="1" onchange="cambioCheck3()">
                   <label class="form-check-label" for="save-info">Otra:</label>
                 </div>
                 <div class="form-check">
@@ -257,10 +255,10 @@
         </div>
         <div class="input-group mt-3">
           <span class="input-group-text">Observaciones</span>
-          <textarea class="form-control" aria-label="With textarea" name="observaciones" id="observaciones"></textarea>
+          <textarea class="form-control" aria-label="With textarea" name="observaciones"></textarea>
         </div>
 
-          <button class="w-100 btn btn-primary btn-lg mt-3 mb-4" type="submit"><i class="bi bi-cloud-check-fill"></i> Realizar solicitud</button>
+          <button class="w-100 btn btn-primary btn-lg mt-3 mb-4" type="submit" id="solicitudbtn"><i class="bi bi-cloud-check-fill"></i> Realizar solicitud</button>
         </form>
       </div>
     </div>
@@ -272,7 +270,7 @@
 </div>
 
 
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="form-validation.js"></script>
   </body>

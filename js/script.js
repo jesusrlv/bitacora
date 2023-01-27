@@ -163,17 +163,75 @@ function reservation(){
                       // alert("Reservation Done!")     
                       Swal.fire({
                         icon: 'success',
-                        imageUrl: '../assets/brand/img/logo_store_shoes_sin_fondo.png',
+                        imageUrl: 'img/InclusionLogo.png',
                         imageHeight: 200,
-                        imageAlt: 'Natatorial',
+                        imageAlt: 'Inclusión',
                         title: 'Done!',
-                        text: 'Your reservation its done!',
+                        text: 'Su ticket será atendido a la brevedad',
                         confirmButtonColor: '#3085d6',
-                        footer: 'Natatorial.com'
+                        footer: 'INCLUSIÓN'
                     }).then(function(){window.location='schedule.php';});         
                     }               
                   });
                   
                   event.preventDefault();
 
+        }
+
+        // bloqueos de input
+        function cambioCheck1(){
+          var valorCheck = document.getElementById('checkOtra');
+            if(valorCheck.checked){
+                // valorCheck.value = 1;
+                document.getElementById('otra').disabled = false;
+                document.getElementById('otra').setAttribute("name","otra1_desc");
+            }
+            else{
+                // valorCheck.value = 0;
+                document.getElementById('otra').disabled = true;
+                document.getElementById('otra').removeAttribute("name");
+                
+            }
+        }
+        function cambioCheck2(){
+          var valorCheck = document.getElementById('checkOtra2');
+            if(valorCheck.checked){
+                // valorCheck.value = 1;
+                document.getElementById('otra2').disabled = false;
+                document.getElementById('otra2').setAttribute("name","otra2_desc");
+            }
+            else{
+                // valorCheck.value = 0;
+                document.getElementById('otra2').disabled = true;
+                document.getElementById('otra2').removeAttribute("name");
+                
+            }
+        }
+        function cambioCheck3(){
+          var valorCheck = document.getElementById('checkOtra3');
+            if(valorCheck.checked){
+                // valorCheck.value = 1;
+                document.getElementById('otra3').disabled = false;
+                document.getElementById('otra3').setAttribute("name","otra3_desc");
+            }
+            else{
+                // valorCheck.value = 0;
+                document.getElementById('otra3').disabled = true;
+                document.getElementById('otra3').removeAttribute("name");
+                
+            }
+        }
+        function cambioCheck4(){
+          var valorCheck = document.getElementById('checkOtra4');
+            if(valorCheck.checked){
+                // valorCheck.value = 1;
+                document.getElementById('otra4').disabled = false;
+                document.getElementById('otra4').setAttribute("name","actualizar_sw2");
+            }
+            else{
+                // valorCheck.value = 0;
+                document.getElementById('otra4').disabled = true;
+                document.getElementById('otra4').removeAttribute("name");
+                
+            }
         }
