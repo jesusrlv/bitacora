@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-01-2023 a las 10:40:13
--- Versión del servidor: 10.1.16-MariaDB
--- Versión de PHP: 5.5.38
+-- Tiempo de generación: 27-01-2023 a las 19:42:04
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -90,7 +91,12 @@ INSERT INTO `bitacora` (`id`, `folio`, `fecha`, `datos_pc`, `datos_usr`, `intern
 (24, 'a4d2kl131', '2023-01-27 03:36:58', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
 (25, '4ccfy2yq5', '2023-01-27 03:38:43', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
 (26, 'n25045cld', '2023-01-27 03:39:22', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
-(27, 'zhlfz3ntc', '2023-01-27 03:39:43', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0);
+(27, 'zhlfz3ntc', '2023-01-27 03:39:43', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(28, 't5lrm58h2', '2023-01-27 12:34:53', 'HP Laser Jet', 'Jesusrlv', 1, 0, 1, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 1, 0, '0', 0, 0, 0, 0, 1, 'w', 'ww', 'I.C. Ana Elisa Barba Pinedo', 0),
+(29, 'w2s5cdjto', '2023-01-27 12:36:08', 'HP Laser Jet', 'Jesusrlv', 1, 0, 1, 1, 0, 0, '0', 0, 0, 0, '0', 0, 0, 1, 0, '0', 0, 0, 0, 0, 1, 'w', 'ww', 'I.C. Ana Elisa Barba Pinedo', 0),
+(30, 'io9qbf2vd', '2023-01-27 12:37:15', 'HP Laser Jet', 'Jesusrlv', 1, 0, 1, 1, 0, 0, '0', 0, 0, 0, '0', 0, 0, 1, 0, '0', 0, 0, 0, 0, 1, 'w', 'ww', 'I.C. Ana Elisa Barba Pinedo', 0),
+(31, 'ogovhtncg', '2023-01-27 12:38:55', 'HP Laser Jet', 'Jesusrlv', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 1, 0, '0', 0, 0, 0, 1, 0, '0', 'ZX', 'I.C. Ana Elisa Barba Pinedo', 0),
+(32, 'aaq3jq42c', '2023-01-27 12:41:39', 'HP Laser Jet', 'Jesusrlv 9', 1, 1, 1, 1, 1, 1, 'D', 1, 1, 1, 'D', 1, 1, 1, 1, 'D', 1, 1, 1, 1, 1, 'D', '', 'I.C. Ana Elisa Barba Pinedo', 0);
 
 -- --------------------------------------------------------
 
@@ -128,12 +134,15 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
 --
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

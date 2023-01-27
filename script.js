@@ -1,6 +1,5 @@
 $(document).ready(function() {
-    $('#pwdForm').submit(function(e) {
-        e.preventDefault();
+    $('#botonSubmit').click(function(e) {
 
     var datos_usr = document.getElementById('datos_usr').value;
     var datos_pc = document.getElementById('datos_pc').value;
@@ -164,11 +163,12 @@ $(document).ready(function() {
 
     var observaciones = document.getElementById('observaciones').value;
 
+        e.preventDefault();
        
         $.ajax({
-            type: "POST",
             url: 'prcd/save.php',
-            async:true,
+            type: "POST",
+            dataType:'json',
             data: {
                 datos_usr:datos_usr,
                 datos_pc:datos_pc,
@@ -196,7 +196,6 @@ $(document).ready(function() {
                 otra3:otra3,
                 observaciones:observaciones
             },
-            dataType: 'html',
             success: function(response)
             {
                 // var jsonData = JSON.parse(response);
@@ -209,7 +208,7 @@ $(document).ready(function() {
                     Swal.fire({
                         icon: 'success',
                         imageUrl: 'img/InclusionLogo.png',
-                        imageHeight: 200,
+                        imageWidth: 200,
                         title: 'Bitácora actualizada',
                         text: 'Servicio registrado',
                         confirmButtonColor: '#3085d6',

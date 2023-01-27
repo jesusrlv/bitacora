@@ -24,8 +24,8 @@ $inst_periferico = $_POST['inst_periferico'];
 $limp_equipo = $_POST['limp_equipo'];
 $tec_mouse = $_POST['tec_mouse'];
 $falla_monitor = $_POST['falla_monitor'];
-$otra1 = $_POST['otra1'];
-$otra1_desc = $_POST['otra1_desc'];
+$otra1 = $_POST['checkOtra'];
+$otra1_desc = $_POST['otra'];
 $act_office = $_POST['act_office'];
 $activar_so = $_POST['activar_so'];
 $actualizar_sw = $_POST['checkOtra4'];
@@ -111,9 +111,12 @@ $resultadoBitacora = $conn->query($queryBitacora);
 
 if($resultadoBitacora){
     echo json_encode(array('success' => 1));
+    // echo 'Registrado';
 }
 else{
     echo json_encode(array('success' => 0));
+
+    // echo 'No Registrado';
     // echo 'No se registró ningún cambio';
     // printf("Errormessage: %s\n", $conn->error);
 }
