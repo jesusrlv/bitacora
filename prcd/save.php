@@ -99,29 +99,18 @@ $queryBitacora = "INSERT INTO bitacora(
         '$otra2',
         '$otra2_desc',
         '$observaciones',
-        '$solucionado'
+        '$solucionado')
         ";
+
 $resultadoBitacora = $conn->query($queryBitacora);
 
 if($resultadoBitacora){
     echo json_encode(array('success' => 1));
-
-//     echo "<script>
-//     Swal.fire({
-//         icon: 'success',
-//         imageUrl: '../img/InclusionLogo.png',
-//         imageHeight: 200,
-//         imageAlt: 'INCLUSIÓN',
-//         title: 'Solicitud agendada',
-//         text: 'Se dará servicio técnico a la brevedad',
-//         confirmButtonColor: '#3085d6',
-//         footer: 'INCLUSIÓN'
-//     }).then(function(){window.location='../index.html';});</script>";
 }
 else{
     echo json_encode(array('success' => 0));
-    // echo 'No se registró ningún cambio';
-    // printf("Errormessage: %s\n", $conn->error);
+    echo 'No se registró ningún cambio';
+    printf("Errormessage: %s\n", $conn->error);
 }
 
 
