@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     var internetVal = document.getElementById('internet');
     if(internetVal.checked){
-       var internet = 1;
+        var internet = 1;
     }
     else{
         var internet = 0;
@@ -14,7 +14,7 @@ $(document).ready(function() {
     
     var inst_perifericoVal = document.getElementById('inst_periferico');
     if(inst_perifericoVal.checked){
-       var inst_periferico = 1;
+        var inst_periferico = 1;
     }
     else{
         var inst_periferico = 0;
@@ -22,7 +22,7 @@ $(document).ready(function() {
 
     var limp_equipoVal = document.getElementById('limp_equipo');
     if(limp_equipoVal.checked){
-       var limp_equipo = 1;
+        var limp_equipo = 1;
     }
     else{
         var limp_equipo = 0;
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
     var tec_mouseVal = document.getElementById('tec_mouse');
     if(tec_mouseVal.checked){
-       var tec_mouse = 1;
+        var tec_mouse = 1;
     }
     else{
         var tec_mouse = 0;
@@ -38,7 +38,7 @@ $(document).ready(function() {
 
     var falla_monitorVal = document.getElementById('falla_monitor');
     if(falla_monitorVal.checked){
-       var falla_monitor = 1;
+        var falla_monitor = 1;
     }
     else{
         var falla_monitor = 0;
@@ -46,8 +46,8 @@ $(document).ready(function() {
 
     var checkOtraVal = document.getElementById('checkOtra');
     if(checkOtraVal.checked){
-       var checkOtra = 1;
-       var otra = document.getElementById('otra').value;
+        var checkOtra = 1;
+        var otra = document.getElementById('otra').value;
     }
     else{
         var checkOtra = 0;
@@ -58,7 +58,7 @@ $(document).ready(function() {
 
     var act_officeVal = document.getElementById('act_office');
     if(act_officeVal.checked){
-       var act_office = 1;
+        var act_office = 1;
     }
     else{
         var act_office = 0;
@@ -66,7 +66,7 @@ $(document).ready(function() {
 
     var activar_soVal = document.getElementById('activar_so');
     if(activar_soVal.checked){
-       var activar_so = 1;
+        var activar_so = 1;
     }
     else{
         var activar_so = 0;
@@ -108,8 +108,8 @@ $(document).ready(function() {
 
     var checkOtra2Val = document.getElementById('checkOtra2');
     if(checkOtra2Val.checked){
-       var checkOtra2 = 1;
-       var otra2 = document.getElementById('otra2').value;
+        var checkOtra2 = 1;
+        var otra2 = document.getElementById('otra2').value;
     }
     else{
         var checkOtra2 = 0;
@@ -121,7 +121,7 @@ $(document).ready(function() {
 
     var escanearVal = document.getElementById('escanear');
     if(escanearVal.checked){
-       var escanear = 1;
+        var escanear = 1;
     }
     else{
         var escanear = 0;
@@ -129,7 +129,7 @@ $(document).ready(function() {
 
     var printColorVal = document.getElementById('printColor');
     if(printColorVal.checked){
-       var printColor = 1;
+        var printColor = 1;
     }
     else{
         var printColor = 0;
@@ -137,7 +137,7 @@ $(document).ready(function() {
 
     var rw_cdVal = document.getElementById('rw_cd');
     if(rw_cdVal.checked){
-       var rw_cd = 1;
+        var rw_cd = 1;
     }
     else{
         var rw_cd = 0;
@@ -145,7 +145,7 @@ $(document).ready(function() {
 
     var webVal = document.getElementById('web');
     if(webVal.checked){
-       var web = 1;
+        var web = 1;
     }
     else{
         var web = 0;
@@ -153,8 +153,8 @@ $(document).ready(function() {
 
     var checkOtra3Val = document.getElementById('checkOtra3');
     if(checkOtra3Val.checked){
-       var checkOtra3 = 1;
-       var otra3 = document.getElementById('otra3').value;
+        var checkOtra3 = 1;
+        var otra3 = document.getElementById('otra3').value;
     }
     else{
         var checkOtra3 = 0;
@@ -164,7 +164,7 @@ $(document).ready(function() {
     var observaciones = document.getElementById('observaciones').value;
 
         e.preventDefault();
-       
+        
         $.ajax({
             url: 'prcd/save.php',
             type: "POST",
