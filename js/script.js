@@ -61,7 +61,7 @@ function dateTime(){
 }
 
 function queryDate(){
-   
+  
   var dateS= document.querySelector("[name='scheduleDate']").value;
   var dateT= document.querySelector("[name='scheduleTime']").value;
   console.log(dateS);
@@ -141,7 +141,7 @@ function reservation(){
     // var filter= document.querySelector("[name='filter']").value;
     // var filtro= document.querySelector("[name='filtro']").value;
     // var talla= document.querySelector("[name='talla']").value;
-         
+        
           $.ajax({
                   type:"POST",
                   url:"prcd/save.php",
@@ -168,6 +168,7 @@ function reservation(){
                         imageAlt: 'Inclusión',
                         title: 'Done!',
                         text: 'Su ticket será atendido a la brevedad',
+                        text: '# de Ticket',
                         confirmButtonColor: '#3085d6',
                         footer: 'INCLUSIÓN'
                     }).then(function(){window.location='schedule.php';});         
