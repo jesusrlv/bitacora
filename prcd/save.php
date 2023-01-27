@@ -14,8 +14,8 @@ include('qc.php');
     return $key;
     }
     //genera un código de 9 caracteres de longitud.
-$folio = generarCodigo(9);
-
+$codigo = generarCodigo(9);
+$folio = $codigo;
 $datos_usr = $_POST['datos_usr'];
 $datos_pc = $_POST['datos_pc'];
 
@@ -43,9 +43,11 @@ $otra2 = $_POST['checkOtra3'];
 $otra2_desc = $_POST['otra3'];
 $observaciones = $_POST['observaciones'];
 $solucionado = 0;
+$realizo_mantenimiento = 'I.C. Ana Elisa Barba Pinedo';
 
 $queryBitacora = "INSERT INTO bitacora(
     folio,
+    fecha,
     datos_usr,
     datos_pc,
     internet,
@@ -71,9 +73,11 @@ $queryBitacora = "INSERT INTO bitacora(
     otra2,
     otra2_desc,
     observaciones,
+    realizo_mantenimiento,
     solucionado)
     VALUES(
         '$folio',
+        '$fecha_sistema',
         '$datos_usr',
         '$datos_pc',
         '$internet',
@@ -99,6 +103,7 @@ $queryBitacora = "INSERT INTO bitacora(
         '$otra2',
         '$otra2_desc',
         '$observaciones',
+        '$realizo_mantenimiento',
         '$solucionado')
         ";
 
@@ -109,8 +114,8 @@ if($resultadoBitacora){
 }
 else{
     echo json_encode(array('success' => 0));
-    echo 'No se registró ningún cambio';
-    printf("Errormessage: %s\n", $conn->error);
+    // echo 'No se registró ningún cambio';
+    // printf("Errormessage: %s\n", $conn->error);
 }
 
 

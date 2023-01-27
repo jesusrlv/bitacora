@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('#pwdForm').submit(function(e) {
+        e.preventDefault();
 
     var datos_usr = document.getElementById('datos_usr').value;
     var datos_pc = document.getElementById('datos_pc').value;
@@ -163,12 +164,11 @@ $(document).ready(function() {
 
     var observaciones = document.getElementById('observaciones').value;
 
-        e.preventDefault();
+       
         $.ajax({
             type: "POST",
             url: 'prcd/save.php',
-            dataType: "text",
-            cache: false,
+            async:true,
             data: {
                 datos_usr:datos_usr,
                 datos_pc:datos_pc,
@@ -196,10 +196,12 @@ $(document).ready(function() {
                 otra3:otra3,
                 observaciones:observaciones
             },
+            dataType: 'html',
             success: function(response)
             {
-                var jsonData = JSON.parse(response);
- 
+                // var jsonData = JSON.parse(response);
+                var jsonData = JSON.parse(JSON.stringify(response));
+
                 // user is logged in successfully in the back-end
                 // let's redirect
                 if (jsonData.success == "1")

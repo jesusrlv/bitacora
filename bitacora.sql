@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-01-2023 a las 10:05:38
+-- Tiempo de generación: 27-01-2023 a las 10:40:13
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.5.38
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `bitacora` (
   `id` int(11) NOT NULL,
-  `folio` int(11) NOT NULL,
+  `folio` varchar(9) COLLATE utf8_unicode_ci NOT NULL,
   `fecha` datetime NOT NULL,
   `datos_pc` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `datos_usr` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -58,6 +58,39 @@ CREATE TABLE `bitacora` (
   `realizo_mantenimiento` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `solucionado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `bitacora`
+--
+
+INSERT INTO `bitacora` (`id`, `folio`, `fecha`, `datos_pc`, `datos_usr`, `internet`, `inst_periferico`, `limp_equipo`, `tec_mouse`, `falla_monitor`, `otra1`, `otra1_desc`, `act_office`, `activar_so`, `actualizar_sw`, `actualizar_sw2`, `formateo_completo`, `limpieza_virus`, `instalar_sw`, `otra_sw`, `otra_sw_desc`, `escanear`, `printcolor`, `rw_cd`, `web`, `otra2`, `otra2_desc`, `observaciones`, `realizo_mantenimiento`, `solucionado`) VALUES
+(1, '0', '0000-00-00 00:00:00', 'MAC', 'Jesus', 0, 0, 0, 0, 0, 0, 'XXX', 0, 0, 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, '', 'dsdff', NULL, 0),
+(2, '5', '0000-00-00 00:00:00', 'MAC', 'Jesus', 0, 0, 1, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'dsdff', NULL, 0),
+(3, '0', '0000-00-00 00:00:00', 'MAC', 'Jesus', 0, 0, 1, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'dsdff', NULL, 0),
+(4, '0', '0000-00-00 00:00:00', 'MAC', 'Jesus', 1, 0, 0, 1, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'ddd', NULL, 0),
+(5, '0', '0000-00-00 00:00:00', 'MAC', 'Jesus R', 1, 0, 0, 1, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'ddd', NULL, 0),
+(6, '0', '0000-00-00 00:00:00', 'MAC', 'Jesus R', 1, 0, 0, 1, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'ddd', NULL, 0),
+(7, '0', '0000-00-00 00:00:00', 'MAC', 'Jesus R', 1, 0, 0, 1, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'ddd', NULL, 0),
+(8, '0', '0000-00-00 00:00:00', 'MAC', 'Jesus R', 1, 0, 0, 1, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'ddd', NULL, 0),
+(9, '41', '0000-00-00 00:00:00', 'MAC', 'Jesus R', 1, 0, 0, 1, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'ddd', NULL, 0),
+(10, 'aopck0llm', '0000-00-00 00:00:00', 'MAC', 'Jesus R', 1, 0, 0, 1, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'ddd', NULL, 0),
+(11, 'ssobtr5c6', '2023-01-27 03:23:56', 'MAC', 'Jesus R', 1, 0, 0, 1, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'ddd', NULL, 0),
+(12, 'elecugsqn', '2023-01-27 03:25:36', 'MAC', 'Jesus R', 1, 0, 0, 1, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'ddd', 'I.C. Ana Elisa Barba Pinedo', 0),
+(13, '5ey1dz6qm', '2023-01-27 03:25:55', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(14, '36zsogyqw', '2023-01-27 03:26:34', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(15, '9t7d0b5fn', '2023-01-27 03:28:51', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(16, 'h4dngmzvn', '2023-01-27 03:29:13', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(17, 'dkj6yesln', '2023-01-27 03:29:39', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(18, 'hgujzxil2', '2023-01-27 03:30:32', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(19, 'fsgy581ld', '2023-01-27 03:30:50', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(20, 'zxquv0xsx', '2023-01-27 03:33:26', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(21, '07si76eg1', '2023-01-27 03:33:30', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(22, '9tzuzdetj', '2023-01-27 03:34:49', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(23, 'bp5iugbi8', '2023-01-27 03:36:48', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(24, 'a4d2kl131', '2023-01-27 03:36:58', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(25, '4ccfy2yq5', '2023-01-27 03:38:43', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(26, 'n25045cld', '2023-01-27 03:39:22', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0),
+(27, 'zhlfz3ntc', '2023-01-27 03:39:43', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', 'I.C. Ana Elisa Barba Pinedo', 0);
 
 -- --------------------------------------------------------
 
@@ -95,7 +128,7 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT de la tabla `usr`
 --
