@@ -7,7 +7,7 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
     <link rel="icon" type="image/png" href="img/inclusion.ico"/>
-    <title>Bitácora | INCLUSIÓN</title>
+    <title>Admin bitácora | INCLUSIÓN</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="script.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/search.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap');
       body{
@@ -77,10 +77,6 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
-      #imgFoot{
-        filter: grayscale(100%);
-        width: 180px;
-      }
     </style>
 
     
@@ -94,7 +90,7 @@
     <div class="py-5 text-center">
       <img class="d-block mx-auto mb-4" src="img/logo_completo.png" alt="" width="300" height="">
       <h2>Departamento de Tecnologías de la Información</h2>
-      <p class="lead">Sistema de Tickets para servicio, apoyo y/o soporte técnico</p>
+      <p class="lead">Listado de tickets</p>
     </div>
 
     <div class="row g-5 border rounded-2 bg-white p-2">
@@ -103,7 +99,7 @@
         <form id="pwdForm">
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="firstName" class="form-label"><i class="bi bi-person"></i> Nombre del Usuario:</label>
+              <label for="firstName" class="form-label"><i class="bi bi-calendar-week-fill"></i> Fecha de búsqueda</label>
               <input type="text" class="form-control" id="datos_usr" name="datos_usr" placeholder="Nombre del usuario solicitante" required>
               <div class="invalid-feedback">
                 * Campo requerido.
@@ -272,7 +268,6 @@
   </main>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
-    <img class="d-block mx-auto mb-4" src="img/logo_completo.png" alt="" id="imgFoot">
     <p class="mb-1">&copy; 2023 INCLUSIÓN</p>
   </footer>
 </div>
