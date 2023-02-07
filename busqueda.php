@@ -77,6 +77,10 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+      #imgFoot{
+        filter: grayscale(100%);
+        width: 180px;
+      }
     </style>
 
     
@@ -100,174 +104,57 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label"><i class="bi bi-calendar-week-fill"></i> Fecha de búsqueda</label>
-              <input type="text" class="form-control" id="datos_usr" name="datos_usr" placeholder="Nombre del usuario solicitante" required>
+              <input type="date" class="form-control" id="busquedaDate" name="busquedaDate" placeholder="Nombre del usuario solicitante" onchange="searchDate()" required>
               <div class="invalid-feedback">
                 * Campo requerido.
               </div>
             </div>
-            <div class="col-sm-12">
-              <label for="firstName" class="form-label"><i class="bi bi-pc-display"></i> Datos del equipo:</label>
-              <input type="text" class="form-control" id="datos_pc" name="datos_pc" placeholder="Marca y/o modelo del equipo" required>
-              <div class="invalid-feedback">
-                * Campo requerido.
-              </div>
-            </div>
+            
             <div class="col-sm-6">
             
             </div>
-            <br>
-            <h5>Seleccione una o varias de las siguientes opciones:</h5>
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header border-bottom" id="flush-headingOne">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    <i class="bi bi-pc-display-horizontal me-2" style="font-size: larger;"> </i> Hardware
-                  </button>
-                </h2>
-            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">
 
-                <h5>Mantenimimiento preventivo y/o correctivo de hardware</h5>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="internet" name="internet[]" >
-            <label class="form-check-label" for="same-address">Revisar conexión a internet</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="inst_periferico" name="inst_periferico[]"  >
-            <label class="form-check-label" for="same-address">Instalar impresora/scanner</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="limp_equipo" name="limp_equipo[]" >
-            <label class="form-check-label" for="save-info">Limpiar equipo</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="tec_mouse" name="tec_mouse[]" >
-            <label class="form-check-label" for="save-info">Mouse/teclado no funciona</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="falla_monitor" name="falla_monitor[]" >
-            <label class="form-check-label" for="save-info">Falla del monitor/pantalla</label>
-          </div>
-          
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="checkOtra" name="otra1[]" onchange="cambioCheck1()">
-            <label class="form-check-label" for="save-info">Otra:</label>
-          </div>
-          <div class="form-check">
-            <input type="text" class="form-control" id="otra" placeholder="Especifique..." name="otra1_desc" disabled>
-          </div>
-
-                
-              </div>
-              
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header border-bottom" id="flush-headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"><i class="bi bi-windows me-2" style="font-size: larger;"></i>
-                Software
-              </button>
-            </h2>
-            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">
-                <h5>Mantenimimiento preventivo y/o correctivo de software</h5>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="act_office" name="act_office[]">
-            <label class="form-check-label" for="save-info">Activación office</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="activar_so" name="activar_so[]">
-            <label class="form-check-label" for="save-info">Activación Sistema Operativo</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="checkOtra4" name="actualizar_sw[]" onchange="cambioCheck4()">
-            <label class="form-check-label" for="save-info">Actualizar software</label>
-          </div>
-          <div class="form-check">
-            <input type="text" class="form-control" id="otra4" placeholder="Especifique..." name="actualizar_sw2" disabled>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="formateo_completo" name="formateo_completo[]">
-            <label class="form-check-label" for="save-info">Formateo completo</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="limpieza_virus" name="limpieza_virus[]">
-            <label class="form-check-label" for="save-info">Limpieza de virus</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="instalar_sw" name="instalar_sw[]">
-            <label class="form-check-label" for="save-info">Instalación de software</label>
-          </div>
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="checkOtra2" name="otra_sw[]" onchange="cambioCheck2()">
-            <label class="form-check-label" for="save-info">Otra:</label>
-          </div>
-          <div class="form-check">
-            <input type="text" class="form-control" id="otra2" placeholder="Especifique..." name="otra_sw_desc" disabled>
-          </div>
-              </div>
-
+            <!-- table -->
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Folio</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Datos</th>
+                        <th scope="col">Usuario</th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchDate">
+                        <!-- <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                        </tr> -->
+                    </tbody>
+                </table>
             </div>
-          </div>
-          <div class="accordion-item">
-            <h2 class="accordion-header border-bottom" id="flush-headingThree">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree"><i class="bi bi-file-earmark-break me-2" style="font-size: larger;"></i>
-                Otros
-              </button>
-            </h2>
-            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-              <div class="accordion-body">
-
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="escanear" name="escanear[]">
-                  <label class="form-check-label" for="save-info">Escaneo de documento(s) y/o imágenes</label>
-                </div>
-      
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="printColor" name="printColor[]">
-                  <label class="form-check-label" for="save-info">Impresión a color</label>
-                </div>
-      
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="rw_cd" name="rw_cd[]">
-                  <label class="form-check-label" for="save-info">Grabar información en CD's o DVD's</label>
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="web" name="web[]">
-                  <label class="form-check-label" for="save-info">Publicar información en el sitio web oficial</label>
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="checkOtra3" name="otra2[]" onchange="cambioCheck3()">
-                  <label class="form-check-label" for="save-info">Otra:</label>
-                </div>
-                <div class="form-check">
-                  <input type="text" class="form-control" id="otra3" placeholder="Especifique..." name="otra2_desc" disabled>
-                </div>
-            
-          </div>
-        </div>
-        <div class="input-group mt-3">
-          <span class="input-group-text">Observaciones</span>
-          <textarea class="form-control" aria-label="With textarea" name="observaciones" id="observaciones"></textarea>
-        </div>
-
-          <button id="botonSubmit" class="w-100 btn btn-primary btn-lg mt-3 mb-4" ><i class="bi bi-cloud-check-fill"></i> Realizar solicitud</button>
-          <span id="resp"></span>
-        </form>
+            <!-- table -->
+           
       </div>
     </div>
   </main>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
+  <img class="d-block mx-auto mb-4" src="img/logo_completo.png" alt="" id="imgFoot">
     <p class="mb-1">&copy; 2023 INCLUSIÓN</p>
   </footer>
 </div>

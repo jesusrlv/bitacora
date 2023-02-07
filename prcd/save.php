@@ -4,7 +4,9 @@ include('qc.php');
 
     date_default_timezone_set('America/Mexico_City');
     setlocale(LC_TIME, 'es_MX.UTF-8');
-    $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
+    // $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
+    $fecha_sistema = strftime("%Y-%m-%d");
+    $fecha_hora = strftime("%H:%M:%S");
 
     function generarCodigo($longitud) {
     $key = '';
@@ -48,6 +50,7 @@ $realizo_mantenimiento = 'I.C. Ana Elisa Barba Pinedo';
 $queryBitacora = "INSERT INTO bitacora(
     folio,
     fecha,
+    hora,
     datos_usr,
     datos_pc,
     internet,
@@ -78,6 +81,7 @@ $queryBitacora = "INSERT INTO bitacora(
     VALUES(
         '$folio',
         '$fecha_sistema',
+        '$fecha_hora',
         '$datos_usr',
         '$datos_pc',
         '$internet',
