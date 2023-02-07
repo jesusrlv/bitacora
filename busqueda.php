@@ -1,3 +1,9 @@
+<?php
+date_default_timezone_set('America/Mexico_City');
+setlocale(LC_TIME, 'es_MX.UTF-8');
+$fecha_sistema = strftime("%Y-%m-%d");
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -87,7 +93,7 @@
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
   </head>
-  <body class="bg-light" >
+  <body class="bg-light" onload="pendientes()">
     
 <div class="container">
   <main>
@@ -115,35 +121,21 @@
             </div>
 
             <!-- table -->
-            <div class="container">
+            <div class="container mt-5">
                 <table class="table">
                     <thead>
                         <tr>
                         <th scope="col">#</th>
                         <th scope="col">Folio</th>
                         <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
                         <th scope="col">Datos</th>
                         <th scope="col">Usuario</th>
+                        <th scope="col">Detalles</th>
+                        <th scope="col">Estatus</th>
                         </tr>
                     </thead>
                     <tbody id="searchDate">
-                        <!-- <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                        </tr> -->
                     </tbody>
                 </table>
             </div>
