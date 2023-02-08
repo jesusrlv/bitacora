@@ -75,7 +75,7 @@ $queryBitacora = "INSERT INTO bitacora(
     web,
     otra2,
     otra2_desc,
-    observaciones,
+    observaciones_usr,
     realizo_mantenimiento,
     solucionado)
     VALUES(
