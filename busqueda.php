@@ -133,6 +133,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <th scope="col">Usuario</th>
                         <th scope="col">Detalles</th>
                         <th scope="col">Estatus</th>
+                        <th scope="col">Reporte</th>
                         </tr>
                     </thead>
                     <tbody id="searchDate">
@@ -140,7 +141,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                 </table>
             </div>
             <!-- table -->
-           
+          
       </div>
     </div>
   </main>

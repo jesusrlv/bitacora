@@ -74,8 +74,8 @@ $(document).ready(function() {
 
     var checkOtra4Val = document.getElementById('checkOtra4');
     if(checkOtra4Val.checked){
-       var checkOtra4 = 1;
-       var otra4 = document.getElementById('otra4').value;
+        var checkOtra4 = 1;
+        var otra4 = document.getElementById('otra4').value;
     }
     else{
         var checkOtra4 = 0;
@@ -84,7 +84,7 @@ $(document).ready(function() {
 
     var formateo_completoVal = document.getElementById('formateo_completo');
     if(formateo_completoVal.checked){
-       var formateo_completo = 1;
+        var formateo_completo = 1;
     }
     else{
         var formateo_completo = 0;
@@ -92,7 +92,7 @@ $(document).ready(function() {
 
     var limpieza_virusVal = document.getElementById('limpieza_virus');
     if(limpieza_virusVal.checked){
-       var limpieza_virus = 1;
+        var limpieza_virus = 1;
     }
     else{
         var limpieza_virus = 0;
@@ -100,7 +100,7 @@ $(document).ready(function() {
 
     var instalar_swVal = document.getElementById('instalar_sw');
     if(instalar_swVal.checked){
-       var instalar_sw = 1;
+        var instalar_sw = 1;
     }
     else{
         var instalar_sw = 0;
@@ -161,6 +161,23 @@ $(document).ready(function() {
         var otra3 = 0;
     }
 
+    if (datos_usr == 1 || datos_pc == 1 || internet == 1 || inst_periferico == 1 || limp_equipo == 1 || tec_mouse == 1 || falla_monitor == 1 || checkOtra == 1){
+        var hardware = 1;
+    } else {
+        var hardware = 0;
+    }
+    if (act_office == 1 || activar_so == 1 || checkOtra4 == 1 || formateo_completo == 1 || limpieza_virus == 1 || instalar_sw == 1 || checkOtra2 == 1){
+        var software = 1;
+    } else {
+        var software = 0;
+    }
+
+    if (escanear == 1 || printColor == 1 || rw_cd == 1 || web == 1 || checkOtra3 == 1){
+        var otrosap = 1;
+    } else {
+        var otrosap = 0;
+    }
+
     var observaciones = document.getElementById('observaciones').value;
 
         e.preventDefault();
@@ -194,7 +211,10 @@ $(document).ready(function() {
                 web:web,
                 checkOtra3:checkOtra3,
                 otra3:otra3,
-                observaciones:observaciones
+                observaciones:observaciones,
+                hardware:hardware,
+                software:software,
+                otrosap:otrosap
             },
             success: function(response)
             {
@@ -225,7 +245,7 @@ $(document).ready(function() {
                     }).then(function(){window.location='index.html';});
                     // });
                 }
-           }
-       });
-     });
+            }
+        });
+    });
 });

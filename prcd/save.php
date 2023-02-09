@@ -27,7 +27,7 @@ $limp_equipo = $_POST['limp_equipo'];
 $tec_mouse = $_POST['tec_mouse'];
 $falla_monitor = $_POST['falla_monitor'];
 $otra1 = $_POST['checkOtra'];
-$otra1_desc = $_POST['otra'];
+$otra1_desc = $_POST['otra']; /* termina Hardware */
 $act_office = $_POST['act_office'];
 $activar_so = $_POST['activar_so'];
 $actualizar_sw = $_POST['checkOtra4'];
@@ -36,16 +36,20 @@ $formateo_completo = $_POST['formateo_completo'];
 $limpieza_virus = $_POST['limpieza_virus'];
 $instalar_sw = $_POST['instalar_sw'];
 $otra_sw = $_POST['checkOtra2'];
-$otra_sw_desc = $_POST['otra2'];
+$otra_sw_desc = $_POST['otra2'];/* Termina Software */
 $escanear = $_POST['escanear'];
 $printColor = $_POST['printColor'];
 $rw_cd = $_POST['rw_cd'];
 $web = $_POST['web'];
 $otra2 = $_POST['checkOtra3'];
-$otra2_desc = $_POST['otra3'];
+$otra2_desc = $_POST['otra3'];/* termina Otros */
 $observaciones = $_POST['observaciones'];
 $solucionado = 0;
 $realizo_mantenimiento = 'I.C. Ana Elisa Barba Pinedo';
+
+$hardware = $_POST['hardware'];
+$software = $_POST['software'];
+$otrosap = $_POST['otrosap'];
 
 $queryBitacora = "INSERT INTO bitacora(
     folio,
@@ -77,7 +81,10 @@ $queryBitacora = "INSERT INTO bitacora(
     otra2_desc,
     observaciones_usr,
     realizo_mantenimiento,
-    solucionado)
+    solucionado,
+    hardware,
+    software,
+    otros)
     VALUES(
         '$folio',
         '$fecha_sistema',
@@ -108,7 +115,10 @@ $queryBitacora = "INSERT INTO bitacora(
         '$otra2_desc',
         '$observaciones',
         '$realizo_mantenimiento',
-        '$solucionado')
+        '$solucionado',
+        '$hardware',
+        '$software',
+        '$otrosap')
         ";
 
 $resultadoBitacora = $conn->query($queryBitacora);
