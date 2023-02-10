@@ -74,7 +74,7 @@ $queryBitacora = "INSERT INTO bitacora(
     otra_sw,
     otra_sw_desc,
     escanear,
-    printColor,
+    printcolor,
     rw_cd,
     web,
     otra2,

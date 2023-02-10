@@ -122,8 +122,8 @@ $fecha_sistema = strftime("%Y-%m-%d");
 
             <!-- table -->
             <div class="container mt-5">
-                <table class="table">
-                    <thead>
+                <table class="table align-middle table-borderless rounded">
+                    <thead class="bg-dark text-light text-center">
                         <tr>
                         <th scope="col">#</th>
                         <th scope="col">Folio</th>
@@ -131,7 +131,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <th scope="col">Hora</th>
                         <th scope="col">Datos</th>
                         <th scope="col">Usuario</th>
-                        <th scope="col">Detalles</th>
+                        <!-- <th scope="col">Detalles</th> -->
                         <th scope="col">Estatus</th>
                         <th scope="col">Reporte</th>
                         </tr>
@@ -151,9 +151,6 @@ $fecha_sistema = strftime("%Y-%m-%d");
     <p class="mb-1">&copy; 2023 INCLUSIÓN</p>
   </footer>
 </div>
-
-
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
       <script src="form-validation.js"></script>
   </body>
