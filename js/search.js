@@ -35,3 +35,21 @@ function pendientes(){
 
     });
 }
+
+function cambioStatus(x){
+    $.ajax({
+        url: 'prcd/cambioEstatus.php',
+        type: "POST",
+        dataType:'html',
+        data: {
+            x:x
+        },
+        success: function(data)
+        {
+            // $('#cambioStatus1').fadeIn(1000).html(data);
+            // document.getElementById('cambioStatus1').innerHTML ='<a href="cambioStatus('.$rowSearch['id'].')" onclick=""><span class="badge text-bg-danger"><i class="bi bi-x-circle-fill"></i> No Solucionado</span></a>';
+        }
+
+    });
+
+}

@@ -24,12 +24,58 @@ if($numRows > 0){
                 
                 if($rowSearch['solucionado'] == 0){
                     echo'
-                    <td><span class="badge text-bg-danger"><i class="bi bi-x-circle-fill"></i> No Solucionado</span></td>
+                    <td id="cambioStatus1">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#estatus'.$rowSearch['id'].'">
+                            <span class="badge text-bg-danger">
+                                <i class="bi bi-x-circle-fill"></i> No Solucionado
+                            </span>
+                        </a>
+                    </td>
+                    ';
+                    echo'
+                    <!-- Modal -->
+                    <div class="modal fade" id="estatus'.$rowSearch['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     ';
                     }
                     else{
                     echo'
-                    <td><span class="badge text-bg-success"><i class="bi bi-check-circle-fill"></i> Solucionado</span></td>
+                    <td><a href="#" data-bs-toggle="modal" data-bs-target="#estatus2'.$rowSearch['id'].'"><span class="badge text-bg-success"><i class="bi bi-check-circle-fill"></i> Solucionado</span></a></td>
+                    ';
+                    echo'
+                    <!-- Modal -->
+                    <div class="modal fade" id="estatus2'.$rowSearch['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                     ';
                     }
 

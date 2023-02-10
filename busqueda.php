@@ -117,7 +117,8 @@ $fecha_sistema = strftime("%Y-%m-%d");
             </div>
             
             <div class="col-sm-6">
-            
+              <label for="firstName" class="form-label"><i class="bi bi-funnel"></i> Filtro</label>
+              <input type="text" class="form-control" id="filtroTable" name="filtroTable" placeholder="Filtro...">
             </div>
 
             <!-- table -->
@@ -156,3 +157,13 @@ $fecha_sistema = strftime("%Y-%m-%d");
   </body>
 </html>
 
+<script>
+  $(document).ready(function () {
+        $("#filtroTable").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#searchDate tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
