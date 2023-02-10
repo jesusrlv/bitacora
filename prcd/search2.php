@@ -30,28 +30,32 @@ if($numRows > 0){
                                 <i class="bi bi-x-circle-fill"></i> No Solucionado
                             </span>
                         </a>
-                    </td>
-                    ';
-                    echo'
-                    <!-- Modal -->
-                    <div class="modal fade" id="estatus'.$rowSearch['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    ...
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save changes</button>
+                        <!-- Modal -->
+                        <div class="modal fade " id="estatus'.$rowSearch['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar estatus del ticket #'.$rowSearch['folio'].'</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form target="prcd/StatusDone.php" >
+                                        <div class="input-group mt-3">
+                                            <span class="input-group-text">Observaciones DTI</span>
+                                            <textarea class="form-control" aria-label="With textarea" name="observaciones_dti" id="observaciones_dti"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Solucionado</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </td>
                     ';
+                    
                     }
                     else{
                     echo'
@@ -67,7 +71,7 @@ if($numRows > 0){
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            ...
+                        
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -241,7 +245,7 @@ if($numRows > 0){
                                             <li>Publicar información en el sitio web oficial</li>
                                             ';
                                         }
-                                       
+                                        
                                         if($rowSearch['otra2']==1){
                                             echo'
                                             <li>Otro:</li>
@@ -266,8 +270,28 @@ if($numRows > 0){
                 ';
         echo'
         </tr>
+        <tr class="mt-2 mb-2"> 
+            <td colspan="8" class="table-warning"><strong class="me-2">Observaciones: </strong>
+            ';
+                if (empty($rowSearch['observaciones_usr'])){
+                    echo ' Sin datos
+                    ';
+                } else {
+                    echo $rowSearch['observaciones_usr'];
+                    
+                }
+            echo '
+            </td>
+        </tr>
+        <tr class="mt-2">
+        <td>
+        </td>
+        </tr>
+        
         ';
+    
     }
+
 }
 else{
     echo'
