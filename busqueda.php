@@ -18,7 +18,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
-    
+    <script src="https://kit.fontawesome.com/b2e301b71f.js" crossorigin="anonymous"></script>
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -93,8 +93,54 @@ $fecha_sistema = strftime("%Y-%m-%d");
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
   </head>
+
   <body class="bg-light" onload="pendientes()">
-    
+    <header class="p-3 mb-3 border-bottom">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 px-3 mb-lg-0 text-dark text-decoration-none" >
+            <img src="img/InclusionLogo.png" class="img-fluid" style="max-width: auto; max-height: 3rem;" alt="">
+          </a>
+  
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <!-- <button class="btn btn-light position-relative" type="buton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"><i class="bi bi-cart-plus"></i> <span id="esconder">Tickets</span>
+                <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger" id="notificacionBadge">
+          0
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
+              <button type="button" class="btn btn-light">Reportes</button> -->
+            </div>
+          </ul>
+  
+          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <div class="btn-group" role="group" aria-label="Basic example">
+              <button class="btn btn-light position-relative" type="buton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"><i class="bi bi-clipboard-check"></i> <span id="esconder">Tickets</span>
+                <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger" id="notificacionBadge">
+          0
+                <span class="visually-hidden">unread messages</span>
+              </span>
+            </button>
+              <button type="button" class="btn btn-light"><i class="bi bi-clipboard-data"></i> Reportes</button>
+            </div>
+          </form>
+  
+          <div class="dropdown text-end">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="img/avatar.png" alt="Logo" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small">
+              <li><a class="dropdown-item" href="#">Tickets</a></li>
+              <li><a class="dropdown-item" href="#">Reportes</a></li>
+              <li><a class="dropdown-item" href="#">Contraseña</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
 <div class="container">
   <main>
     <div class="py-5 text-center">
@@ -148,7 +194,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
   </main>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
-  <img class="d-block mx-auto mb-4" src="img/logo_completo.png" alt="" id="imgFoot">
+  <img  class="d-block mx-auto mb-4" src="img/logo_completo.png" alt="" id="imgFoot">
     <p class="mb-1">&copy; 2023 INCLUSIÓN</p>
   </footer>
 </div>
