@@ -2,10 +2,11 @@
 
 include('qc.php');
 
-$fecha = ($_POST['dateSearch']);
+$fecha1 = ($_POST['dateSearch1']);
+$fecha2 = ($_POST['dateSearch2']);
 
 // $search = "SELECT * FROM bitacora WHERE fecha = '$fecha'";
-$search = "SELECT * FROM bitacora WHERE fecha = '$fecha' ORDER BY fecha ASC, hora ASC, solucionado DESC";
+$search = "SELECT * FROM bitacora WHERE fecha BETWEEN '$fecha1' AND '$fecha2' ORDER BY fecha ASC, hora ASC, solucionado DESC";
 $resultadoSearch = $conn->query($search);
 $numRows = $resultadoSearch->num_rows;
 if($numRows > 0){
@@ -26,109 +27,27 @@ if($numRows > 0){
                 if($rowSearch['solucionado'] == 0){
                     echo'
                     <td id="cambioStatus1">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#estatus'.$rowSearch['id'].'">
+                        <a>
                             <span class="badge text-bg-danger">
                                 <i class="bi bi-x-circle-fill"></i> No Solucionado
                             </span>
                         </a>
-                        <!-- Modal -->
-                        <div class="modal fade " id="estatus'.$rowSearch['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar estatus del ticket #'.$rowSearch['folio'].'</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form target="prcd/StatusDone.php" >
-                                        <div class="input-group mt-3">
-                                            <span class="input-group-text">Observaciones DTI</span>
-                                            <textarea class="form-control" aria-label="With textarea" name="observaciones_dti" id="observaciones_dti"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn btn-primary">Solucionado</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                     </td>
                     ';
                     
                     }
-                    elseif (($rowSearch['solucionado'] == 1)){
-                        echo'
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#estatus2'.$rowSearch['id'].'"><span class="badge text-bg-success"><i class="bi bi-check-circle-fill"></i> Solucionado</span></a>
-                        
-                        <!-- Modal -->
-                        <div class="modal fade" id="estatus2'.$rowSearch['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            <form id="cambioStatusSelect'.$rowSearch['id'].'">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Cambiar estatus</option>
-                                    <option value="0">No solucionado</option>
-                                    <option value="1">Solucionado</option>
-                                </select>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary">Cambiar estatus</button>
-                            </form>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        </td>
-                        ';
+                    else if ($rowSearch['solucionado'] == 1){
+                    echo'
+                    <td><a><span class="badge text-bg-success"><i class="bi bi-check-circle-fill"></i> Solucionado</span></a></td>
+                    ';
                     }
 
                     else {
                         echo'
-                        <td id="cambioStatus3">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#estatus3'.$rowSearch['id'].'">
-                            <span class="badge text-bg-warning text-light">
-                                <i class="bi bi-x-circle-fill"></i> En proceso
-                            </span>
-                        </a>
-                        <!-- Modal -->
-                        <div class="modal fade " id="estatus3'.$rowSearch['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar estatus del ticket #'.$rowSearch['folio'].'</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form target="prcd/StatusDone.php" >
-                                        <div class="input-group mt-3">
-                                            <span class="input-group-text">Observaciones DTI</span>
-                                            <textarea class="form-control" aria-label="With textarea" name="observaciones_dti" id="observaciones_dti"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn btn-primary">Solucionado</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    ';
+                        <td><a><span class="badge text-bg-warning text-light"><i class="bi bi-check-circle-fill "></i> En proceso</span></a></td>
+                        ';
                     }
-
-                    echo'    
-                    <td class="text-center"> <a href="#"><i class="bi bi-filetype-pdf h2"></i></a></td>    
-                    ';
-
 
                 echo'
                 </tr>
@@ -313,13 +232,13 @@ if($numRows > 0){
         echo'
         </tr>
         <tr class="mt-2 mb-2"> 
-            <td colspan="8" class="table-warning"><strong class="me-2">Observaciones: </strong>
+            <td colspan="8" class="table-secondary"><strong class="me-2">Observaciones: </strong>
             ';
-                if (empty($rowSearch['observaciones_usr'])){
+                if (empty($rowSearch['observaciones_dti'])){
                     echo ' Sin datos
                     ';
                 } else {
-                    echo $rowSearch['observaciones_usr'];
+                    echo $rowSearch['observaciones_dti'];
                     
                 }
             echo '

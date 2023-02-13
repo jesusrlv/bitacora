@@ -57,30 +57,71 @@ if($numRows > 0){
                     ';
                     
                     }
-                    else{
-                    echo'
-                    <td><a href="#" data-bs-toggle="modal" data-bs-target="#estatus2'.$rowSearch['id'].'"><span class="badge text-bg-success"><i class="bi bi-check-circle-fill"></i> Solucionado</span></a></td>
-                    ';
-                    echo'
-                    <!-- Modal -->
-                    <div class="modal fade" id="estatus2'.$rowSearch['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    else if (($rowSearch['solucionado'] == 1)){
+                        echo'
+                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#estatus2'.$rowSearch['id'].'"><span class="badge text-bg-success"><i class="bi bi-check-circle-fill"></i> Solucionado</span></a>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="estatus2'.$rowSearch['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <form id="cambioStatusSelect'.$rowSearch['id'].'">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Cambiar estatus</option>
+                                    <option value="0">No solucionado</option>
+                                    <option value="1">Solucionado</option>
+                                </select>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Cambiar estatus</button>
+                            </form>
+                            </div>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                        
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </td>
+                        ';
+                    }
+
+                    else {
+                        echo'
+                        <td id="cambioStatus3">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#estatus3'.$rowSearch['id'].'">
+                            <span class="badge text-bg-warning text-light">
+                                <i class="bi bi-x-circle-fill"></i> En proceso
+                            </span>
+                        </a>
+                        <!-- Modal -->
+                        <div class="modal fade " id="estatus3'.$rowSearch['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar estatus del ticket #'.$rowSearch['folio'].'</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form target="prcd/StatusDone.php" >
+                                        <div class="input-group mt-3">
+                                            <span class="input-group-text">Observaciones DTI</span>
+                                            <textarea class="form-control" aria-label="With textarea" name="observaciones_dti" id="observaciones_dti"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-primary">Solucionado</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        </div>
-                    </div>
-                    </div>
-                    ';
+                    </td>
+                        ';
                     }
 
                     echo'    
@@ -103,6 +144,8 @@ if($numRows > 0){
                             </h2>
                                 <div id="hardware'.$rowSearch['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#hardware1'.$rowSearch['id'].'">
                                     <div class="accordion-body">
+                                        <div class="input-group mb-3">
+
                                         <ol type="1">';
                                         if($rowSearch['internet']==1){
                                             echo'
@@ -140,6 +183,17 @@ if($numRows > 0){
 
                                         echo'
                                         </ol>
+                                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</button>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                          <li><a class="dropdown-item" href="#">0</a></li>
+                                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                          <li><hr class="dropdown-divider"></li>
+                                          <li><a class="dropdown-item" href="#">Separated link</a></li>
+                                        </ul>
+                                      
+                                        </div>
                                     </div>
                                     </div>
                                 </div>
@@ -159,6 +213,7 @@ if($numRows > 0){
                             </h2>
                                 <div id="software'.$rowSearch['id'].'" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#software1'.$rowSearch['id'].'">
                                     <div class="accordion-body">
+                                    <div class="input-group mb-3 border">
                                     <ol type="1">';
                                         if($rowSearch['act_office']==1){
                                             echo'
@@ -201,9 +256,10 @@ if($numRows > 0){
                                             </ol>
                                             ';
                                         }
-
                                         echo'
                                         </ol>
+                                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -270,6 +326,7 @@ if($numRows > 0){
                 ';
         echo'
         </tr>
+        
         <tr class="mt-2 mb-2"> 
             <td colspan="8" class="table-warning"><strong class="me-2">Observaciones: </strong>
             ';

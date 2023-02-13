@@ -53,3 +53,28 @@ function cambioStatus(x){
     });
 
 }
+
+function desbloquearfinal(){
+    document.getElementById("fechafinal").disabled = false;
+    
+}
+
+function searchDate2(){
+    var dateSearch1 = document.getElementById('fechainicial').value;
+    var dateSearch2 = document.getElementById('fechafinal').value;
+    $.ajax({
+        url: 'prcd/fechasreporte.php',
+        type: "POST",
+        dataType:'html',
+        data: {
+            dateSearch1:dateSearch1,
+            dateSearch2:dateSearch2
+        },
+        success: function(data)
+        {
+            $('#searchDate1').fadeIn(1000).html(data);
+        }
+
+    });
+
+}

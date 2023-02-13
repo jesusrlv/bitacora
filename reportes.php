@@ -94,7 +94,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
     <link href="form-validation.css" rel="stylesheet">
   </head>
 
-  <body class="bg-light" onload="pendientes()">
+  <body class="bg-light">
     <header class="p-3 mb-3 border-bottom">
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -169,16 +169,23 @@ $fecha_sistema = strftime("%Y-%m-%d");
         <form id="pwdForm">
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="firstName" class="form-label"><i class="bi bi-calendar-week-fill"></i> Fecha de búsqueda</label>
-              <input type="date" class="form-control" id="busquedaDate" name="busquedaDate" placeholder="Nombre del usuario solicitante" onchange="searchDate()" required>
+              <label for="firstName" class="form-label"><i class="bi bi-calendar-week-fill"></i> Fecha inicial</label>
+              <input type="date" class="form-control" id="fechainicial" name="fechainicial"  onchange="desbloquearfinal()" required>
               <div class="invalid-feedback">
                 * Campo requerido.
               </div>
             </div>
             
-            <div class="col-sm-6">
+<!--             <div class="col-sm-6">
               <label for="firstName" class="form-label"><i class="bi bi-funnel"></i> Filtro</label>
               <input type="text" class="form-control" id="filtroTable" name="filtroTable" placeholder="Filtro...">
+            </div> -->
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label"><i class="bi bi-calendar-week-fill"></i> Fecha final</label>
+              <input type="date" class="form-control" id="fechafinal" name="fechafinal"  onchange="searchDate2()" disabled>
+              <div class="invalid-feedback">
+                * Campo requerido.
+              </div>
             </div>
 
             <!-- table -->
@@ -192,12 +199,10 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <th scope="col">Hora</th>
                         <th scope="col">Datos</th>
                         <th scope="col">Usuario</th>
-                        <!-- <th scope="col">Detalles</th> -->
                         <th scope="col">Estatus</th>
-                        <th scope="col">Reporte</th>
                         </tr>
                     </thead>
-                    <tbody id="searchDate">
+                    <tbody id="searchDate1">
                     </tbody>
                 </table>
             </div>
