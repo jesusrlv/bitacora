@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2023 at 10:29 PM
+-- Generation Time: Feb 15, 2023 at 03:55 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -97,11 +97,32 @@ INSERT INTO `bitacora` (`id`, `folio`, `fecha`, `hora`, `datos_pc`, `datos_usr`,
 (25, '4ccfy2yq5', '2023-01-27', '00:00:00', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, NULL, NULL, NULL),
 (26, 'n25045cld', '2023-01-27', '00:00:00', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, NULL, NULL, NULL),
 (27, 'zhlfz3ntc', '2023-01-27', '00:00:00', 'MAC', 'Jesus', 1, 1, 0, 0, 0, 0, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'dddd', 'dsdsds', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, NULL, NULL, NULL),
-(28, '33k2i9xtc', '2023-02-06', '00:00:00', 'MAC', 'Jesus R', 1, 0, 0, 1, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'Solo eso', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, NULL, NULL),
+(28, '33k2i9xtc', '2023-02-06', '00:00:00', 'MAC', 'Jesus R', 1, 0, 0, 1, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'Solo eso', NULL, 'I.C. Ana Elisa Barba Pinedo', 2, 1, NULL, NULL),
 (29, 'z3lz18f8y', '2023-02-06', '00:00:00', '', '', 0, 0, 0, 0, 0, 0, '', 0, 0, 0, '', 0, 0, 0, 0, '', 0, 0, 0, 0, 0, '', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
 (30, 'cf3qgcd9s', '2023-02-06', '18:34:19', 'MAC', 'Jesus R Date', 1, 1, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'NA', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, NULL, 1),
 (31, '3u5htntg4', '2023-02-08', '14:53:55', '', '', 0, 0, 0, 0, 0, 0, '0', 1, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, NULL, NULL, NULL),
-(32, '5yxyq8cqu', '2023-02-09', '13:12:25', 'Dell', 'Ana', 1, 0, 0, 0, 0, 0, '0', 1, 0, 0, '0', 0, 0, 0, 0, '0', 1, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1);
+(32, '5yxyq8cqu', '2023-02-09', '13:12:25', 'Dell', 'Ana', 1, 0, 0, 0, 0, 0, '0', 1, 0, 0, '0', 0, 0, 0, 0, '0', 1, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
+(33, 'prya8wv19', '2023-02-10', '11:17:41', 'HP', 'Ma. de Lourdes Rodarte Díaz', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 1, 'No puedo quitar la contraseña de inicio y no me acuerdo', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 1, 0, 1, 0),
+(34, 'l6a267udj', '2023-02-10', '11:18:29', 'HP', 'Ma. del Refugio Robles Zamarripa', 0, 0, 0, 0, 0, 0, '0', 0, 0, 1, 'Adobe Reader', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, 'Convertir archivo pdf a doc', 'me urge', NULL, 'I.C. Ana Elisa Barba Pinedo', 2, 0, 1, 1),
+(35, '347bof3ij', '2023-02-13', '14:21:20', 'DELL', 'Griselda Galván', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 1, 0, 1, 0, '0', 'Urgente para transparencia', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 0, 1),
+(36, 'n00dsgdnx', '2023-02-13', '15:17:18', 'Ensamblada', 'Dinorah', 0, 0, 0, 0, 0, 1, 'no sirve la cámara', 0, 0, 0, '0', 0, 0, 1, 0, '0', 0, 0, 0, 1, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
+(37, '2oplsqqqf', '2023-02-14', '12:02:25', 'HP', 'Irma Elizabeth González Lira', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 1, 'No puedo sacar reportes del sisema de asistencias', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 0),
+(38, 'y2ig2n7gv', '2023-02-14', '12:03:19', 'Dell', 'Verónica Acuña González', 1, 1, 0, 0, 0, 0, '0', 1, 0, 0, '0', 0, 0, 0, 0, '0', 1, 0, 1, 1, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
+(39, 'wdc43t84k', '2023-02-15', '08:35:30', 'HP', 'Irma Elizabeth González Lira', 1, 1, 0, 0, 0, 1, 'no funciona el usb', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0),
+(40, 'xqqv5973b', '2023-02-15', '08:37:58', 'Dell', 'Jazmin Sepúlveda Álvarez', 0, 0, 0, 0, 0, 0, '0', 1, 1, 0, '0', 0, 0, 0, 0, '0', 1, 0, 0, 0, 1, '', 'No puedo hacer nada', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `observaciones`
+--
+
+CREATE TABLE `observaciones` (
+  `id` int(11) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
+  `tipo_servicio` int(11) NOT NULL,
+  `fecha` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -126,6 +147,12 @@ ALTER TABLE `bitacora`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `observaciones`
+--
+ALTER TABLE `observaciones`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `usr`
 --
 ALTER TABLE `usr`
@@ -139,7 +166,13 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT for table `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `observaciones`
+--
+ALTER TABLE `observaciones`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `usr`
