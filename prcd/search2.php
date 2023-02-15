@@ -25,7 +25,7 @@ if($numRows > 0){
                 if($rowSearch['solucionado'] == 0){
                     echo'
                     <td id="cambioStatus1">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#estatus'.$rowSearch['id'].'">
+                        <a data-bs-toggle="modal" data-bs-target="#estatus'.$rowSearch['id'].'">
                             <span class="badge text-bg-danger">
                                 <i class="bi bi-x-circle-fill"></i> No Solucionado
                             </span>
@@ -37,7 +37,7 @@ if($numRows > 0){
                     }
                     else if (($rowSearch['solucionado'] == 1)){
                         echo'
-                        <td><a href="#" data-bs-toggle="modal" data-bs-target="#estatus2'.$rowSearch['id'].'"><span class="badge text-bg-success"><i class="bi bi-check-circle-fill"></i> Solucionado</span></a>
+                        <td><a data-bs-toggle="modal" data-bs-target="#estatus2'.$rowSearch['id'].'"><span class="badge text-bg-success"><i class="bi bi-check-circle-fill"></i> Solucionado</span></a>
                         </td>
                         ';
                     }
@@ -45,7 +45,7 @@ if($numRows > 0){
                     else {
                         echo'
                         <td id="cambioStatus3">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#estatus3'.$rowSearch['id'].'">
+                        <a data-bs-toggle="modal" data-bs-target="#estatus3'.$rowSearch['id'].'">
                             <span class="badge text-bg-warning text-light">
                                 <i class="bi bi-x-circle-fill"></i> En proceso
                             </span>
@@ -144,7 +144,6 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Falla en el monitor</li></span>
                                                 <input type="text" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
-                                                
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -159,10 +158,7 @@ if($numRows > 0){
                                         if($rowSearch['otra1']==1){
                                             echo'
                                             <div class="input-group mb-3">
-                                            <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro:</li>
-                                                <ol type="a">
-                                                    <li>'.$rowSearch['otra1_desc'].'</li>
-                                                </ol></span>
+                                            <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra1_desc'].'</li></span>
                                                 <input type="text" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
@@ -234,10 +230,7 @@ if($numRows > 0){
                                         if($rowSearch['actualizar_sw']==1){
                                             echo'
                                             <div class="input-group mb-3">
-                                                <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Actualizar software</li>
-                                                <ol type="a">
-                                                    <li>'.$rowSearch['actualizar_sw2'].'</li>
-                                                </ol></span>
+                                                <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Actualizar software: '.$rowSearch['actualizar_sw2'].'</li></span>
                                                 <input type="text" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
@@ -301,10 +294,7 @@ if($numRows > 0){
                                         if($rowSearch['otra_sw']==1){
                                             echo'
                                             <div class="input-group mb-3">
-                                                <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro:</li>
-                                                <ol type="a">
-                                                    <li>'.$rowSearch['otra_sw_desc'].'</li>
-                                                </ol></span>
+                                                <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra_sw_desc'].'</li></span>
                                                 <input type="text" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
@@ -409,10 +399,7 @@ if($numRows > 0){
                                         if($rowSearch['otra2']==1){
                                             echo'
                                             <div class="input-group mb-3">
-                                                <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro:</li>
-                                                <ol type="a">
-                                                    <li>'.$rowSearch['otra2_desc'].'</li>
-                                                </ol></span>
+                                                <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra2_desc'].'</li></span>
                                                 <input type="text" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>

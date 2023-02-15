@@ -1,5 +1,27 @@
 $(document).ready(function() {
-    $('#botonSubmit').click(function(e) {
+        $('#pwdForm').validate({
+            rules: {
+                otra1_desc: "required",
+                otra2_desc: "required",
+                otra3_desc: "required",
+                otra4_desc: "required"
+            },
+            messages: {
+                otra1_desc: "Please enter first name",
+                otra2_desc: "Please enter last name",
+                otra3_desc: "Please enter last name",
+                otra4_desc: "Please enter last name"
+            },
+            submitHandler: function(form) {
+                form.submit();
+            }
+    
+            // any other options and/or rules
+        });
+    });
+
+$(document).ready(function() {
+    $('#pwdForm').submit(function(e) {
 
     var datos_usr = document.getElementById('datos_usr').value;
     var datos_pc = document.getElementById('datos_pc').value;
@@ -179,7 +201,7 @@ $(document).ready(function() {
     }
 
     var observaciones = document.getElementById('observaciones').value;
-
+        
         e.preventDefault();
         
         $.ajax({
@@ -247,5 +269,7 @@ $(document).ready(function() {
                 }
             }
         });
+    
+        
     });
 });
