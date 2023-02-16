@@ -183,19 +183,19 @@ $(document).ready(function() {
         e.preventDefault();
 
         if(otra.length == 0 || /^\s+$/.test(otra)){
-        
+
         Swal.fire({
             icon: 'error',
-            title: 'Datos incorrectos',
-            text: 'Incorrecto',
-            footer: 'INCLUSIÓN'
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
         });
-       
+
             return;
         }
 
         if(otra2.length == 0 || /^\s+$/.test(otra2)){
-        // alert("Sin datos");
+
         Swal.fire({
             icon: 'error',
             title: 'Datos incorrectos 2',
@@ -207,26 +207,26 @@ $(document).ready(function() {
         }
 
         if( otra3.length == 0 || /^\s+$/.test(otra3)){
-        // alert("Sin datos");
+
         Swal.fire({
             icon: 'error',
             title: 'Datos incorrectos',
             text: 'Incorrecto',
             footer: 'INCLUSIÓN'
         });
-       
+
             return;
         } 
 
         if(otra4.length == 0 || /^\s+$/.test(otra4)){
-        // alert("Sin datos");
+
         Swal.fire({
             icon: 'error',
             title: 'Datos incorrectos',
             text: 'Incorrecto',
             footer: 'INCLUSIÓN'
-        });
-       
+        }); 
+
             return;
         }
         
@@ -291,7 +291,7 @@ $(document).ready(function() {
                             text: 'Incorrecto',
                             footer: 'INCLUSIÓN'
                         }).then(function(){window.location='index.html';});
-                        // });
+
                     }
                 }
             });
