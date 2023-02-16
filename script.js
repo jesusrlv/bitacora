@@ -1,25 +1,3 @@
-// $(document).ready(function() {
-//         $('#pwdForm').validate({
-//             rules: {
-//                 otra1_desc: "required",
-//                 otra2_desc: "required",
-//                 otra3_desc: "required",
-//                 otra4_desc: "required"
-//             },
-//             messages: {
-//                 otra1_desc: "Please enter first name",
-//                 otra2_desc: "Please enter last name",
-//                 otra3_desc: "Please enter last name",
-//                 otra4_desc: "Please enter last name"
-//             },
-//             submitHandler: function(form) {
-//                 form.submit();
-//             }
-    
-//             // any other options and/or rules
-//         });
-//     });
-
 $(document).ready(function() {
     $('#pwdForm').submit(function(e) {
 
@@ -205,7 +183,7 @@ $(document).ready(function() {
         e.preventDefault();
 
         if(otra.length == 0 || /^\s+$/.test(otra)){
-        // alert("Sin datos");
+        
         Swal.fire({
             icon: 'error',
             title: 'Datos incorrectos',
@@ -214,7 +192,7 @@ $(document).ready(function() {
         });
        
             return;
-        } //else
+        }
 
         if(otra2.length == 0 || /^\s+$/.test(otra2)){
         // alert("Sin datos");
@@ -226,7 +204,7 @@ $(document).ready(function() {
         });
         
             return;
-        } //else
+        }
 
         if( otra3.length == 0 || /^\s+$/.test(otra3)){
         // alert("Sin datos");
@@ -238,7 +216,7 @@ $(document).ready(function() {
         });
        
             return;
-        } //else
+        } 
 
         if(otra4.length == 0 || /^\s+$/.test(otra4)){
         // alert("Sin datos");
@@ -250,7 +228,7 @@ $(document).ready(function() {
         });
        
             return;
-        } //else
+        }
         
             $.ajax({
                 url: 'prcd/save.php',
