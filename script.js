@@ -1,24 +1,24 @@
-$(document).ready(function() {
-        $('#pwdForm').validate({
-            rules: {
-                otra1_desc: "required",
-                otra2_desc: "required",
-                otra3_desc: "required",
-                otra4_desc: "required"
-            },
-            messages: {
-                otra1_desc: "Please enter first name",
-                otra2_desc: "Please enter last name",
-                otra3_desc: "Please enter last name",
-                otra4_desc: "Please enter last name"
-            },
-            submitHandler: function(form) {
-                form.submit();
-            }
+// $(document).ready(function() {
+//         $('#pwdForm').validate({
+//             rules: {
+//                 otra1_desc: "required",
+//                 otra2_desc: "required",
+//                 otra3_desc: "required",
+//                 otra4_desc: "required"
+//             },
+//             messages: {
+//                 otra1_desc: "Please enter first name",
+//                 otra2_desc: "Please enter last name",
+//                 otra3_desc: "Please enter last name",
+//                 otra4_desc: "Please enter last name"
+//             },
+//             submitHandler: function(form) {
+//                 form.submit();
+//             }
     
-            // any other options and/or rules
-        });
-    });
+//             // any other options and/or rules
+//         });
+//     });
 
 $(document).ready(function() {
     $('#pwdForm').submit(function(e) {
@@ -203,73 +203,121 @@ $(document).ready(function() {
     var observaciones = document.getElementById('observaciones').value;
         
         e.preventDefault();
-        
-        $.ajax({
-            url: 'prcd/save.php',
-            type: "POST",
-            dataType:'json',
-            data: {
-                datos_usr:datos_usr,
-                datos_pc:datos_pc,
-                internet:internet,
-                inst_periferico:inst_periferico,
-                limp_equipo:limp_equipo,
-                tec_mouse:tec_mouse,
-                falla_monitor:falla_monitor,
-                checkOtra:checkOtra,
-                otra:otra,
-                act_office:act_office,
-                activar_so:activar_so,
-                checkOtra4:checkOtra4,
-                otra4:otra4,
-                formateo_completo:formateo_completo,
-                limpieza_virus:limpieza_virus,
-                instalar_sw:instalar_sw,
-                checkOtra2:checkOtra2,
-                otra2:otra2,
-                escanear:escanear,
-                printColor:printColor,
-                rw_cd:rw_cd,
-                web:web,
-                checkOtra3:checkOtra3,
-                otra3:otra3,
-                observaciones:observaciones,
-                hardware:hardware,
-                software:software,
-                otrosap:otrosap
-            },
-            success: function(response)
-            {
-                // var jsonData = JSON.parse(response);
-                var jsonData = JSON.parse(JSON.stringify(response));
 
-                // user is logged in successfully in the back-end
-                // let's redirect
-                if (jsonData.success == "1")
-                {
-                    Swal.fire({
-                        icon: 'success',
-                        imageUrl: 'img/InclusionLogo.png',
-                        imageWidth: 200,
-                        title: 'Bitácora actualizada',
-                        text: 'Servicio registrado',
-                        confirmButtonColor: '#3085d6',
-                        footer: 'INCLUSIÓN'
-                    }).then(function(){window.location='index.html';});
-                }
-                else if (jsonData.success == "0")
-                {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Incorrecto',
-                        text: 'Incorrecto',
-                        footer: 'INCLUSIÓN'
-                    }).then(function(){window.location='index.html';});
-                    // });
-                }
-            }
+        if(otra.length == 0 || /^\s+$/.test(otra)){
+        // alert("Sin datos");
+        Swal.fire({
+            icon: 'error',
+            title: 'Datos incorrectos',
+            text: 'Incorrecto',
+            footer: 'INCLUSIÓN'
         });
-    
+       
+            return;
+        } //else
+
+        if(otra2.length == 0 || /^\s+$/.test(otra2)){
+        // alert("Sin datos");
+        Swal.fire({
+            icon: 'error',
+            title: 'Datos incorrectos 2',
+            text: 'Incorrecto',
+            footer: 'INCLUSIÓN'
+        });
+        
+            return;
+        } //else
+
+        if( otra3.length == 0 || /^\s+$/.test(otra3)){
+        // alert("Sin datos");
+        Swal.fire({
+            icon: 'error',
+            title: 'Datos incorrectos',
+            text: 'Incorrecto',
+            footer: 'INCLUSIÓN'
+        });
+       
+            return;
+        } //else
+
+        if(otra4.length == 0 || /^\s+$/.test(otra4)){
+        // alert("Sin datos");
+        Swal.fire({
+            icon: 'error',
+            title: 'Datos incorrectos',
+            text: 'Incorrecto',
+            footer: 'INCLUSIÓN'
+        });
+       
+            return;
+        } //else
+        
+            $.ajax({
+                url: 'prcd/save.php',
+                type: "POST",
+                dataType:'json',
+                data: {
+                    datos_usr:datos_usr,
+                    datos_pc:datos_pc,
+                    internet:internet,
+                    inst_periferico:inst_periferico,
+                    limp_equipo:limp_equipo,
+                    tec_mouse:tec_mouse,
+                    falla_monitor:falla_monitor,
+                    checkOtra:checkOtra,
+                    otra:otra,
+                    act_office:act_office,
+                    activar_so:activar_so,
+                    checkOtra4:checkOtra4,
+                    otra4:otra4,
+                    formateo_completo:formateo_completo,
+                    limpieza_virus:limpieza_virus,
+                    instalar_sw:instalar_sw,
+                    checkOtra2:checkOtra2,
+                    otra2:otra2,
+                    escanear:escanear,
+                    printColor:printColor,
+                    rw_cd:rw_cd,
+                    web:web,
+                    checkOtra3:checkOtra3,
+                    otra3:otra3,
+                    observaciones:observaciones,
+                    hardware:hardware,
+                    software:software,
+                    otrosap:otrosap
+                },
+                success: function(response)
+                {
+                    // var jsonData = JSON.parse(response);
+                    var jsonData = JSON.parse(JSON.stringify(response));
+
+                    // user is logged in successfully in the back-end
+                    // let's redirect
+                    if (jsonData.success == "1")
+                    {
+                        Swal.fire({
+                            icon: 'success',
+                            imageUrl: 'img/InclusionLogo.png',
+                            imageWidth: 200,
+                            title: 'Bitácora actualizada',
+                            text: 'Servicio registrado',
+                            confirmButtonColor: '#3085d6',
+                            footer: 'INCLUSIÓN'
+                        }).then(function(){window.location='index.html';});
+                    }
+                    else if (jsonData.success == "0")
+                    {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Incorrecto',
+                            text: 'Incorrecto',
+                            footer: 'INCLUSIÓN'
+                        }).then(function(){window.location='index.html';});
+                        // });
+                    }
+                }
+            });
+        
         
     });
 });
