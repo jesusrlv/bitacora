@@ -27,6 +27,9 @@ $fecha_sistema = strftime("%Y-%m-%d");
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="script.js"></script>
     <script src="js/search.js"></script>
+    <!-- <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
+
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap');
       body{
@@ -114,39 +117,24 @@ $fecha_sistema = strftime("%Y-%m-%d");
             </div>
           </ul>
   
-          <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
           <div class="btn-group" role="group" aria-label="Basic example">
-              <button class="btn btn-light position-relative" type="buton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"><i class="bi bi-clipboard-check"></i> <span id="esconder">Tickets</span>
-                <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger" id="notificacionBadge">
-          0
+            <a href="busqueda.php" target="_self" class="btn btn-light position-relative" type="buton"  aria-expanded="false"><i class="bi bi-clipboard-check"></i>
+              <span id="esconder">Tickets</span>
+              <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger" id="notificacionBadge">
+                0
                 <span class="visually-hidden">unread messages</span>
               </span>
-            </button>
-              <!-- <button type="button" class="btn btn-light"><i class="bi bi-clipboard-data"></i> Reportes</button> -->
-              <div class="btn-group">
-                <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-clipboard-data"></i> 
-                  Reportes
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Semanal</a></li>
-                  <li><a class="dropdown-item" href="#">Mensual</a></li>
-                  <li><a class="dropdown-item" href="#">Trimestral</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Otros</a></li>
-                </ul>
-              </div>
-
-
-            </div>
-          </form>
+            </a>
+            <a href="reportes.php" type="button" class="btn btn-light"><i class="bi bi-clipboard-data"></i> Reportes</a>
+          </div>
   
           <div class="dropdown text-end">
             <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <img src="img/avatar.png" alt="Logo" width="32" height="32" class="rounded-circle">
             </a>
             <ul class="dropdown-menu text-small">
-              <li><a class="dropdown-item" href="#">Tickets</a></li>
-              <li><a class="dropdown-item" href="#">Reportes</a></li>
+              <li><a class="dropdown-item" href="busqueda.php">Tickets</a></li>
+              <li><a class="dropdown-item" href="reportes.php">Reportes</a></li>
               <li><a class="dropdown-item" href="#">Contraseña</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
@@ -186,6 +174,17 @@ $fecha_sistema = strftime("%Y-%m-%d");
               <div class="invalid-feedback">
                 * Campo requerido.
               </div>
+            </div>
+
+            <div class="dropdown text-end">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-clipboard-data"></i>
+                Generar Reporte
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Tickets del periodo</a></li>
+                <li><a class="dropdown-item" href="#">Detallado</a></li>
+                <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+              </ul>
             </div>
 
             <!-- table -->

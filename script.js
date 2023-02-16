@@ -186,9 +186,9 @@ $(document).ready(function() {
 
         Swal.fire({
             icon: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong!',
-            footer: '<a href="">Why do I have this issue?</a>'
+            title: 'Faltan datos',
+            html: 'Datos incompletos en opción "Otra" de la sección de <b>Hardware</b>',
+            footer: 'INCLUSIÓN'
         });
 
             return;
@@ -198,8 +198,8 @@ $(document).ready(function() {
 
         Swal.fire({
             icon: 'error',
-            title: 'Datos incorrectos 2',
-            text: 'Incorrecto',
+            title: 'Faltan datos',
+            html: 'Datos incompletos en opción "Otra" de la sección de <b>Software</b>',
             footer: 'INCLUSIÓN'
         });
         
@@ -210,25 +210,14 @@ $(document).ready(function() {
 
         Swal.fire({
             icon: 'error',
-            title: 'Datos incorrectos',
-            text: 'Incorrecto',
+            title: 'Faltan datos',
+            html: 'Datos incompletos en opción "Otra" de la sección de <b>Otros</b>',
             footer: 'INCLUSIÓN'
         });
 
             return;
         } 
 
-        if(otra4.length == 0 || /^\s+$/.test(otra4)){
-
-        Swal.fire({
-            icon: 'error',
-            title: 'Datos incorrectos',
-            text: 'Incorrecto',
-            footer: 'INCLUSIÓN'
-        }); 
-
-            return;
-        }
         
             $.ajax({
                 url: 'prcd/save.php',

@@ -185,7 +185,6 @@ function reservation(){
             if(valorCheck.checked){
                 // valorCheck.value = 1;
                 document.getElementById('otra').disabled = false;
-/*                 document.getElementById('otra').required = true; */
                 document.getElementById('otra').setAttribute("name","otra1_desc");
             }
             else{
@@ -201,7 +200,6 @@ function reservation(){
             if(valorCheck.checked){
                 // valorCheck.value = 1;
                 document.getElementById('otra2').disabled = false;
-/*                 document.getElementById('otra2').required = true; */
                 document.getElementById('otra2').setAttribute("name","otra2_desc");
             }
             else{
@@ -216,7 +214,6 @@ function reservation(){
             if(valorCheck.checked){
                 // valorCheck.value = 1;
                 document.getElementById('otra3').disabled = false;
-/*                 document.getElementById('otra3').required = true; */
                 document.getElementById('otra3').setAttribute("name","otra3_desc");
             }
             else{
@@ -231,7 +228,6 @@ function reservation(){
             if(valorCheck.checked){
                 // valorCheck.value = 1;
                 document.getElementById('otra4').disabled = false;
-/*                 document.getElementById('otra4').required = true; */
                 document.getElementById('otra4').setAttribute("name","actualizar_sw2");
             }
             else{
