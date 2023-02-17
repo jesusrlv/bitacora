@@ -87,7 +87,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li class="ps-3">Internet</li></span>
+                                                
                                                 <input type="text" class="form-control" id="observaciones'.$rowSearch['hardware'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="internet_s'.$rowSearch['id'].'" aria-label="Default select example" onchange="calificar()">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -103,7 +105,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Periférico</li></span>
+                                                
                                                 <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['hardware'].'2" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                
                                                 <select id="periferico_s'.$rowSearch['id'].'" class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -119,7 +123,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Limpieza de equipo</li></span>
+                                                
                                                 <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['hardware'].'3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                
                                                 <select class="form-select bg-secondary bg-opacity-25" id="limpequipo_s'.$rowSearch['id'].'" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -135,7 +141,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Mouse</li></span>
+                                                
                                                 <input type="text" id="observaciones'.$rowSearch['hardware'].'4" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">                            
+                                                
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="tecmouse_s'.$rowSearch['id'].'" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -151,7 +159,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Falla en el monitor</li></span>
+                                                
                                                 <input type="text" id="observaciones'.$rowSearch['hardware'].'5" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                
                                                 <select class="form-select bg-secondary bg-opacity-25" id="fallamonitor_s'.$rowSearch['id'].'" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -167,7 +177,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra1_desc'].'</li></span>
+                                                
                                                 <input type="text" id="observaciones'.$rowSearch['hardware'].'6" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                
                                                 <select class="form-select bg-secondary bg-opacity-25" id="otrohw_s'.$rowSearch['id'].'" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -214,7 +226,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de office</li></span>
+                                                
                                                 <input type="text" id="observaciones'.$rowSearch['software'].'7" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                
                                                 <select class="form-select bg-secondary bg-opacity-25"  style="max-width:100px;" id="actoffice_s'.$rowSearch['id'].'" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -230,7 +244,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de sistema operativo</li></span>
+                                                
                                                 <input type="text" id="observaciones'.$rowSearch['software'].'8" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="activarso_s'.$rowSearch['id'].'" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -246,7 +262,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Actualizar software: '.$rowSearch['actualizar_sw2'].'</li></span>
+                                                
                                                 <input type="text" id="observaciones'.$rowSearch['software'].'9" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="actualizarsw_s'.$rowSearch['id'].'" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -262,7 +280,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Formateo completo</li></span>
+                                                
                                                 <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['software'].'10" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="format_s'.$rowSearch['id'].'" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
@@ -278,7 +298,9 @@ if($numRows > 0){
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Limpieza de virus</li></span>
+                                                
                                                 <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['software'].'11" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                
                                                 <select class="form-select bg-secondary bg-opacity-25" id="virus_s'.$rowSearch['id'].'" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
