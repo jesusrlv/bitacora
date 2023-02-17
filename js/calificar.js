@@ -1,18 +1,19 @@
-function calificar(folio,categoria,porcentaje,id){
-    var calificacion = document.getElementById(id).value;
-    var observaciones = document.getElementById(id).value;
+function calificar(folio,subcategoria,id){
+    var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
+    var likert = document.getElementById('likert'+id+subcategoria).value;
+
     $.ajax({
         type: "POST",
         url: "prcd/calificar.php",
         data: {
             id:id,
-            documento:documento,
-            calificacion:calificacion,
-            jurado:jurado
+            observaciones:observaciones,
+            likert:likert,
+            folio:folio
         },
         success: function(data) {
             // $('#calificacionActual').fadeIn(1000).html(data);
-            document.getElementById('calificacionActual'+documento).innerHTML = calificacion;
+            document.getElementById('likert'+documento).setAttribute ("onchange","editarcCalificacion('.$rowSearch['folio'].',1,'.$rowSearch['id'].')");
             document.getElementById('calificacion'+documento).hidden = true;
             document.getElementById('editadCalf'+documento).hidden = false;
             Swal.fire({
@@ -22,7 +23,7 @@ function calificar(folio,categoria,porcentaje,id){
                 title: 'Documento calificado',
                 text: 'Proceso correcto',
                 confirmButtonColor: '#3085d6',
-                footer: 'INJUVENTUD'
+                footer: 'INCLUSIÓN'
             });
         }
     });

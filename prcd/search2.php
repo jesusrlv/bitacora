@@ -84,13 +84,15 @@ if($numRows > 0){
                                     <div class="accordion-body">
                                         <ol type="1">';
                                         if($rowSearch['internet']==1){
+                
                                             echo'
+                                            <input id="numero'.$rowSearch['id'].'" value="1" hidden>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li class="ps-3">Internet</li></span>
                                                 
-                                                <input type="text" class="form-control" id="observaciones'.$rowSearch['hardware'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control" id="observaciones'.$rowSearch['id'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
                                                 
-                                                <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="internet_s'.$rowSearch['id'].'" aria-label="Default select example" onchange="calificar()">
+                                                <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar('.$rowSearch['folio'].',1,'.$rowSearch['id'].')">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
                                                     <option class="bg-secondary bg-white" value="2">25%</option>
@@ -103,10 +105,11 @@ if($numRows > 0){
                                         }
                                         if($rowSearch['inst_periferico']==1){
                                             echo'
+                                            <input id="numero'.$rowSearch['id'].'" value="2" hidden>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Periférico</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['hardware'].'2" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'2" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
                                                 
                                                 <select id="periferico_s'.$rowSearch['id'].'" class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
@@ -121,6 +124,7 @@ if($numRows > 0){
                                         }
                                         if($rowSearch['limp_equipo']==1){
                                             echo'
+                                            <input id="numero'.$rowSearch['id'].'" value="3" hidden>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Limpieza de equipo</li></span>
                                                 
@@ -470,7 +474,6 @@ if($numRows > 0){
                                             </div>
                                             ';
                                         }
-
                                         echo'
                                         </ol>
                                     </div>
