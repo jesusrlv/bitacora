@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2023 at 03:55 PM
+-- Generation Time: Feb 17, 2023 at 09:04 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -109,7 +109,21 @@ INSERT INTO `bitacora` (`id`, `folio`, `fecha`, `hora`, `datos_pc`, `datos_usr`,
 (37, '2oplsqqqf', '2023-02-14', '12:02:25', 'HP', 'Irma Elizabeth González Lira', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 1, 'No puedo sacar reportes del sisema de asistencias', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 0),
 (38, 'y2ig2n7gv', '2023-02-14', '12:03:19', 'Dell', 'Verónica Acuña González', 1, 1, 0, 0, 0, 0, '0', 1, 0, 0, '0', 0, 0, 0, 0, '0', 1, 0, 1, 1, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
 (39, 'wdc43t84k', '2023-02-15', '08:35:30', 'HP', 'Irma Elizabeth González Lira', 1, 1, 0, 0, 0, 1, 'no funciona el usb', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0),
-(40, 'xqqv5973b', '2023-02-15', '08:37:58', 'Dell', 'Jazmin Sepúlveda Álvarez', 0, 0, 0, 0, 0, 0, '0', 1, 1, 0, '0', 0, 0, 0, 0, '0', 1, 0, 0, 0, 1, '', 'No puedo hacer nada', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 1);
+(40, 'xqqv5973b', '2023-02-15', '08:37:58', 'Dell', 'Jazmin Sepúlveda Álvarez', 0, 0, 0, 0, 0, 0, '0', 1, 1, 0, '0', 0, 0, 0, 0, '0', 1, 0, 0, 0, 1, '', 'No puedo hacer nada', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 1),
+(41, 'bw5m14c39', '2023-02-15', '09:06:42', 'Lenovo', 'Sandra Valdovinos', 0, 0, 0, 0, 0, 1, 'Cable de HDMI', 0, 0, 1, 'Adobe Reader', 0, 0, 0, 1, 'Actualizar antivirus', 0, 0, 0, 0, 1, 'Subir al drive el archivo', 'No puedo hacer nada', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
+(42, 'wix1zb3y4', '2023-02-15', '10:44:11', 'MAC', 'Rodolfo Leaños', 0, 0, 0, 0, 0, 1, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0),
+(43, 'nor0s44cl', '2023-02-15', '10:46:39', 'Lenovo', 'Chuchita', 0, 0, 0, 0, 0, 1, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0),
+(44, 't182fdfot', '2023-02-15', '10:47:04', 'Vaio', 'Chonita', 0, 0, 0, 0, 0, 1, '', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0),
+(45, '890g0xlov', '2023-02-15', '10:55:38', 'mac', 'Rodo', 0, 0, 0, 0, 1, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0),
+(46, 'aas298ueh', '2023-02-15', '10:59:17', 'HP', 'Sandra Valdovinos', 0, 0, 0, 0, 0, 1, 'Cable de HDMI', 0, 0, 1, 'Antivirus', 0, 0, 0, 1, 'No puedo sacar reportes del sisema de CI', 0, 0, 0, 1, 1, 'Subir al drive el archivo', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
+(47, 'xjz0bgatb', '2023-02-15', '15:14:19', 'VAIO', 'Paquito', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 0, 0),
+(48, 'te1z6j54x', '2023-02-16', '11:36:59', 'MAC', 'Rodolfo', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 1, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 0, 1),
+(49, 'uh9qldo1q', '2023-02-16', '11:45:41', '1', 'yo', 0, 0, 0, 0, 0, 1, '45', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 1, '25', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 1),
+(50, 'mts1p68gq', '2023-02-16', '11:58:00', 'mac', 'uriel', 0, 0, 0, 0, 0, 1, '1', 0, 0, 1, '3', 0, 0, 0, 1, '34', 0, 0, 0, 0, 1, '3', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
+(51, 'dzph2o2p3', '2023-02-16', '12:06:44', 'HP', 'Gustavo', 0, 0, 0, 0, 0, 1, 'h', 0, 0, 1, 'h', 0, 0, 0, 1, 's', 0, 0, 0, 0, 1, 'f', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
+(52, 'bksvna442', '2023-02-16', '12:19:09', 'MAC', 'Paulina González', 0, 0, 0, 0, 0, 1, 'r', 0, 0, 1, 'r', 0, 0, 0, 1, 't', 0, 0, 0, 0, 1, 'r', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
+(53, 'vjvm83o2n', '2023-02-17', '11:12:05', 'Acer', 'Mariana', 0, 0, 0, 0, 1, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0),
+(54, 's5bn500k2', '2023-02-17', '11:12:50', 'Asus', 'Andrea', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 1, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -119,7 +133,11 @@ INSERT INTO `bitacora` (`id`, `folio`, `fecha`, `hora`, `datos_pc`, `datos_usr`,
 
 CREATE TABLE `observaciones` (
   `id` int(11) NOT NULL,
-  `descripcion` varchar(200) NOT NULL,
+  `concatenado` varchar(40) NOT NULL,
+  `id_cat` int(2) NOT NULL,
+  `sub_cat` int(2) NOT NULL,
+  `observaciones_dti` varchar(200) NOT NULL,
+  `likert` int(2) NOT NULL,
   `tipo_servicio` int(11) NOT NULL,
   `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -166,7 +184,7 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT for table `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `observaciones`
