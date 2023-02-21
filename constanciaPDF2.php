@@ -58,7 +58,7 @@ $pdf->Cell(40,8,'',1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',10);
 // $pdf->Cell(50,20,'Datos',1,0);
-$pdf->SetFillColor(93, 109, 126);
+$pdf->SetFillColor(93,109,126);
 // $pdf->SetDrawColor(93, 109, 126);
 $pdf->Cell(100,5,'Datos del equipo',1,0,'C');
 $pdf->Cell(91,5,'Folio',1,0,'C');
