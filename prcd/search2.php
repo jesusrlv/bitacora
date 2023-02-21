@@ -90,9 +90,11 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li class="ps-3">Internet</li></span>
                                                 
-                                                <input type="text" class="form-control" id="observaciones'.$rowSearch['id'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
-                                                
-                                                <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar('.$rowSearch['folio'].',1,1,'.$rowSearch['id'].')">
+                                                <input type="text" class="form-control" id="observaciones'.$rowSearch['id'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">';
+                                                ?>
+                                                <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert<?php echo $rowSearch['id']?>1" aria-label="Default select example" onchange="calificar('<?php echo $rowSearch['folio'] ?>',1,1, <?php echo $rowSearch['id'] ?>)">
+                                                <?php
+                                                echo '
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
                                                     <option class="bg-secondary bg-white" value="2">25%</option>

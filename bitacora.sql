@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 21, 2023 at 10:28 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.29
+-- Servidor: localhost
+-- Tiempo de generación: 21-02-2023 a las 23:25:16
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bitacora`
+-- Base de datos: `bitacora`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bitacora`
+-- Estructura de tabla para la tabla `bitacora`
 --
 
 CREATE TABLE `bitacora` (
@@ -66,7 +66,7 @@ CREATE TABLE `bitacora` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `bitacora`
+-- Volcado de datos para la tabla `bitacora`
 --
 
 INSERT INTO `bitacora` (`id`, `folio`, `fecha`, `hora`, `datos_pc`, `datos_usr`, `internet`, `inst_periferico`, `limp_equipo`, `tec_mouse`, `falla_monitor`, `otra1`, `otra1_desc`, `act_office`, `activar_so`, `actualizar_sw`, `actualizar_sw2`, `formateo_completo`, `limpieza_virus`, `instalar_sw`, `otra_sw`, `otra_sw_desc`, `escanear`, `printcolor`, `rw_cd`, `web`, `otra2`, `otra2_desc`, `observaciones_usr`, `observaciones_tis`, `realizo_mantenimiento`, `solucionado`, `hardware`, `software`, `otros`) VALUES
@@ -130,24 +130,31 @@ INSERT INTO `bitacora` (`id`, `folio`, `fecha`, `hora`, `datos_pc`, `datos_usr`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `observaciones`
+-- Estructura de tabla para la tabla `observaciones`
 --
 
 CREATE TABLE `observaciones` (
   `id` int(11) NOT NULL,
   `folio` varchar(40) NOT NULL,
-  `id_cat` int(2) NOT NULL,
-  `sub_cat` int(2) NOT NULL,
+  `id_cat` int(11) NOT NULL,
+  `sub_cat` int(11) NOT NULL,
   `observaciones_dti` varchar(200) NOT NULL,
-  `likert` int(2) NOT NULL,
+  `likert` int(11) NOT NULL,
   `tipo_servicio` int(11) DEFAULT NULL,
   `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Volcado de datos para la tabla `observaciones`
+--
+
+INSERT INTO `observaciones` (`id`, `folio`, `id_cat`, `sub_cat`, `observaciones_dti`, `likert`, `tipo_servicio`, `fecha`) VALUES
+(1, 'jfj38pwmc', 1, 1, 'x', 4, NULL, '2023-02-21 16:22:13');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usr`
+-- Estructura de tabla para la tabla `usr`
 --
 
 CREATE TABLE `usr` (
@@ -157,45 +164,45 @@ CREATE TABLE `usr` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `bitacora`
+-- Indices de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `observaciones`
+-- Indices de la tabla `observaciones`
 --
 ALTER TABLE `observaciones`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usr`
+-- Indices de la tabla `usr`
 --
 ALTER TABLE `usr`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `bitacora`
+-- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT for table `observaciones`
+-- AUTO_INCREMENT de la tabla `observaciones`
 --
 ALTER TABLE `observaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `usr`
+-- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;

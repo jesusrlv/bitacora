@@ -1,7 +1,7 @@
 function calificar(folio,categoria,subcategoria,id){
     var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
     var likert = document.getElementById('likert'+id+subcategoria).value;
-    let folio = folio;
+    // let folio = folio;
     $.ajax({
         type: "POST",
         url: "prcd/calificar.php",
@@ -14,9 +14,9 @@ function calificar(folio,categoria,subcategoria,id){
         },
         success: function(data) {
             // $('#calificacionActual').fadeIn(1000).html(data);
-            document.getElementById('likert'+documento).setAttribute ("onchange","editarcCalificacion('.$rowSearch['folio'].',1,'.$rowSearch['id'].')");
-            document.getElementById('calificacion'+documento).hidden = true;
-            document.getElementById('editadCalf'+documento).hidden = false;
+            document.getElementById('likert'+id+subcategoria).setAttribute ("onchange","editarcCalificacion('.$rowSearch['folio'].',1,'.$rowSearch['id'].')");
+            // document.getElementById('calificacion'+id+subcategoria).hidden = true;
+            // document.getElementById('editadCalf'+id+subcategoria).hidden = false;
             Swal.fire({
                 icon: 'success',
                 imageUrl: '../../img/logo_consejo_04.png',
