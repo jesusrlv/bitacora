@@ -46,30 +46,36 @@ DEPARTAMENTO DE TECNOLOGÍAS DE LA INFORMACIÓN'),0,'C',0);
 $pdf->SetFont('Arial','B',8);
 
 $pdf->Multicell(190,8,utf8_decode('FORMATO DE SERVICIO, APOYO Y/O SOPORTE TÉCNICO'),0,'C',0);
+
 $pdf->SetFont('Arial','B',10);
-$pdf->Multicell(81,8,utf8_decode('Fecha de solicitud'),1,'C',0);
-$pdf->SetRightMargin(100); // before adding a page
+$pdf->Cell(151,5,'',0,0);
+$pdf->Cell(40,5,'Fecha',1,0,'C');
+$pdf->Ln();
+$pdf->Cell(151,8,'',0,0);
+$pdf->Cell(40,8,'',1,0,'C');
+$pdf->Ln();
+// $pdf->Cell(50,20,'Datos',1,0);
+$pdf->Cell(100,5,'Datos del equipo',1,0,'C');
+$pdf->Cell(91,5,'Folio',1,0,'C');
+$pdf->Ln();
+$pdf->Cell(100,8,'',1,0,'C');
+$pdf->Cell(91,8,'',1,0,'C');
+$pdf->Ln();
+$pdf->Cell(191,5,'MANTENIMIENTO PREVENTIVO/CORRECTIVO DE HARDWARE',1,0,'C');
+$pdf->Ln();
+$pdf->SetFont('Arial','B',8);
+$pdf->Cell(100,5,'Actividad',1,0,'C');
+$pdf->Cell(91,5,'Trabajo realizado',1,0,'C');
+$pdf->Ln();
 $pdf->SetFont('Arial','',8);
-$pdf->Multicell(81,8,utf8_decode('<var FECHA>'),1,'C',0);
-$pdf->Cell(0,12,'Estimado(a) participante, ',0,1);
-$pdf->SetFont('Arial','',10);
-$pdf->Multicell(190,9,utf8_decode('Por medio de la presente, el Instituto de la Juventud del Estado de Zacatecas, a través de su Director General, el Ing. Mauricio Acevedo Rodríguez, reconoce a usted su participación como candidato(a) a recibir el Premio Estatal de la Juventud en su edición 2022.
-
-Su postulación es fundamental para la construcción de un Estado más próspero, incluyente, democrático e igualitario. Gracias a su intervención, recordamos lo importante que es reconocer el talento y la trayectoria de las y los jóvenes en nuestra Entidad. Los principios rectores de la Nueva Gobernanza, nos obligan a impulsar y generar los espacios oportunos para que las juventudes puedan alcanzar sus objetivos, desarrollarse de manera integral y vivir en bienestar. No sólo representas uno de los cimientos más importantes de la sociedad, también eres protagonista del presente y agente estratégico para la transformación nacional.
-
-Continúa abriendo brechas, rompiendo estigmas y creciendo, ¡Tú talento y capacidades, no tienen límites!
-
-'),0,'J',0);
-$pdf->SetFont('Arial','I',10);
-$pdf->Multicell(190,9,'En la ciudad de Zacatecas, Zac., noviembre de 2022.',0,'C',0);
-// $pdf->MultiCell(190,9, $pdf->Image("../img/rubrica_pej2022.png", $pdf->GetX()+20, $pdf->GetY()+1, 150) ,0,"C",0);
-//IMAGE (RUTA,X,Y,ANCHO,ALTO,EXTEN)
+$pdf->Cell(10,5,'1',1,0,'C');
+$pdf->Cell(90,5,'Sopletear PC',1,0,'L');
+$pdf->Cell(91,5,'',1,0,'C');
 $pdf->Ln();
-$pdf->Ln();
-$pdf->SetFont('Arial','B',10);
-$pdf->Multicell(190,8,'DIRECTOR GENERAL
-INSTITUTO DE LA JUVENTUD 
-DEL ESTADO DE ZACATECAS',0,'C',0);
+$pdf->Cell(10,5,'2',1,0,'C');
+$pdf->SetFont('Arial','',8);
+$pdf->Cell(90,5,'Sopletear fuente de poder',1,0,'L');
+$pdf->Cell(91,5,'',1,0,'C');
 
 // $pdf->Output();
 $modo="I";
@@ -77,3 +83,32 @@ $nombre_archivo="reporte_servicio.pdf";
 $pdf->Output($nombre_archivo,$modo);  
 
 ?>
+
+<!-- 
+
+    require('html_table.php');
+    $nombre='canorioss';
+    $htmlTable='
+     
+    <table width="36%" height="100%" border="1" align="right" style="border-spacing:0px; border-color:#000">
+      <tr>
+        <td>Nombre</td>
+        <td>edad</td>
+        <td align="center">domicilio</td>
+      </tr>
+      <tr>
+        <td>'.$nombre.'</td>
+        <td>26</td>
+        <td align="center">Santa Ana</td>
+      </tr>
+    </table>
+    ';
+     
+    $pdf = new  PDF_HTML_Table();
+    $pdf->AddPage('L','A4');
+    $pdf->SetFont('Arial','',12);
+    $pdf->WriteHTML("$htmlTable");
+    //$pdf->AddPage('L','Legal');
+    $pdf->Output();
+     
+ -->
