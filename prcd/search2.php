@@ -92,7 +92,7 @@ if($numRows > 0){
                                                 
                                                 <input type="text" class="form-control" id="observaciones'.$rowSearch['id'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
                                                 
-                                                <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar('.$rowSearch['folio'].',1,'.$rowSearch['id'].')">
+                                                <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar('.$rowSearch['folio'].',1,1,'.$rowSearch['id'].')">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
                                                     <option class="bg-secondary bg-white" value="2">25%</option>
@@ -146,7 +146,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Mouse</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['hardware'].'4" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">                            
+                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">                            
                                                 
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="tecmouse_s'.$rowSearch['id'].'" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
@@ -164,7 +164,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Falla en el monitor</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['hardware'].'5" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
                                                 
                                                 <select class="form-select bg-secondary bg-opacity-25" id="fallamonitor_s'.$rowSearch['id'].'" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
@@ -182,7 +182,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra1_desc'].'</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['hardware'].'6" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
                                                 
                                                 <select class="form-select bg-secondary bg-opacity-25" id="otrohw_s'.$rowSearch['id'].'" style="max-width:100px;" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>
@@ -231,7 +231,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de office</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['software'].'7" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
                                                 
                                                 <select class="form-select bg-secondary bg-opacity-25"  style="max-width:100px;" id="actoffice_s'.$rowSearch['id'].'" aria-label="Default select example">
                                                     <option class="bg-secondary bg-white" selected>Seleccione...</option>

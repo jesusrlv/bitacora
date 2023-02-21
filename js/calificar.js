@@ -1,15 +1,16 @@
-function calificar(folio,subcategoria,id){
+function calificar(folio,categoria,subcategoria,id){
     var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
     var likert = document.getElementById('likert'+id+subcategoria).value;
-
+    let folio = folio;
     $.ajax({
         type: "POST",
         url: "prcd/calificar.php",
         data: {
-            id:id,
             observaciones:observaciones,
             likert:likert,
-            folio:folio
+            folio:folio,
+            categoria:categoria,
+            subcategoria:subcategoria
         },
         success: function(data) {
             // $('#calificacionActual').fadeIn(1000).html(data);

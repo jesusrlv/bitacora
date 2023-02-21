@@ -1,9 +1,3 @@
-<?php
-date_default_timezone_set('America/Mexico_City');
-setlocale(LC_TIME, 'es_MX.UTF-8');
-$fecha_sistema = strftime("%Y-%m-%d");
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -27,6 +21,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="script.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/calificar.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap');
       body{

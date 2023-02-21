@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2023 at 09:04 PM
+-- Generation Time: Feb 21, 2023 at 10:28 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.29
 
@@ -123,7 +123,9 @@ INSERT INTO `bitacora` (`id`, `folio`, `fecha`, `hora`, `datos_pc`, `datos_usr`,
 (51, 'dzph2o2p3', '2023-02-16', '12:06:44', 'HP', 'Gustavo', 0, 0, 0, 0, 0, 1, 'h', 0, 0, 1, 'h', 0, 0, 0, 1, 's', 0, 0, 0, 0, 1, 'f', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
 (52, 'bksvna442', '2023-02-16', '12:19:09', 'MAC', 'Paulina González', 0, 0, 0, 0, 0, 1, 'r', 0, 0, 1, 'r', 0, 0, 0, 1, 't', 0, 0, 0, 0, 1, 'r', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1),
 (53, 'vjvm83o2n', '2023-02-17', '11:12:05', 'Acer', 'Mariana', 0, 0, 0, 0, 1, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0),
-(54, 's5bn500k2', '2023-02-17', '11:12:50', 'Asus', 'Andrea', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 1, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 0, 1);
+(54, 's5bn500k2', '2023-02-17', '11:12:50', 'Asus', 'Andrea', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 1, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 0, 1),
+(55, 'zqxu3nch8', '2023-02-21', '10:58:25', 'HP', 'Magdalena', 0, 1, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 1, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 1),
+(56, 'jfj38pwmc', '2023-02-21', '15:06:38', 'HP', 'Magdalena Molina', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -133,12 +135,12 @@ INSERT INTO `bitacora` (`id`, `folio`, `fecha`, `hora`, `datos_pc`, `datos_usr`,
 
 CREATE TABLE `observaciones` (
   `id` int(11) NOT NULL,
-  `concatenado` varchar(40) NOT NULL,
+  `folio` varchar(40) NOT NULL,
   `id_cat` int(2) NOT NULL,
   `sub_cat` int(2) NOT NULL,
   `observaciones_dti` varchar(200) NOT NULL,
   `likert` int(2) NOT NULL,
-  `tipo_servicio` int(11) NOT NULL,
+  `tipo_servicio` int(11) DEFAULT NULL,
   `fecha` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -184,7 +186,7 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT for table `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `observaciones`
