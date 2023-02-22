@@ -256,17 +256,20 @@ $(document).ready(function() {
                     // var jsonData = JSON.parse(response);
                     var jsonData = JSON.parse(JSON.stringify(response));
 
+                    
+                    console.log(jsonData.variable);
+                    var num = jsonData.variable;
+                        
                     // user is logged in successfully in the back-end
                     // let's redirect
                     if (jsonData.success == "1")
                     {
-                        
                         Swal.fire({
                             icon: 'success',
                             imageUrl: 'img/InclusionLogo.png',
                             imageWidth: 200,
                             title: 'Bitácora actualizada',
-                            text: 'Servicio registrado ',
+                            text: 'Su turno es el ' +num,
                             confirmButtonColor: '#3085d6',
                             footer: 'INCLUSIÓN'
                         }).then(function(){window.location='index.html';});

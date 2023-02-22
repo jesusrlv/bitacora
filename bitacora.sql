@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-02-2023 a las 21:04:42
+-- Tiempo de generación: 22-02-2023 a las 23:38:53
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.28
 
@@ -131,7 +131,24 @@ INSERT INTO `bitacora` (`id`, `folio`, `fecha`, `hora`, `datos_pc`, `datos_usr`,
 (58, 'iqoi478f7', '2023-02-22', '11:35:40', 'HP 99', 'Jesusrlv 99', 1, 1, 1, 1, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'gg', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, 0),
 (59, 'g6yy1qepr', '2023-02-22', '13:13:43', 'HP Laser Jet', 'Jesusrlv', 0, 1, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 1, 0, 0, '0', 0, 0, 0, 1, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1, 0),
 (60, 'wfu0ybjob', '2023-02-22', '13:34:48', 'MACBook', 'Anny', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'x', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, 0),
-(61, '6vqqkkons', '2023-02-22', '14:03:49', 'HP Laser Jet', 'Jesusrlv', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, NULL);
+(61, '6vqqkkons', '2023-02-22', '14:03:49', 'HP Laser Jet', 'Jesusrlv', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, 0),
+(62, 'r0il2y6yu', '2023-02-22', '14:44:41', 'HP Laser Jet', 'Jesusrlv 9', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'X', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, NULL),
+(63, '0slc16awq', '2023-02-22', '14:45:10', 'HP Laser Jet', 'Jesusrlv 9', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, NULL),
+(64, 'ceaudalxf', '2023-02-22', '15:11:41', 'HP', 'Jesusrlv 9', 0, 0, 0, 0, 0, 0, '0', 1, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'dddd', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 0, NULL),
+(65, 's2m7r2u7h', '2023-02-22', '15:11:42', 'HP', 'Jesusrlv 9', 0, 0, 0, 0, 0, 0, '0', 1, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'dddd', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 0, NULL),
+(66, '4m3cm5n7k', '2023-02-22', '15:11:54', 'MACBook', 'Anny', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'd', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, NULL),
+(67, 'aym3ue48n', '2023-02-22', '15:13:14', 'MACBook', 'Anny', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'd', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, NULL),
+(68, '5z5m2zq57', '2023-02-22', '15:16:34', 'DELL', 'Anny Barba', 0, 0, 0, 0, 0, 0, '0', 0, 1, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'Quiero un aumento', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 0, NULL),
+(69, 'qeicks217', '2023-02-22', '15:16:36', 'DELL', 'Anny Barba', 0, 0, 0, 0, 0, 0, '0', 0, 1, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'Quiero un aumento', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 0, NULL),
+(70, 'u3m6djpis', '2023-02-22', '16:17:56', 'HP 99', 'Anny B', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'e', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, NULL),
+(71, 'so3hgeah3', '2023-02-22', '16:21:12', 'MackBook PRO', 'Ana Elisa Barba Pinedo', 1, 1, 1, 1, 1, 1, 'MackBook PRO', 1, 1, 1, 'MackBook PRO', 1, 1, 1, 1, 'MackBook PRO', 1, 1, 1, 1, 1, 'MackBook PRO', 'MackBook PRO', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 1, 1, NULL),
+(72, 'e8r1o3cxx', '2023-02-22', '16:22:08', 'HP 99', 'Anny B', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'e', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, NULL),
+(73, 'cl4udug9u', '2023-02-22', '16:22:25', 'HP 99', 'Anny B', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'e', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, NULL),
+(74, '105bfmfaa', '2023-02-22', '16:23:04', 'MackBook PRO', 'Ana Elisa Barba Pinedo', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'MackBook PRO', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, NULL),
+(75, '307mjr2q1', '2023-02-22', '16:24:20', 'HP Laser Jet', 'Jesusrlv 9', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 1, 0, '0', 'num_asignado', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 0, 1, 1),
+(76, 'fshu62byd', '2023-02-22', '16:24:36', 'DELL', 'Anny Barba', 0, 0, 0, 0, 0, 0, '0', 0, 1, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'num_asignado 2', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 0, 1),
+(77, 'i9te1b0v6', '2023-02-22', '16:37:38', 'MackBook PRO', 'Ana Elisa Barba Pinedo', 1, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 0, 0, 0, '0', 0, 0, 0, 0, 0, '0', 'Internet', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 1, 0, 0, 2),
+(78, '1er2tzzyk', '2023-02-22', '16:37:48', 'MACBook', 'Anny B', 0, 0, 0, 0, 0, 0, '0', 0, 0, 0, '0', 0, 1, 0, 0, '0', 0, 0, 0, 0, 0, '0', '', NULL, 'I.C. Ana Elisa Barba Pinedo', 0, 0, 1, 0, 3);
 
 -- --------------------------------------------------------
 
@@ -202,7 +219,7 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `bitacora`
 --
 ALTER TABLE `bitacora`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT de la tabla `observaciones`

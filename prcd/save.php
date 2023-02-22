@@ -8,12 +8,15 @@ include('qc.php');
     $fecha_sistema = strftime("%Y-%m-%d");
     $fecha_hora = strftime("%H:%M:%S");
 
-    // $consultaDate = "SELECT consecutivo_dia, MAX(fecha) as fecha FROM bitactora";
-    // $resutaldoDate = $conn->query($consultaDate);
+    // $consultaDate = "SELECT * FROM bitacora WHERE fecha = '$fecha_sistema' DESC LIMIT 1";
+    $consultaDate = "SELECT * FROM bitacora WHERE fecha = '$fecha_sistema' ORDER BY id DESC LIMIT 1";
+    $resutaldoDate = $conn->query($consultaDate);
+    $filasDate = $resutaldoDate->num_rows;
 
-    // $rowDate = $resutaldoDate->fetch_assoc();
-    // $consecutivo = $rowDate['consecutivo_dia'];
-    // $num_asignado = $consecutivo + 1;
+    if($filasDate > 0){
+    $rowDate = $resutaldoDate->fetch_assoc();
+    $consecutivo = $rowDate['consecutivo_dia'];
+    $num_asignado = $consecutivo + 1;
 
     function generarCodigo($longitud) {
     $key = '';
@@ -91,7 +94,8 @@ $queryBitacora = "INSERT INTO bitacora(
     solucionado,
     hardware,
     software,
-    otros)
+    otros,
+    consecutivo_dia)
     VALUES(
         '$folio',
         '$fecha_sistema',
@@ -125,15 +129,21 @@ $queryBitacora = "INSERT INTO bitacora(
         '$solucionado',
         '$hardware',
         '$software',
-        '$otrosap'
+        '$otrosap',
+        '$num_asignado'
         )
         ";
 
 $resultadoBitacora = $conn->query($queryBitacora);
 
 if($resultadoBitacora){
-    echo json_encode(array('success' => 1));
+
+    // for ($i = 1; $i <= 2; $i++) {
+    //     $data[] = 
+    // }
+    echo json_encode(array('success' => 1,'variable' => $num_asignado));
     // echo json_encode($num_asignado);
+    // echo json_encode(array('variable'=> $num_asignado));
     // echo 'Registrado';
 }
 else{
@@ -143,6 +153,9 @@ else{
     // echo 'No se registró ningún cambio';
     // printf("Errormessage: %s\n", $conn->error);
 }
-
+}
+else{
+    echo json_encode(array('success' => 0));
+}
 
 ?>
