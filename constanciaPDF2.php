@@ -8,7 +8,6 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-    // $pdf->MultiCell(0,9, $pdf->Image("../img/logos_pej2022.png", $pdf->GetX()+5, $pdf->GetY()+3, 180) ,0,"C");
 
     $this->Image('img/logo_completo.png',72,15,63);
     // Arial bold 15
@@ -16,7 +15,6 @@ function Header()
     // Movernos a la derecha
     $this->Cell(80);
     // Título
-    // $this->Cell(30,10,utf8_decode('Constancia de participación'),0,0,'C');
     // Salto de línea
     $this->Ln(20);
 }
@@ -37,8 +35,6 @@ function Footer()
 $pdf = new PDF();
 $pdf->AliasNbPages();
 $pdf->AddPage();
-// $pdf->Image('../img/fondo_pej2022.png','0','0','250','300','PNG');
-// $pdf->MultiCell(190,9, $pdf->Image("../img/logos_pej2022.png", $pdf->GetX()+5, $pdf->GetY()+3, 180) ,0,"C");
 $pdf->SetFont('Arial','B',10);
 $pdf->Multicell(190,8,utf8_decode('
 
@@ -57,9 +53,7 @@ $pdf->Cell(151,8,'Zacatecas, Zac., a ',0,'R',0);
 $pdf->Cell(40,8,'',1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',10);
-// $pdf->Cell(50,20,'Datos',1,0);
 $pdf->SetFillColor(93,109,126);
-// $pdf->SetDrawColor(93, 109, 126);
 $pdf->Cell(100,5,'Datos del equipo',1,0,'C');
 $pdf->Cell(91,5,'Folio',1,0,'C');
 $pdf->Ln();
@@ -159,8 +153,6 @@ $pdf->Ln();
 $pdf->SetFont('Arial','B',8);
 $pdf->Cell(100,5,'Nombre y firma',1,0,'C');
 $pdf->Cell(91,5,'Nombre y firma',1,0,'C');
-
-// $pdf->Output();
 $modo="I";
 $nombre_archivo="reporte_servicio.pdf";
 $pdf->Output($nombre_archivo,$modo);  
