@@ -21,8 +21,15 @@ if($numRows > 0){
                 <td>'.$rowSearch['datos_usr'].'</td>
                 
                 ';
+
+                $folio = $rowSearch['folio'];
+                $indicador = "SELECT * FROM observaciones WHERE folio = '$folio'";
+                $resultadoIndicador = $conn->query($indicador);
+                $numRowsIndicador = $resultadoIndicador->num_rows;
+                // $rowIndicador = $resultadoIndicador->fetch_assoc();
                 
-                if($rowSearch['solucionado'] == 0){
+                // if($rowSearch['solucionado'] == 0){
+                if($numRowsIndicador == 0){
                     echo'
                     <td id="cambioStatus1">
                         <a data-bs-toggle="modal" data-bs-target="#estatus'.$rowSearch['id'].'">
@@ -35,27 +42,53 @@ if($numRows > 0){
                     ';
                     
                     }
-                    else if (($rowSearch['solucionado'] == 1)){
-                        echo'
-                        <td><a data-bs-toggle="modal" data-bs-target="#estatus2'.$rowSearch['id'].'"><span class="badge text-bg-success"><i class="bi bi-check-circle-fill"></i> Solucionado</span></a>
-                        </td>
-                        ';
-                    }
-
-                    else {
-                        echo'
-                        <td id="cambioStatus3">
-                        <a data-bs-toggle="modal" data-bs-target="#estatus3'.$rowSearch['id'].'">
+                    // else if (($rowSearch['solucionado'] == 1)){
+                    else if ($numRowsIndicador > 0){
+                        $calif = 0;
+                        $x = 0;
+                        while($rowIndicador = $resultadoIndicador->fetch_assoc()){
+                            $indicaProm = $rowIndicador['likert'];
+                            $calif = $calif + $indicaProm;
+                            $x++;
+                            $prom = $calif / $x;
+                        }
+                        if($prom == 0){
+                            echo'
+                            <td>
+                            <span class="badge text-bg-danger">
+                                <i class="bi bi-x-circle-fill"></i> No Solucionado
+                            </span>
+                            </td>
+                            ';
+                        }
+                        else if($prom > 0 && $prom < 5){
+                            echo'
+                            <td>
                             <span class="badge text-bg-warning text-light">
                                 <i class="bi bi-x-circle-fill"></i> En proceso
                             </span>
-                        </a>
-                    </td>
+                            </td>
+                            ';
+                        }
+                        else if($prom == 5){
+                            echo'
+                            <td>
+                            <span class="badge text-bg-success">
+                                <i class="bi bi-check-circle-fill"></i> Solucionado
+                            </span>
+                            </td>
+                            '
+                            ;
+                        }
+                        echo'
+                        <script>
+                            console.log('.$prom.');
+                            </script>
                         ';
                     }
 
                     echo'    
-                    <td class="text-center"> <a href="#"><i class="bi bi-filetype-pdf h2"></i></a></td>    
+                    <td class="text-center"> <a href="constanciaPDF2.php?folio='.$folio.'" target="_blank"><i class="bi bi-filetype-pdf h2"></i></a></td>    
                     ';
 
 
@@ -64,7 +97,28 @@ if($numRows > 0){
                 <tr>
                 <td colspan="8">';
                 if ($rowSearch['hardware'] == 1){
+                    $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 1";
+                    $resultadoIndicadorHD = $conn->query($indicadorHD);
+                    $numRowsIndicadorHD = $resultadoIndicadorHD->num_rows;
+                    $xHD=0;
+                    $califHD=0;
+                    if($numRowsIndicadorHD > 0){
+                        while($rowIndicadorHD = $resultadoIndicadorHD->fetch_assoc()){
+                            $indicaPromHD = $rowIndicadorHD['likert'];
+                            $califHD = $califHD + $indicaPromHD;
+                            $xHD++;
+                            $promHD = $califHD / $xHD;
+                        }
+                    }
+                    else{
+                        $promHD = 0;
+                    }
+                        $hd = ROUND($promHD);
+                        
                     echo'
+                    <script>
+                            console.log('.$hd.');
+                            </script>
                     <div class="accordion accordion-flush" id="hardware1'.$rowSearch['id'].'">
                         <div class="accordion-item">
                             <h2 class="accordion-header border-bottom" id="flush-headingOne">
@@ -74,7 +128,24 @@ if($numRows > 0){
                                     <i class="bi bi-pc-display-horizontal me-2" style="font-size: larger;"> </i> Hardware
                                 </div>
                                 <div class="col-6 text-end">
-                                    <span>100%</span>
+                                    <span>';
+                                    if($hd = 1){
+                                        echo'0%';
+                                    }
+                                    else if($hd = 2){
+                                        echo'25%';
+                                    }
+                                    else if($hd = 3){
+                                        echo'50%';
+                                    }
+                                    else if($hd = 4){
+                                        echo'75%';
+                                    }
+                                    else if($hd = 5){
+                                        echo'100%';
+                                    }
+                                    echo'
+                                    </span>
                                 </div>
                             </div>    
                             
@@ -95,7 +166,23 @@ if($numRows > 0){
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert<?php echo $rowSearch['id']?>1" aria-label="Default select example" onchange="calificar('<?php echo $rowSearch['folio'] ?>',1,1, <?php echo $rowSearch['id'] ?>)">
                                                 <?php
                                                 echo '
-                                                    <option class="bg-secondary bg-white" selected>Seleccione...</option>
+                                                    <option class="bg-secondary bg-white" value="'.$hd.'" selected>';
+                                                    if($hd = 1){
+                                                        echo'0%';
+                                                    }
+                                                    else if($hd = 2){
+                                                        echo'25%';
+                                                    }
+                                                    else if($hd = 3){
+                                                        echo'50%';
+                                                    }
+                                                    else if($hd = 4){
+                                                        echo'75%';
+                                                    }
+                                                    else if($hd = 5){
+                                                        echo'100%';
+                                                    }
+                                                    echo'</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
                                                     <option class="bg-secondary bg-white" value="2">25%</option>
                                                     <option class="bg-secondary bg-white" value="3">50%</option>

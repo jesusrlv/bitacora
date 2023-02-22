@@ -1,6 +1,17 @@
 <?php
 ini_set('memory_limit', '1024M');
 require('prcd/fpdf/fpdf.php');
+include('prcd/qc.php');
+
+$folio = $_REQUEST['folio'];
+$sql = "SELECT * FROM bitacora WHERE folio = '$folio'";
+$resultadoSql = $conn->query($sql);
+$rowSQL = $resultadoSql->fetch_assoc();
+
+$sql2 = "SELECT * FROM observaciones WHERE folio = '$folio'";
+$resultadoSql2 = $conn->query($sql2);
+$rowSQL2 = $resultadoSql2->fetch_assoc();
+
 
 class PDF extends FPDF
 {
@@ -50,15 +61,15 @@ $pdf->Cell(40,5,'Fecha',1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',8);
 $pdf->Cell(151,8,'Zacatecas, Zac., a ',0,'R',0);
-$pdf->Cell(40,8,'',1,0,'C');
+$pdf->Cell(40,8,$rowSQL['fecha'],1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',10);
 $pdf->SetFillColor(93,109,126);
 $pdf->Cell(100,5,'Datos del equipo',1,0,'C');
 $pdf->Cell(91,5,'Folio',1,0,'C');
 $pdf->Ln();
-$pdf->Cell(100,18,'',1,0,'C');
-$pdf->Cell(91,18,'',1,0,'C');
+$pdf->Cell(100,18,$rowSQL['datos_pc'],1,0,'C');
+$pdf->Cell(91,18,$rowSQL['folio'],1,0,'C');
 $pdf->Ln();
 $pdf->Cell(191,8,'MANTENIMIENTO PREVENTIVO/CORRECTIVO DE HARDWARE',1,0,'C');
 $pdf->Ln();
