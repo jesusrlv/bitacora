@@ -41,7 +41,6 @@ if($numRows > 0){
                     
                     </td>
                     ';
-                    
                     }
                     // else if (($rowSearch['solucionado'] == 1)){
                     else if ($numRowsIndicador > 0){
@@ -89,7 +88,7 @@ if($numRows > 0){
                     }
 
                     echo'    
-                    <td class="text-center"> <a href="constanciaPDF2.php" target="_blank"><i class="bi bi-filetype-pdf h2"></i></a></td>    
+                    <td class="text-center"> <a href="constanciaPDF2.php?folio='.$folio.'" target="_blank"><i class="bi bi-filetype-pdf h2"></i></a></td>    
                     ';
 
 
