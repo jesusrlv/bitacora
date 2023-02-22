@@ -8,6 +8,13 @@ include('qc.php');
     $fecha_sistema = strftime("%Y-%m-%d");
     $fecha_hora = strftime("%H:%M:%S");
 
+    // $consultaDate = "SELECT consecutivo_dia, MAX(fecha) as fecha FROM bitactora";
+    // $resutaldoDate = $conn->query($consultaDate);
+
+    // $rowDate = $resutaldoDate->fetch_assoc();
+    // $consecutivo = $rowDate['consecutivo_dia'];
+    // $num_asignado = $consecutivo + 1;
+
     function generarCodigo($longitud) {
     $key = '';
     $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
@@ -118,13 +125,15 @@ $queryBitacora = "INSERT INTO bitacora(
         '$solucionado',
         '$hardware',
         '$software',
-        '$otrosap')
+        '$otrosap'
+        )
         ";
 
 $resultadoBitacora = $conn->query($queryBitacora);
 
 if($resultadoBitacora){
     echo json_encode(array('success' => 1));
+    // echo json_encode($num_asignado);
     // echo 'Registrado';
 }
 else{

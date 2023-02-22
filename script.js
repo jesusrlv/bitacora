@@ -260,12 +260,13 @@ $(document).ready(function() {
                     // let's redirect
                     if (jsonData.success == "1")
                     {
+                        
                         Swal.fire({
                             icon: 'success',
                             imageUrl: 'img/InclusionLogo.png',
                             imageWidth: 200,
                             title: 'Bitácora actualizada',
-                            text: 'Servicio registrado',
+                            text: 'Servicio registrado ',
                             confirmButtonColor: '#3085d6',
                             footer: 'INCLUSIÓN'
                         }).then(function(){window.location='index.html';});
