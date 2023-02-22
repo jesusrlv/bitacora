@@ -41,7 +41,6 @@ function Footer()
     $this->Cell(0,10,utf8_decode('Página ').$this->PageNo().'/{nb}',0,0,'C');
 }
 }
-
 // Creación del objeto de la clase heredada
 $pdf = new PDF();
 $pdf->AliasNbPages();

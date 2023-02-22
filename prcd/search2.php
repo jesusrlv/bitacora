@@ -40,7 +40,6 @@ if($numRows > 0){
                     
                     </td>
                     ';
-                    
                     }
                     // else if (($rowSearch['solucionado'] == 1)){
                     else if ($numRowsIndicador > 0){

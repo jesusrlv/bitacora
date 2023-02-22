@@ -11,7 +11,6 @@ $(document).ready(function() {
     else{
         var internet = 0;
     }
-    
     var inst_perifericoVal = document.getElementById('inst_periferico');
     if(inst_perifericoVal.checked){
         var inst_periferico = 1;
@@ -55,7 +54,6 @@ $(document).ready(function() {
     }
 
     // Software
-
     var act_officeVal = document.getElementById('act_office');
     if(act_officeVal.checked){
         var act_office = 1;
