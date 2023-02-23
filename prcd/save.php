@@ -12,11 +12,19 @@ include('qc.php');
     $consultaDate = "SELECT * FROM bitacora WHERE fecha = '$fecha_sistema' ORDER BY id DESC LIMIT 1";
     $resutaldoDate = $conn->query($consultaDate);
     $filasDate = $resutaldoDate->num_rows;
-
-    if($filasDate > 0){
     $rowDate = $resutaldoDate->fetch_assoc();
-    $consecutivo = $rowDate['consecutivo_dia'];
-    $num_asignado = $consecutivo + 1;
+
+    if($filasDate == 0){
+        $consecutivo = 0;
+        $num_asignado = $consecutivo + 1;
+    }
+    else if($filasDate > 0){
+        
+        $consecutivo = $rowDate['consecutivo_dia'];
+        $num_asignado = $consecutivo + 1;
+    }
+    
+    
 
     function generarCodigo($longitud) {
     $key = '';
@@ -153,9 +161,9 @@ else{
     // echo 'No se registró ningún cambio';
     // printf("Errormessage: %s\n", $conn->error);
 }
-}
-else{
-    echo json_encode(array('success' => 0));
-}
+// }
+// else{
+//     echo json_encode(array('success' => 0));
+// }
 
 ?>
