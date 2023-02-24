@@ -238,15 +238,42 @@
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="printColor" name="printColor[]">
                   <label class="form-check-label" for="save-info">Impresión a color</label>
+                  <div class="row mt-2 mb-2">
+                    <div class="col-sm-6 d-flex">
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-files"></i></span>
+                        <input type="number" class="form-control" maxlength="2" placeholder="# Págs. del doc." aria-label="Username" disabled>
+                        <span class="input-group-text"><i class="bi bi-printer"></i></span>
+                        <input type="number" class="form-control" maxlength="2" placeholder="# Impresiones" aria-label="Username" disabled>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" disabled>
+                    </div>
+                  </div>
+<!--                 https://stackoverflow.com/questions/43533062/bootstrap-tooltip-placement-right-on-input-group link para código de tooltip con jquery -->
+
                 </div>
       
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="rw_cd" name="rw_cd[]">
                   <label class="form-check-label" for="save-info">Grabar información en CD's o DVD's</label>
+                  <div class="row mt-2 mb-2">
+                    <div class="col-sm-4 d-flex">
+                      <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-files"></i></span>
+                        <input type="number" class="form-control" maxlength="2" placeholder="# Copias" aria-label="Username" disabled>
+                      </div>
+                    </div>
+                    <div class="col-sm-8">
+                      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" disabled>
+                    </div>
+                  </div>
                 </div>
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="web" name="web[]">
                   <label class="form-check-label" for="save-info">Publicar información en el sitio web oficial</label>
+                  <input type="file" class="form-control mt-2 mb-2" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" disabled>
                 </div>
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="checkOtra3" name="otra2[]" onchange="cambioCheck3()">
