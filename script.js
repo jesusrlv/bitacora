@@ -128,14 +128,19 @@ $(document).ready(function() {
     var printColorVal = document.getElementById('printColor');
     if(printColorVal.checked){
         var printColor = 1;
+        var numpagdoc = document.getElementById('NoPag').value;
+        var noimpresiones = document.getElementById('NoImpresiones').value;
     }
     else{
         var printColor = 0;
+        var numpagdoc = 0;
+        var noimpresiones = 0;
     }
 
     var rw_cdVal = document.getElementById('rw_cd');
     if(rw_cdVal.checked){
         var rw_cd = 1;
+        var nocopias = document.getElementById('NoCopias').value;
     }
     else{
         var rw_cd = 0;
@@ -242,7 +247,10 @@ $(document).ready(function() {
                     otra2:otra2,
                     escanear:escanear,
                     printColor:printColor,
+                    numpagdoc:numpagdoc,
+                    noimpresiones:noimpresiones,
                     rw_cd:rw_cd,
+                    nocopias:nocopias,
                     web:web,
                     checkOtra3:checkOtra3,
                     otra3:otra3,
@@ -258,6 +266,8 @@ $(document).ready(function() {
 
                     
                     console.log(jsonData.variable);
+                    console.log(jsonData.error);
+
                     var num = jsonData.variable;
                         
                     // user is logged in successfully in the back-end

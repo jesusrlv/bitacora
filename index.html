@@ -236,19 +236,19 @@
                 </div>
       
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="printColor" name="printColor[]">
+                  <input type="checkbox" class="form-check-input" id="printColor" name="printColor[]" onchange="mostrarInputs()">
                   <label class="form-check-label" for="save-info">Impresión a color</label>
-                  <div class="row mt-2 mb-2">
+                  <div class="row mt-2 mb-2" id="inputPrint" hidden>
                     <div class="col-sm-6 d-flex">
-                      <div class="input-group">
+                      <div class="input-group"  >
                         <span class="input-group-text"><i class="bi bi-files"></i></span>
-                        <input type="number" class="form-control" maxlength="2" placeholder="# Págs. del doc." aria-label="Username" disabled>
+                        <input type="number" class="form-control" id="NoPag" maxlength="2" placeholder="# Págs. del doc." aria-label="Username">
                         <span class="input-group-text"><i class="bi bi-printer"></i></span>
-                        <input type="number" class="form-control" maxlength="2" placeholder="# Impresiones" aria-label="Username" disabled>
+                        <input type="number" class="form-control" id="NoImpresiones" maxlength="2" placeholder="# Impresiones" aria-label="Username">
                       </div>
                     </div>
                     <div class="col-sm-6">
-                      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" disabled>
+                      <input type="file" class="form-control" id="PintFile" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                     </div>
                   </div>
 <!--                 https://stackoverflow.com/questions/43533062/bootstrap-tooltip-placement-right-on-input-group link para código de tooltip con jquery -->
@@ -256,24 +256,26 @@
                 </div>
       
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="rw_cd" name="rw_cd[]">
+                  <input type="checkbox" class="form-check-input" id="rw_cd" name="rw_cd[]" onchange="mostrarInputs2()">
                   <label class="form-check-label" for="save-info">Grabar información en CD's o DVD's</label>
-                  <div class="row mt-2 mb-2">
+                  <div class="row mt-2 mb-2" id="inputRW" hidden>
                     <div class="col-sm-4 d-flex">
                       <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-files"></i></span>
-                        <input type="number" class="form-control" maxlength="2" placeholder="# Copias" aria-label="Username" disabled>
+                        <input type="number" class="form-control" id="NoCopias" maxlength="2" placeholder="# Copias" aria-label="Username">
                       </div>
                     </div>
                     <div class="col-sm-8">
-                      <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" disabled>
+                      <input type="file" class="form-control" id="RWfile" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                     </div>
                   </div>
                 </div>
                 <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="web" name="web[]">
+                  <input type="checkbox" class="form-check-input" id="web" name="web[]" onchange="mostrarInputs3()">
                   <label class="form-check-label" for="save-info">Publicar información en el sitio web oficial</label>
-                  <input type="file" class="form-control mt-2 mb-2" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" disabled>
+                  <div id="WebUpload" hidden>
+                    <input type="file" class="form-control mt-2 mb-2" aria-describedby="inputGroupFileAddon04" id="WebFile" aria-label="Upload" >
+                  </div>
                 </div>
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="checkOtra3" name="otra2[]" onchange="cambioCheck3()">

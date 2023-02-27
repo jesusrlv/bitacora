@@ -237,3 +237,53 @@ function reservation(){
                 
             }
         }
+        function mostrarInputs(){
+          var valorCheck = document.getElementById('printColor');
+            if(valorCheck.checked){
+                // valorCheck.value = 1;
+                document.getElementById('inputPrint').hidden = false;
+                
+                document.getElementById('NoPag').setAttribute("name","numpagdoc");
+                document.getElementById('NoPag').required = true;
+
+                document.getElementById('NoImpresiones').setAttribute("name","noimpresiones");
+                document.getElementById('NoImpresiones').required = true;
+            }
+            else{
+                // valorCheck.value = 0;
+                document.getElementById('inputPrint').hidden = true;
+                document.getElementById('NoPag').removeAttribute("name");
+                document.getElementById('NoImpresiones').removeAttribute("name");
+                
+            }
+        }
+        function mostrarInputs2(){
+          var valorCheck = document.getElementById('rw_cd');
+            if(valorCheck.checked){
+                // valorCheck.value = 1;
+                document.getElementById('inputRW').hidden = false;
+                
+                document.getElementById('NoCopias').setAttribute("name","nocopias");
+                document.getElementById('NoCopias').required = true;
+
+            }
+            else{
+                // valorCheck.value = 0;
+                document.getElementById('inputRW').hidden = true;
+                document.getElementById('NoCopias').removeAttribute("name");
+                
+            }
+        }
+        function mostrarInputs3(){
+          var valorCheck = document.getElementById('web');
+            if(valorCheck.checked){
+                // valorCheck.value = 1;
+                document.getElementById('WebUpload').hidden = false;
+                document.getElementById('WebFile').required = true;
+            }
+            else{
+                // valorCheck.value = 0;
+                document.getElementById('WebUpload').hidden = true;
+                
+            }
+        }

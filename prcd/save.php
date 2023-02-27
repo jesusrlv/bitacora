@@ -57,7 +57,10 @@ $otra_sw = $_POST['checkOtra2'];
 $otra_sw_desc = $_POST['otra2'];/* Termina Software */
 $escanear = $_POST['escanear'];
 $printColor = $_POST['printColor'];
+$numpagdoc = $_POST['numpagdoc'];
+$noimpresiones = $_POST['noimpresiones'];
 $rw_cd = $_POST['rw_cd'];
+$nocopias = $_POST['nocopias'];
 $web = $_POST['web'];
 $otra2 = $_POST['checkOtra3'];
 $otra2_desc = $_POST['otra3'];/* termina Otros */
@@ -73,8 +76,8 @@ $queryBitacora = "INSERT INTO bitacora(
     folio,
     fecha,
     hora,
-    datos_usr,
     datos_pc,
+    datos_usr,
     internet,
     inst_periferico,
     limp_equipo,
@@ -93,7 +96,10 @@ $queryBitacora = "INSERT INTO bitacora(
     otra_sw_desc,
     escanear,
     printcolor,
+    numpagdoc,
+    noimpresiones,
     rw_cd,
+    nocopias,
     web,
     otra2,
     otra2_desc,
@@ -108,8 +114,8 @@ $queryBitacora = "INSERT INTO bitacora(
         '$folio',
         '$fecha_sistema',
         '$fecha_hora',
-        '$datos_usr',
         '$datos_pc',
+        '$datos_usr',
         '$internet',
         '$inst_periferico',
         '$limp_equipo',
@@ -128,7 +134,10 @@ $queryBitacora = "INSERT INTO bitacora(
         '$otra_sw_desc',
         '$escanear',
         '$printColor',
+        '$numpagdoc',
+        '$noimpresiones',
         '$rw_cd',
+        '$nocopias',
         '$web',
         '$otra2',
         '$otra2_desc',
@@ -155,11 +164,12 @@ if($resultadoBitacora){
     // echo 'Registrado';
 }
 else{
-    echo json_encode(array('success' => 0));
+    $error = $conn->error;
+    echo json_encode(array('success' => 0,'error'=> $error));
 
     // echo 'No Registrado';
     // echo 'No se registró ningún cambio';
-    // printf("Errormessage: %s\n", $conn->error);
+    
 }
 // }
 // else{

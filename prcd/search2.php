@@ -505,6 +505,8 @@ if($numRows > 0){
                                                     <option class="bg-secondary bg-white" value="5">100%</option>
                                                 </select>
                                             </div>
+                                            <samp class="input-group-text mt-2"># paginas: '.$rowSearch['numpagdoc'].'</samp>
+                                            <samp class="input-group-text mb-3"># impresiones: '.$rowSearch['noimpresiones'].'</samp>
                                             ';
                                         }
                                         if($rowSearch['rw_cd']==1){
