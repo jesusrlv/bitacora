@@ -136,6 +136,7 @@ $(document).ready(function() {
         var printColor = 0;
         var numpagdoc = 0;
         var noimpresiones = 0;
+        var archivoimprimir = "";
     }
 
     var rw_cdVal = document.getElementById('rw_cd');
@@ -146,6 +147,8 @@ $(document).ready(function() {
     }
     else{
         var rw_cd = 0;
+        var nocopias = 0;
+        var archivocd = "";
     }
 
     var webVal = document.getElementById('web');
@@ -155,6 +158,7 @@ $(document).ready(function() {
     }
     else{
         var web = 0;
+        var archivoweb ="";
     }
 
     var checkOtra3Val = document.getElementById('checkOtra3');
