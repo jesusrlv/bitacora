@@ -59,9 +59,12 @@ $escanear = $_POST['escanear'];
 $printColor = $_POST['printColor'];
 $numpagdoc = $_POST['numpagdoc'];
 $noimpresiones = $_POST['noimpresiones'];
+$archivoimprimir = $_POST['archivoimprimir'];
 $rw_cd = $_POST['rw_cd'];
 $nocopias = $_POST['nocopias'];
+$archivocd = $_POST['archivocd'];
 $web = $_POST['web'];
+$archivoweb = $_POST['archivoweb'];
 $otra2 = $_POST['checkOtra3'];
 $otra2_desc = $_POST['otra3'];/* termina Otros */
 $observaciones = $_POST['observaciones'];
@@ -98,9 +101,12 @@ $queryBitacora = "INSERT INTO bitacora(
     printcolor,
     numpagdoc,
     noimpresiones,
+    archivoimprimir,
     rw_cd,
     nocopias,
+    archivocd,
     web,
+    archivoweb,
     otra2,
     otra2_desc,
     observaciones_usr,
@@ -136,9 +142,12 @@ $queryBitacora = "INSERT INTO bitacora(
         '$printColor',
         '$numpagdoc',
         '$noimpresiones',
+        '$archivoimprimir',
         '$rw_cd',
         '$nocopias',
+        '$archivocd',
         '$web',
+        '$archivoweb',
         '$otra2',
         '$otra2_desc',
         '$observaciones',

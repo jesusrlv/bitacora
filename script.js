@@ -130,6 +130,7 @@ $(document).ready(function() {
         var printColor = 1;
         var numpagdoc = document.getElementById('NoPag').value;
         var noimpresiones = document.getElementById('NoImpresiones').value;
+        var archivoimprimir = document.getElementById('archivoimprimir').value;
     }
     else{
         var printColor = 0;
@@ -141,6 +142,7 @@ $(document).ready(function() {
     if(rw_cdVal.checked){
         var rw_cd = 1;
         var nocopias = document.getElementById('NoCopias').value;
+        var archivocd = document.getElementById('archivocd').value;
     }
     else{
         var rw_cd = 0;
@@ -149,6 +151,7 @@ $(document).ready(function() {
     var webVal = document.getElementById('web');
     if(webVal.checked){
         var web = 1;
+        var archivoweb = document.getElementById('WebFile').value;
     }
     else{
         var web = 0;
@@ -249,9 +252,12 @@ $(document).ready(function() {
                     printColor:printColor,
                     numpagdoc:numpagdoc,
                     noimpresiones:noimpresiones,
+                    archivoimprimir:archivoimprimir,
                     rw_cd:rw_cd,
                     nocopias:nocopias,
+                    archivocd:archivocd,
                     web:web,
+                    archivoweb:archivoweb,
                     checkOtra3:checkOtra3,
                     otra3:otra3,
                     observaciones:observaciones,
