@@ -99,13 +99,6 @@
   
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <div class="btn-group" role="group" aria-label="Basic example">
-              <!-- <button class="btn btn-light position-relative" type="buton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"><i class="bi bi-cart-plus"></i> <span id="esconder">Tickets</span>
-                <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger" id="notificacionBadge">
-          0
-                <span class="visually-hidden">unread messages</span>
-              </span>
-            </button>
-              <button type="button" class="btn btn-light">Reportes</button> -->
             </div>
           </ul>
   

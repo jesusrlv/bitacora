@@ -167,7 +167,8 @@ if($resultadoBitacora){
     // for ($i = 1; $i <= 2; $i++) {
     //     $data[] = 
     // }
-    echo json_encode(array('success' => 1,'variable' => $num_asignado));
+    echo json_encode(array('success' => 1,'variable' => $num_asignado, 'folio' => $folio, 'printColor' => $printColor, 'rw_cd' => $rw_cd, 'web' => $web));
+    
     // echo json_encode($num_asignado);
     // echo json_encode(array('variable'=> $num_asignado));
     // echo 'Registrado';

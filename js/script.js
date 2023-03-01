@@ -31,22 +31,7 @@ if(valor !== "" || valor !== NULL){
 else{
   document.getElementById("button3").disabled = true;
 }
-//   var inp5 = 0;
-//   var inp6 = 0;
-//   var inp7 = 0;
-//   var inp8 = 0;
 
-// inp5 = document.getElementById('cc-name');
-// inp6 = document.getElementById('cc-number');
-// inp7 = document.getElementById('cc-expiration');
-// inp8 = document.getElementById('cc-cvv');
-
-// if((inp5.value.length > 0) && (inp6.value.length > 0) && (inp7.value.length > 0) && (inp8.value.length > 0)){
-//   document.getElementById("button3").disabled = false;
-// }
-// else {
-//   document.getElementById("button3").disabled = true;
-// }
 }
 
 function checkOut(){
@@ -106,61 +91,20 @@ function reservation(){
     document.getElementById('ccnumber').innerHTML = numbercc;
 
 }
-// submit
 
-          // $(document).ready(function(){
-          // var form=$("#form1");
-          // $("#form1").submit(function(event){
-          // $.ajax({
-          //         type:"POST",
-          //         url:"prcd/filtro.php",
-          //         data:form.serialize(),
-          //         dataType: "html",
-          //         // async:false,
-          //         cache: false,
-          //           success: function(data) {
-          //             $("#txtHint").html(data);                  
-          //           }               
-          //         });
-                  
-          //         event.preventDefault();
-          // });
-          // });
 
   function submitReservation(){
-    // var date = document.getElementById('scheduleDate').value;
-    // var hour = document.getElementById('scheduleTime').value;
-    // var last = document.getElementById('lastName').value;
-    // var first = document.getElementById('firstName').value;
-    // var email = document.getElementById('email').value;
-    // var address = document.getElementById('address').value;
-    // var data=getFiles();
-    // data = getFormData("formSchedule",data);
+
     var formData = new FormData(document.getElementById("formSchedule"));
- 
-    // var filter= document.querySelector("[name='filter']").value;
-    // var filtro= document.querySelector("[name='filtro']").value;
-    // var talla= document.querySelector("[name='talla']").value;
-        
           $.ajax({
                   type:"POST",
                   url:"prcd/save.php",
-                  // data:{
-                  //   date:date,
-                  //   hour:hour,
-                  //   last:last,
-                  //   first:first,
-                  //   email:email,
-                  //   address:address
-                  // },
                   data:formData,
                   dataType: "html",
                   contentType:false,
                   processData:false,
                   cache: false,
                     success: function(data) {
-                      // $("#txtHint").html(data);    
-                      // alert("Reservation Done!")     
                       Swal.fire({
                         icon: 'success',
                         imageUrl: 'img/InclusionLogo.png',
@@ -248,12 +192,16 @@ function reservation(){
 
                 document.getElementById('NoImpresiones').setAttribute("name","noimpresiones");
                 document.getElementById('NoImpresiones').required = true;
+
+                document.getElementById('archivoimprimir').setAttribute("name","imprimirFile");
+                document.getElementById('archivoimprimir').required = true;
             }
             else{
                 // valorCheck.value = 0;
                 document.getElementById('inputPrint').hidden = true;
                 document.getElementById('NoPag').removeAttribute("name");
                 document.getElementById('NoImpresiones').removeAttribute("name");
+                document.getElementById('archivoimprimir').removeAttribute("name");
                 
             }
         }
@@ -266,11 +214,15 @@ function reservation(){
                 document.getElementById('NoCopias').setAttribute("name","nocopias");
                 document.getElementById('NoCopias').required = true;
 
+                document.getElementById('archivocd').setAttribute("name","grabarFile");
+                document.getElementById('archivocd').required = true;
+
             }
             else{
                 // valorCheck.value = 0;
                 document.getElementById('inputRW').hidden = true;
                 document.getElementById('NoCopias').removeAttribute("name");
+                document.getElementById('archivocd').removeAttribute("name");
                 
             }
         }
@@ -279,11 +231,13 @@ function reservation(){
             if(valorCheck.checked){
                 // valorCheck.value = 1;
                 document.getElementById('WebUpload').hidden = false;
+                document.getElementById('WebFile').setAttribute("name","publicarFile");
                 document.getElementById('WebFile').required = true;
             }
             else{
                 // valorCheck.value = 0;
                 document.getElementById('WebUpload').hidden = true;
+                document.getElementById('WebFile').removeAttribute("name");
                 
             }
         }
