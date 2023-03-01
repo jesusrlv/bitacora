@@ -131,6 +131,7 @@ $(document).ready(function() {
         var numpagdoc = document.getElementById('NoPag').value;
         var noimpresiones = document.getElementById('NoImpresiones').value;
         var archivoimprimir = document.getElementById('archivoimprimir').value;
+        imprimirFile();
     }
     else{
         var printColor = 0;
@@ -144,6 +145,7 @@ $(document).ready(function() {
         var rw_cd = 1;
         var nocopias = document.getElementById('NoCopias').value;
         var archivocd = document.getElementById('archivocd').value;
+        grabarFile();
     }
     else{
         var rw_cd = 0;
@@ -155,6 +157,7 @@ $(document).ready(function() {
     if(webVal.checked){
         var web = 1;
         var archivoweb = document.getElementById('WebFile').value;
+        publicarFile();
     }
     else{
         var web = 0;
@@ -310,3 +313,13 @@ $(document).ready(function() {
         
     });
 });
+
+function imprimirFile(){
+
+}
+function grabarFile(){
+
+}
+function publicarFile(){
+
+}
