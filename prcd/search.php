@@ -506,6 +506,15 @@ if($numRows > 0){
                                                     <option class="bg-secondary bg-white" value="5">100%</option>
                                                 </select>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-sm-11">
+                                                    <samp class="input-group-text mt-2"># paginas: '.$rowSearch['numpagdoc'].'</samp>
+                                                    <samp class="input-group-text mb-3"># impresiones: '.$rowSearch['noimpresiones'].'</samp>
+                                                </div>
+                                                <div class="col-sm-1  mt-4">
+                                                    <a href="docs/'.$rowSearch['archivoimprimir'].'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
+                                                </div>
+                                            </div>
                                             ';
                                         }
                                         if($rowSearch['rw_cd']==1){
@@ -524,6 +533,14 @@ if($numRows > 0){
                                                     <option class="bg-secondary bg-white" value="5">100%</option>
                                                 </select>
                                             </div>
+                                            <div class="row">
+                                                <div class="col-sm-11">
+                                                    <samp class="input-group-text mt-2 mb-3"># copias: '.$rowSearch['nocopias'].'</samp>
+                                                </div>
+                                                <div class="col-sm-1 mt-2">
+                                                    <a href="docs/'.$rowSearch['archivocd'].'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
+                                                </div>
+                                            </div>
                                             ';
                                         }
                                         if($rowSearch['web']==1){
@@ -541,6 +558,13 @@ if($numRows > 0){
                                                     <option class="bg-secondary bg-white" value="4">75%</option>
                                                     <option class="bg-secondary bg-white" value="5">100%</option>
                                                 </select>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-11">
+                                                </div>
+                                                <div class="col-sm-1 mt-2">
+                                                    <a href="docs/'.$rowSearch['archivoweb'].'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
+                                                </div>
                                             </div>
                                             ';
                                         }

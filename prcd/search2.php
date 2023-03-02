@@ -60,7 +60,7 @@ if($numRows > 0){
                             </td>
                             ';
                         }
-                        else if($prom > 0 && $prom < 5){
+                        else if($prom == 1 || $prom == 2 || $prom == 3){
                             echo'
                             <td>
                             <span class="badge text-bg-warning text-light">
@@ -69,7 +69,7 @@ if($numRows > 0){
                             </td>
                             ';
                         }
-                        else if($prom == 5){
+                        else if($prom == 4){
                             echo'
                             <td>
                             <span class="badge text-bg-success">
@@ -165,20 +165,20 @@ if($numRows > 0){
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert<?php echo $rowSearch['id']?>1" aria-label="Default select example" onchange="calificar('<?php echo $rowSearch['folio'] ?>',1,1, <?php echo $rowSearch['id'] ?>)">
                                                 <?php
                                                 echo '
-                                                    <option class="bg-secondary bg-white" value="'.$hd.'" selected>';
-                                                    if($hd = 1){
+                                                    <option class="bg-secondary bg-white" value="'.$indicaPromHD.'" selected>';
+                                                    if($indicaPromHD = 1){
                                                         echo'0%';
                                                     }
-                                                    else if($hd = 2){
+                                                    else if($indicaPromHD = 2){
                                                         echo'25%';
                                                     }
-                                                    else if($hd = 3){
+                                                    else if($indicaPromHD = 3){
                                                         echo'50%';
                                                     }
-                                                    else if($hd = 4){
+                                                    else if($indicaPromHD = 4){
                                                         echo'75%';
                                                     }
-                                                    else if($hd = 5){
+                                                    else if($indicaPromHD = 5){
                                                         echo'100%';
                                                     }
                                                     echo'</option>
@@ -511,7 +511,7 @@ if($numRows > 0){
                                                     <samp class="input-group-text mb-3"># impresiones: '.$rowSearch['noimpresiones'].'</samp>
                                                 </div>
                                                 <div class="col-sm-1  mt-4">
-                                                    <a href="constanciaPDF2.php?folio='.$folio.'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
+                                                    <a href="docs/'.$rowSearch['archivoimprimir'].'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
                                                 </div>
                                             </div>
                                             
@@ -538,7 +538,7 @@ if($numRows > 0){
                                                     <samp class="input-group-text mt-2 mb-3"># copias: '.$rowSearch['nocopias'].'</samp>
                                                 </div>
                                                 <div class="col-sm-1 mt-2">
-                                                    <a href="constanciaPDF2.php?folio='.$folio.'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
+                                                    <a href="docs/'.$rowSearch['archivocd'].'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
                                                 </div>
                                             </div>
                                             ';
@@ -558,6 +558,13 @@ if($numRows > 0){
                                                     <option class="bg-secondary bg-white" value="4">75%</option>
                                                     <option class="bg-secondary bg-white" value="5">100%</option>
                                                 </select>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-11">
+                                                </div>
+                                                <div class="col-sm-1 mt-2">
+                                                    <a href="docs/'.$rowSearch['archivoweb'].'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
+                                                </div>
                                             </div>
                                             ';
                                         }
