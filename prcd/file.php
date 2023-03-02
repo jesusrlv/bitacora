@@ -8,9 +8,10 @@
     // $id=$_SESSION['id'];
     $folio = $_POST['folio'];
     $num = $_POST['num'];
+    $variableUpdate = $_POST['variableUpdate'];
     // $tipo_doc = 1;
     $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
-    $link= 'archivo'.$doc;
+    $link= 'archivo_'.$folio.'_'.$num;
     // $validacion = 1;
 
 $fileName = $_FILES["file"]["name"]; // The file name
@@ -27,14 +28,17 @@ if (!$fileTmpLoc) { // if file not chosen
 $archivo_ext=$_FILES['file']['name'];
 $extension = pathinfo($archivo_ext, PATHINFO_EXTENSION);
 
-    if(move_uploaded_file($_FILES["file"]["tmp_name"],"../../docs/". $link .'_'. $idUsr .'.'.$extension)){
+    if(move_uploaded_file($_FILES["file"]["tmp_name"],"../docs/". $link .'.'.$extension)){
     echo "$fileName carga completa";
     
-    $ruta = "docs/". $link .'_'. $idUsr .'.'.$extension;
-    // $sqlinsert= "UPDATE documentos SET link4='$ruta_pptx' WHERE id_usr='$curp'";
-    $sqlInsert= "INSERT INTO documentos (documento,id_ext,link,fecha) 
-    VALUES('$doc','$idUsr','$ruta','$fecha_sistema')";
-    $resultado= $conn->query($sqlInsert);
+    $ruta = $link .'.'.$extension;
+    
+    // $sqlInsert= "INSERT INTO documentos (documento,id_ext,link,fecha) 
+    // VALUES('$doc','$idUsr','$ruta','$fecha_sistema')";
+    // $resultado= $conn->query($sqlInsert);
+
+    $query = "UPDATE bitacora SET `$variableUpdate` = '$ruta' WHERE folio = '$folio'";
+    $resultado = $conn->query($query);
     
     
 } else {
