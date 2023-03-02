@@ -154,7 +154,8 @@ if($numRows > 0){
                                     <div class="accordion-body">
                                         <ol type="1">';
                                         if($rowSearch['internet']==1){
-                
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 1";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
                                             echo'
                                             <input id="numero'.$rowSearch['id'].'" value="1" hidden>
                                             <div class="input-group mb-3">
