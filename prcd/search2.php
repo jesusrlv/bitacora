@@ -112,7 +112,7 @@ if($numRows > 0){
                     else{
                         $promHD = 0;
                     }
-                        $hd = ROUND($promHD);
+                    $hd = ROUND($promHD);
                         
                     echo'
                     <script>
@@ -156,7 +156,16 @@ if($numRows > 0){
                                         if($rowSearch['internet']==1){
                                             $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 1";
                                             $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
+                                            
                                             <input id="numero'.$rowSearch['id'].'" value="1" hidden>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li class="ps-3">Internet</li></span>
@@ -166,22 +175,8 @@ if($numRows > 0){
                                                 <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert<?php echo $rowSearch['id']?>1" aria-label="Default select example" onchange="calificar('<?php echo $rowSearch['folio'] ?>',1,1, <?php echo $rowSearch['id'] ?>)">
                                                 <?php
                                                 echo '
-                                                    <option class="bg-secondary bg-white" value="'.$indicaPromHD.'" selected>';
-                                                    if($indicaPromHD = 1){
-                                                        echo'0%';
-                                                    }
-                                                    else if($indicaPromHD = 2){
-                                                        echo'25%';
-                                                    }
-                                                    else if($indicaPromHD = 3){
-                                                        echo'50%';
-                                                    }
-                                                    else if($indicaPromHD = 4){
-                                                        echo'75%';
-                                                    }
-                                                    else if($indicaPromHD = 5){
-                                                        echo'100%';
-                                                    }
+                                                    <option class="bg-secondary bg-white" value="'.$seleccion.'" selected>';
+                                                    
                                                     echo'</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
                                                     <option class="bg-secondary bg-white" value="2">25%</option>
@@ -189,8 +184,25 @@ if($numRows > 0){
                                                     <option class="bg-secondary bg-white" value="4">75%</option>
                                                     <option class="bg-secondary bg-white" value="5">100%</option>
                                                 </select>
+                                                
                                             </div>
+                                            
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger bg-light p-2 text-end" id="calificacionActual1'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">0%</p>';
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p class="border border-danger-subtle bg-light p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">25%</p>';
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p class="border border-warning bg-light p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">50%</p>';
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p class="border border-warning-subtle bg-light p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">75%</p>';
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p class="border border-success bg-light p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">100%</p>';
+                                            }
                                         }
                                         if($rowSearch['inst_periferico']==1){
                                             echo'
@@ -508,8 +520,8 @@ if($numRows > 0){
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-11">
-                                                    <samp class="input-group-text mt-2"># paginas: '.$rowSearch['numpagdoc'].'</samp>
-                                                    <samp class="input-group-text mb-3"># impresiones: '.$rowSearch['noimpresiones'].'</samp>
+                                                    <p class="bg-light p-2" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;"># paginas: '.$rowSearch['numpagdoc'].'</p>
+                                                    <p class="bg-light p-2" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;"># impresiones: '.$rowSearch['noimpresiones'].'</p>
                                                 </div>
                                                 <div class="col-sm-1  mt-4">
                                                     <a href="docs/'.$rowSearch['archivoimprimir'].'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
@@ -536,9 +548,9 @@ if($numRows > 0){
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-11">
-                                                    <samp class="input-group-text mt-2 mb-3"># copias: '.$rowSearch['nocopias'].'</samp>
+                                                    <p class="bg-light p-2" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;"># copias: '.$rowSearch['nocopias'].'</p>
                                                 </div>
-                                                <div class="col-sm-1 mt-2">
+                                                <div class="col-sm-1 mt-1">
                                                     <a href="docs/'.$rowSearch['archivocd'].'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
                                                 </div>
                                             </div>
@@ -562,8 +574,9 @@ if($numRows > 0){
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-11">
+                                                    <p class="bg-light p-2" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">Archivo:</p>
                                                 </div>
-                                                <div class="col-sm-1 mt-2">
+                                                <div class="col-sm-1 mt-1">
                                                     <a href="docs/'.$rowSearch['archivoweb'].'" target="_blank"><i class="bi bi-journal-arrow-down h2"></i></a>
                                                 </div>
                                             </div>
