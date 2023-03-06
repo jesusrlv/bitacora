@@ -171,9 +171,25 @@ if($numRows > 0){
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li class="ps-3">Internet</li></span>
                                                 
                                                 <input type="text" class="form-control" id="observaciones'.$rowSearch['id'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">';
-                                                ?>
-                                                <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert<?php echo $rowSearch['id']?>1" aria-label="Default select example" onchange="calificar('<?php echo $rowSearch['folio'] ?>',1,1, <?php echo $rowSearch['id'] ?>)">
-                                                <?php
+                                                
+                                                if ($seleccion == null){
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert '.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',1,1,'<?php echo $rowSearch['id']?>'
+                                                        <?php echo ')">
+                                                    ';
+                                                } else {
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert '.$rowSearch['id'].'1" aria-label="Default select example" onchange="editarCalificacion(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',1,1,'<?php echo $rowSearch['id']?>'
+                                                        <?php echo ')">
+                                                    ';
+                                                }
+
                                                 echo '
                                                     <option class="bg-secondary bg-white" value="'.$seleccion.'" selected>';
                                                     
@@ -189,19 +205,29 @@ if($numRows > 0){
                                             
                                             ';
                                             if($seleccion == 1){
-                                                echo '<p class="border border-danger bg-light p-2 text-end" id="calificacionActual1'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">0%</p>';
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual1'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
                                             }
                                             else if($seleccion == 2){
-                                                echo '<p class="border border-danger-subtle bg-light p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">25%</p>';
+                                                echo '<p class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
                                             }
                                             else if($seleccion == 3){
-                                                echo '<p class="border border-warning bg-light p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">50%</p>';
+                                                echo '<p class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
                                             }
                                             else if($seleccion == 4){
-                                                echo '<p class="border border-warning-subtle bg-light p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">75%</p>';
+                                                echo '<p class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
                                             }
                                             else if($seleccion == 5){
-                                                echo '<p class="border border-success bg-light p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;">100%</p>';
+                                                echo '<p class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+
                                             }
                                         }
                                         if($rowSearch['inst_periferico']==1){
@@ -643,7 +669,7 @@ else{
     echo'
     <script>
         alert("No hay datos");
-    </script>
+    </>
     ';
 }
 
