@@ -69,7 +69,7 @@ if($numRows > 0){
                             </td>
                             ';
                         }
-                        else if($prom == 4){
+                        else if($prom == 4 || $prom == 5){
                             echo'
                             <td>
                             <span class="badge text-bg-success">
@@ -174,18 +174,18 @@ if($numRows > 0){
                                                 
                                                 if ($seleccion == null){
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert '.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',1,1,'<?php echo $rowSearch['id']?>'
+                                                        '<?php echo $rowSearch['folio']?>',1,1,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 } else {
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert '.$rowSearch['id'].'1" aria-label="Default select example" onchange="editarCalificacion(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="editarCalificacion(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',1,1,'<?php echo $rowSearch['id']?>'
+                                                        '<?php echo $rowSearch['folio']?>',1,1,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 }
