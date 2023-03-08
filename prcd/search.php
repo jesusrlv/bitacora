@@ -128,7 +128,7 @@ if($numRows > 0){
                                     <i class="bi bi-pc-display-horizontal me-2" style="font-size: larger;"> </i> Hardware
                                 </div>
                                 <div class="col-6 text-end">
-                                    <span>';
+                                    <span id="calificacionActual1'.$rowSearch['folio'].'">';
                                     if($hd = 1){
                                         echo'0%';
                                     }
@@ -146,6 +146,7 @@ if($numRows > 0){
                                     }
                                     echo'
                                     </span>
+                                    
                                 </div>
                             </div>    
                             

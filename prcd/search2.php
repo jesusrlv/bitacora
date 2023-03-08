@@ -210,22 +210,22 @@ if($numRows > 0){
                                                     
                                             }
                                             else if($seleccion == 2){
-                                                echo '<p class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
                                                 ';
 
                                             }
                                             else if($seleccion == 3){
-                                                echo '<p class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
                                                 ';
         
                                             }
                                             else if($seleccion == 4){
-                                                echo '<p class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
                                                 ';
 
                                             }
                                             else if($seleccion == 5){
-                                                echo '<p class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
                                                 ';
 
                                             }

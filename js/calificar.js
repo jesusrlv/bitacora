@@ -64,7 +64,7 @@ function editarCalificacion(folio,categoria,subcategoria,id){
             subcategoria:subcategoria
         },
         success: function(data) {
-            var likert = data.likert;
+            // var likert = data.likert;
             if (likert == 1) {
                 var calificacion = 0;
             }
@@ -83,10 +83,11 @@ function editarCalificacion(folio,categoria,subcategoria,id){
 /*             console.log(folio);
             console.log(likert);
             console.log(subcategoria); */
-            //console.log(calificacion);
+            console.log(calificacion);
 
             //$('#calificacionActual').fadeIn(1000).html(data);
-            //document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = calificacion;
+            document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = "";
+            document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = calificacion;
             // document.getElementById('calificacion'+documento).hidden = true;
             // document.getElementById('editadCalf'+documento).hidden = false;
             Swal.fire({
@@ -97,7 +98,8 @@ function editarCalificacion(folio,categoria,subcategoria,id){
                 text: 'Proceso correcto',
                 confirmButtonColor: '#3085d6',
                 footer: 'INCLUSIÓN'
-            }).then(function(){window.location.reload()});
+            // }).then(function(){window.location.reload()});
+            });
 
         }
     });
