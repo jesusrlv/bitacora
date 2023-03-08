@@ -1,5 +1,5 @@
 function calificar(folio,categoria,subcategoria,id){
-    var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
+    /* var observaciones = document.getElementById('observaciones'+id+subcategoria).value; */
     var likert = document.getElementById('likert'+id+subcategoria).value;
     var calificacion = 0;
 
@@ -23,7 +23,7 @@ function calificar(folio,categoria,subcategoria,id){
         type: "POST",
         url: "prcd/calificar.php",
         data: {
-            observaciones:observaciones,
+            /* observaciones:observaciones, */
             likert:likert,
             folio:folio,
             categoria:categoria,
@@ -49,7 +49,7 @@ function calificar(folio,categoria,subcategoria,id){
 }
 
 function editarCalificacion(folio,categoria,subcategoria,id){
-    var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
+   /*  var observaciones = document.getElementById('observaciones'+id+subcategoria).value; */
     var likert = document.getElementById('likert'+id+subcategoria).value;
 
 
@@ -57,7 +57,7 @@ function editarCalificacion(folio,categoria,subcategoria,id){
         type: "POST",
         url: "prcd/editarCalificacion.php",
         data: {
-            observaciones:observaciones,
+            /* observaciones:observaciones, */
             likert:likert,
             folio:folio,
             categoria:categoria,
