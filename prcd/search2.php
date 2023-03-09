@@ -49,10 +49,14 @@ if($numRows > 0){
                             $indicaProm = $rowIndicador['likert'];
                             $calif = $calif + $indicaProm;
                             $x++;
-                            $prom1 = $calif / $x;
+                            
                         }
-                        $prom = ROUND($prprom1omHD);
+                        $prom1 = $calif / $x;
+                        $prom = ROUND($prom1);
 
+                        echo '
+                            <script>console.log("Promedio General "+'.$prom.')</script>
+                        ';
                         
                         if($prom == 0){
                             echo'
@@ -674,6 +678,30 @@ if($numRows > 0){
                     echo'';
                 }
                 if ($rowSearch['software'] == 1){
+                    $indicadorHD = "";
+                    $resultadoIndicadorHD = "";
+                    $numRowsIndicadorHD = "";
+                    $hd = 0;
+
+                    $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 2";
+                    $resultadoIndicadorHD = $conn->query($indicadorHD);
+                    $numRowsIndicadorHD = $resultadoIndicadorHD->num_rows;
+                    $xHD=0;
+                    $califHD=0;
+                    if($numRowsIndicadorHD > 0){
+                        while($rowIndicadorHD = $resultadoIndicadorHD->fetch_assoc()){
+                            $indicaPromHD = $rowIndicadorHD['likert'];
+                            $califHD = $califHD + $indicaPromHD;
+                            $xHD++;
+                            
+                        }
+                        $promHD = $califHD / $xHD;
+                    }
+                    else{
+                        $promHD = 0;
+                    }
+                    $hd = ROUND($promHD);
+                        
                     echo'
                     <div class="accordion accordion-flush" id="software1'.$rowSearch['id'].'">
                         <div class="accordion-item">
@@ -684,7 +712,24 @@ if($numRows > 0){
                                     <i class="bi bi-windows me-2" style="font-size: larger;"> </i> Software
                                 </div>
                                 <div class="col-6 text-end">
-                                    <span>100%</span>
+                                    <span id="contador1">';
+                                    if($hd == 1){
+                                        echo'0%';
+                                    }
+                                    else if($hd == 2){
+                                        echo'25%';
+                                    }
+                                    else if($hd == 3){
+                                        echo'50%';
+                                    }
+                                    else if($hd == 4){
+                                        echo'75%';
+                                    }
+                                    else if($hd == 5){
+                                        echo'100%';
+                                    }
+                                    echo'
+                                    </span>
                                 </div>
                             </div>
                             </button>
@@ -693,6 +738,20 @@ if($numRows > 0){
                                     <div class="accordion-body">
                                     <ol type="1">';
                                         if($rowSearch['act_office']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 2 AND sub_cat = 7";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de office</li></span>
@@ -702,18 +761,18 @@ if($numRows > 0){
                                                 
                                                 if ($seleccion == null){
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'7" aria-label="Default select example" onchange="calificar(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,7,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 } else {
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="editarCalificacion(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'7" aria-label="Default select example" onchange="editarCalificacion(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,7,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 }
@@ -730,8 +789,50 @@ if($numRows > 0){
                                                 </select>
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual7'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual7'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual7'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual7'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual7'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual7'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
+
                                         }
                                         if($rowSearch['activar_so']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 2 AND sub_cat = 8";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de sistema operativo</li></span>
@@ -741,18 +842,18 @@ if($numRows > 0){
                                                 
                                                 if ($seleccion == null){
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'8" aria-label="Default select example" onchange="calificar(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,8,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 } else {
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="editarCalificacion(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'8" aria-label="Default select example" onchange="editarCalificacion(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,8,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 }
@@ -769,8 +870,49 @@ if($numRows > 0){
                                                 </select>
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual8'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual8'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual8'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual8'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual8'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual8'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         if($rowSearch['actualizar_sw']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 2 AND sub_cat = 9";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Actualizar software: '.$rowSearch['actualizar_sw2'].'</li></span>
@@ -780,18 +922,18 @@ if($numRows > 0){
                                                 
                                                 if ($seleccion == null){
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'9" aria-label="Default select example" onchange="calificar(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,9,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 } else {
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="editarCalificacion(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'9" aria-label="Default select example" onchange="editarCalificacion(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,9,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 }
@@ -808,8 +950,49 @@ if($numRows > 0){
                                                 </select>
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual9'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual9'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual9'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual9'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual9'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         if($rowSearch['formateo_completo']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 2 AND sub_cat = 10";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Formateo completo</li></span>
@@ -819,15 +1002,15 @@ if($numRows > 0){
                                                 
                                                 if ($seleccion == null){
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'10" aria-label="Default select example" onchange="calificar(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,10,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 } else {
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="editarCalificacion(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'10" aria-label="Default select example" onchange="editarCalificacion(
                                                         ';
                                                         ?>
                                                         '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
@@ -847,8 +1030,49 @@ if($numRows > 0){
                                                 </select>
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual10'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual10'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual10'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual10'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual10'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         if($rowSearch['limpieza_virus']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 2 AND sub_cat = 11";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Limpieza de virus</li></span>
@@ -858,18 +1082,18 @@ if($numRows > 0){
                                                 
                                                 if ($seleccion == null){
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'11" aria-label="Default select example" onchange="calificar(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,11,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 } else {
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="editarCalificacion(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'11" aria-label="Default select example" onchange="editarCalificacion(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,11,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 }
@@ -886,8 +1110,49 @@ if($numRows > 0){
                                                 </select>
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual11'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual11'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual11'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual11'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual11'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         if($rowSearch['instalar_sw']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 2 AND sub_cat = 12";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Instalar software</li></span>
@@ -897,18 +1162,18 @@ if($numRows > 0){
                                                 
                                                 if ($seleccion == null){
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'12" aria-label="Default select example" onchange="calificar(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,12,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 } else {
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="editarCalificacion(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'12" aria-label="Default select example" onchange="editarCalificacion(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,12,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 }
@@ -925,8 +1190,49 @@ if($numRows > 0){
                                                 </select>
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual12'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual12'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual12'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual12'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual12'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         if($rowSearch['otra_sw']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 2 AND sub_cat = 13";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra_sw_desc'].'</li></span>
@@ -936,18 +1242,18 @@ if($numRows > 0){
                                                 
                                                 if ($seleccion == null){
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="calificar(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'13" aria-label="Default select example" onchange="calificar(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,13,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 } else {
                                                     echo '
-                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'1" aria-label="Default select example" onchange="editarCalificacion(
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'13" aria-label="Default select example" onchange="editarCalificacion(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,13,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 }
@@ -964,6 +1270,33 @@ if($numRows > 0){
                                                 </select>
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual13'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual13'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual13'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual13'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual13'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         echo'
                                         </ol>
@@ -977,6 +1310,30 @@ if($numRows > 0){
                     echo'';
                 }
                 if ($rowSearch['otros'] == 1){
+                    $indicadorHD = "";
+                    $resultadoIndicadorHD = "";
+                    $numRowsIndicadorHD = "";
+                    $hd = 0;
+
+                    $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 3";
+                    $resultadoIndicadorHD = $conn->query($indicadorHD);
+                    $numRowsIndicadorHD = $resultadoIndicadorHD->num_rows;
+                    $xHD=0;
+                    $califHD=0;
+                    if($numRowsIndicadorHD > 0){
+                        while($rowIndicadorHD = $resultadoIndicadorHD->fetch_assoc()){
+                            $indicaPromHD = $rowIndicadorHD['likert'];
+                            $califHD = $califHD + $indicaPromHD;
+                            $xHD++;
+                            
+                        }
+                        $promHD = $califHD / $xHD;
+                    }
+                    else{
+                        $promHD = 0;
+                    }
+                    $hd = ROUND($promHD);
+                        
                     echo'
                     <div class="accordion accordion-flush" id="otros1'.$rowSearch['id'].'">
                         <div class="accordion-item">
@@ -987,7 +1344,24 @@ if($numRows > 0){
                                         <i class="bi bi-file-earmark-break me-2" style="font-size: larger;"> </i> Otros
                                     </div>
                                     <div class="col-6 text-end">
-                                        <span>100%</span>
+                                        <span>';
+                                            if($hd == 1){
+                                                echo'0%';
+                                            }
+                                            else if($hd == 2){
+                                                echo'25%';
+                                            }
+                                            else if($hd == 3){
+                                                echo'50%';
+                                            }
+                                            else if($hd == 4){
+                                                echo'75%';
+                                            }
+                                            else if($hd == 5){
+                                                echo'100%';
+                                            }
+                                            echo'
+                                        </span>
                                     </div>
                                 </div>
                             </button>
@@ -997,14 +1371,49 @@ if($numRows > 0){
                                     
                                     <ol type="1">';
                                         if($rowSearch['escanear']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 3 AND sub_cat = 14";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Escanear</li></span>
                                                 
                                                 <input type="text" id="observaciones'.$rowSearch['otros'].'14" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                ';
                                                 
-                                                <select id="escanear_s'.$rowSearch['id'].'" class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
-                                                    <option class="bg-secondary bg-white" selected>Seleccione...</option>
+                                                if ($seleccion == null){
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'14" aria-label="Default select example" onchange="calificar(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',3,14,<?php echo $rowSearch['id']?>
+                                                        <?php echo ')">
+                                                    ';
+                                                } else {
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'14" aria-label="Default select example" onchange="editarCalificacion(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',3,14,<?php echo $rowSearch['id']?>
+                                                        <?php echo ')">
+                                                    ';
+                                                }
+
+                                                echo '
+                                                    <option class="bg-secondary bg-white" value="'.$seleccion.'" selected>';
+                                                    
+                                                    echo'</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
                                                     <option class="bg-secondary bg-white" value="2">25%</option>
                                                     <option class="bg-secondary bg-white" value="3">50%</option>
@@ -1013,16 +1422,78 @@ if($numRows > 0){
                                                 </select>
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual14'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual14'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual14'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual14'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual14'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         if($rowSearch['printcolor']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 3 AND sub_cat = 15";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Impresión a color</li></span>
                                                 
                                                 <input type="text" id="observaciones'.$rowSearch['otros'].'15" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                ';
                                                 
-                                                <select id="printcolor_s'.$rowSearch['id'].'" class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
-                                                    <option class="bg-secondary bg-white" selected>Seleccione...</option>
+                                                if ($seleccion == null){
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'15" aria-label="Default select example" onchange="calificar(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',3,15,<?php echo $rowSearch['id']?>
+                                                        <?php echo ')">
+                                                    ';
+                                                } else {
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'15" aria-label="Default select example" onchange="editarCalificacion(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',3,15,<?php echo $rowSearch['id']?>
+                                                        <?php echo ')">
+                                                    ';
+                                                }
+
+                                                echo '
+                                                    <option class="bg-secondary bg-white" value="'.$seleccion.'" selected>';
+                                                    
+                                                    echo'</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
                                                     <option class="bg-secondary bg-white" value="2">25%</option>
                                                     <option class="bg-secondary bg-white" value="3">50%</option>
@@ -1030,6 +1501,7 @@ if($numRows > 0){
                                                     <option class="bg-secondary bg-white" value="5">100%</option>
                                                 </select>
                                             </div>
+
                                             <div class="row">
                                                 <div class="col-sm-11">
                                                     <p class="bg-light p-2" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border: 1px solid #d1d1d1;"># paginas: '.$rowSearch['numpagdoc'].'</p>
@@ -1041,22 +1513,85 @@ if($numRows > 0){
                                             </div>
                                             
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual15'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual15'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual15'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual15'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual15'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         if($rowSearch['rw_cd']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 3 AND sub_cat = 16";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Grabar información en CDs o DVDs</li></span>
 
                                                 <input type="text" id="observaciones'.$rowSearch['otros'].'16" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                ';
                                                 
-                                                <select id="rwcd_s'.$rowSearch['id'].'" class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
-                                                    <option class="bg-secondary bg-white" selected>Seleccione...</option>
+                                                if ($seleccion == null){
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'16" aria-label="Default select example" onchange="calificar(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',3,16,<?php echo $rowSearch['id']?>
+                                                        <?php echo ')">
+                                                    ';
+                                                } else {
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'16" aria-label="Default select example" onchange="editarCalificacion(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',3,16,<?php echo $rowSearch['id']?>
+                                                        <?php echo ')">
+                                                    ';
+                                                }
+
+                                                echo '
+                                                    <option class="bg-secondary bg-white" value="'.$seleccion.'" selected>';
+                                                    
+                                                    echo'</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
                                                     <option class="bg-secondary bg-white" value="2">25%</option>
                                                     <option class="bg-secondary bg-white" value="3">50%</option>
                                                     <option class="bg-secondary bg-white" value="4">75%</option>
                                                     <option class="bg-secondary bg-white" value="5">100%</option>
                                                 </select>
+
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-11">
@@ -1067,22 +1602,85 @@ if($numRows > 0){
                                                 </div>
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual16'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual16'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual16'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual16'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual16'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         if($rowSearch['web']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 3 AND sub_cat = 17";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Publicar información en el sitio web oficial</li></span>
                                                 
                                                 <input type="text" id="observaciones'.$rowSearch['otros'].'17"  class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                ';
                                                 
-                                                <select id="web_s'.$rowSearch['id'].'" class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
-                                                    <option class="bg-secondary bg-white" selected>Seleccione...</option>
+                                                if ($seleccion == null){
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'17" aria-label="Default select example" onchange="calificar(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',3,17,<?php echo $rowSearch['id']?>
+                                                        <?php echo ')">
+                                                    ';
+                                                } else {
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'17" aria-label="Default select example" onchange="editarCalificacion(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',3,17,<?php echo $rowSearch['id']?>
+                                                        <?php echo ')">
+                                                    ';
+                                                }
+
+                                                echo '
+                                                    <option class="bg-secondary bg-white" value="'.$seleccion.'" selected>';
+                                                    
+                                                    echo'</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
                                                     <option class="bg-secondary bg-white" value="2">25%</option>
                                                     <option class="bg-secondary bg-white" value="3">50%</option>
                                                     <option class="bg-secondary bg-white" value="4">75%</option>
                                                     <option class="bg-secondary bg-white" value="5">100%</option>
                                                 </select>
+
                                             </div>
                                             <div class="row">
                                                 <div class="col-sm-11">
@@ -1093,25 +1691,115 @@ if($numRows > 0){
                                                 </div>
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual17'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual17'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual17'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual17'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual17'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         
                                         if($rowSearch['otra2']==1){
+                                            $indicadorHD = "";
+                                            $resultadoIndicadorHD = "";
+                                            $rowLikert = "";
+
+                                            $indicadorHD = "SELECT * FROM observaciones WHERE folio = '$folio' AND id_cat = 3 AND sub_cat = 18";
+                                            $resultadoIndicadorHD = $conn->query($indicadorHD);
+                                            $rowLikert = $resultadoIndicadorHD -> fetch_assoc();
+                                            if (empty($rowLikert['likert']) || $rowLikert['likert'] == null){
+                                                $seleccion = 0;
+                                            }
+                                            else {
+                                                $seleccion = $rowLikert['likert'];
+                                            }
+
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra2_desc'].'</li></span>
                                                 
                                                 <input type="text" id="observaciones'.$rowSearch['otros'].'18" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                ';
                                                 
-                                                <select id="otra2_s'.$rowSearch['id'].'" class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" aria-label="Default select example">
-                                                    <option class="bg-secondary bg-white" selected>Seleccione...</option>
+                                                if ($seleccion == null){
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'18" aria-label="Default select example" onchange="calificar(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',3,18,<?php echo $rowSearch['id']?>
+                                                        <?php echo ')">
+                                                    ';
+                                                } else {
+                                                    echo '
+                                                    <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'18" aria-label="Default select example" onchange="editarCalificacion(
+                                                        ';
+                                                        ?>
+                                                        '<?php echo $rowSearch['folio']?>',3,18,<?php echo $rowSearch['id']?>
+                                                        <?php echo ')">
+                                                    ';
+                                                }
+
+                                                echo '
+                                                    <option class="bg-secondary bg-white" value="'.$seleccion.'" selected>';
+                                                    
+                                                    echo'</option>
                                                     <option class="bg-secondary bg-white" value="1">0%</option>
                                                     <option class="bg-secondary bg-white" value="2">25%</option>
                                                     <option class="bg-secondary bg-white" value="3">50%</option>
                                                     <option class="bg-secondary bg-white" value="4">75%</option>
                                                     <option class="bg-secondary bg-white" value="5">100%</option>
                                                 </select>
+
                                             </div>
                                             ';
+                                            if($seleccion == 1){
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                ';
+                                                    
+                                            }
+                                            else if($seleccion == 2){
+                                                echo '<p id="calificacionActual18'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 3){
+                                                echo '<p id="calificacionActual18'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                ';
+        
+                                            }
+                                            else if($seleccion == 4){
+                                                echo '<p id="calificacionActual18'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                ';
+
+                                            }
+                                            else if($seleccion == 5){
+                                                echo '<p id="calificacionActual18'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">100%</p>
+                                                ';
+                                            }
+                                            else if ($seleccion == null) {
+                                                echo '<p id="calificacionActual18'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px ##52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid ##52c660;">0%</p>';
+                                            }
                                         }
                                         echo'
                                         </ol>
