@@ -106,8 +106,9 @@ if($numRows > 0){
                             $indicaPromHD = $rowIndicadorHD['likert'];
                             $califHD = $califHD + $indicaPromHD;
                             $xHD++;
-                            $promHD = $califHD / $xHD;
+                            
                         }
+                        $promHD = $califHD / $xHD;
                     }
                     else{
                         $promHD = 0;
@@ -116,7 +117,7 @@ if($numRows > 0){
                         
                     echo'
                     <script>
-                            console.log('.$hd.');
+                            console.log("Valor de hd: "+'.$hd.');
                             </script>
                     <div class="accordion accordion-flush" id="hardware1'.$rowSearch['id'].'">
                         <div class="accordion-item">
@@ -127,20 +128,20 @@ if($numRows > 0){
                                     <i class="bi bi-pc-display-horizontal me-2" style="font-size: larger;"> </i> Hardware
                                 </div>
                                 <div class="col-6 text-end">
-                                    <span>';
-                                    if($hd = 1){
+                                    <span id="contador1">';
+                                    if($hd == 1){
                                         echo'0%';
                                     }
-                                    else if($hd = 2){
+                                    else if($hd == 2){
                                         echo'25%';
                                     }
-                                    else if($hd = 3){
+                                    else if($hd == 3){
                                         echo'50%';
                                     }
-                                    else if($hd = 4){
+                                    else if($hd == 4){
                                         echo'75%';
                                     }
-                                    else if($hd = 5){
+                                    else if($hd == 5){
                                         echo'100%';
                                     }
                                     echo'
@@ -206,32 +207,45 @@ if($numRows > 0){
                                             
                                             ';
                                             if($seleccion == 1){
-                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual1'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">0%</p>
+                                                echo '<p class="border border-danger p-2 text-end" id="calificacionActual1'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" >0%</p>
+                                                
+                                                <input value="'.$seleccion.'" id="valores" >
                                                 ';
                                                     
                                             }
                                             else if($seleccion == 2){
-                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">25%</p>
+                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" name="valores">25%</p>
+
+                                                <input value="'.$seleccion.'" id="valores" >
                                                 ';
 
                                             }
                                             else if($seleccion == 3){
-                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">50%</p>
+                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" name="valores">50%</p>
+
+                                                <input value="'.$seleccion.'" id="valores" >
                                                 ';
         
                                             }
                                             else if($seleccion == 4){
-                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">75%</p>
+                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" name="valores">75%</p>
+
+                                                <input value="'.$seleccion.'" id="valores" >
                                                 ';
 
                                             }
                                             else if($seleccion == 5){
-                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px #52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #52c660;">100%</p>
+                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px #52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #52c660;" name="valores">100%</p>
+
+                                                <input value="'.$seleccion.'" id="valores" >
                                                 ';
 
                                             }
                                             else if ($seleccion == null) {
-                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px #52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #52c660;">0%</p>';
+                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px #52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #52c660;">0%</p>
+                                                
+                                                <input value="'.$seleccion.'" id="valores" >
+                                                ';
                                             }
                                         }
                                         if($rowSearch['inst_periferico']==1){

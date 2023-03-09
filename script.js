@@ -492,12 +492,8 @@ function _(el) {
     return document.getElementById(el);
 }
 
-/* function imprimirFile(){
-    
-}
-function grabarFile(){
+//obtener valores de input
 
-}
-function publicarFile(){
-
-} */
+const collection = document.getElementsByClassName("valores");
+for (let i = 0; i < collection.length; i++) {
+  collection[i].style.backgroundColor = "red";

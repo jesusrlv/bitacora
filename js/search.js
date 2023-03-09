@@ -34,6 +34,19 @@ function pendientes(){
         }
 
     });
+    // document.getElementById('contador1').innerHTML = "";
+
+    // const collection = document.getElementsByClassName("valores");
+    //     for (let i = 0; i < collection.length; i++) {
+    //        var valor = valor + collection[i].value;
+    //     }      
+    collection = document.querySelectorAll("#valores");
+    for (let i = 0; i < collection.length; i++) {
+        var valor = valor + collection[i].nodeValue;
+    }      
+        console.log("Colección "+collection);
+        console.log("Valor de los input "+valor);
+        // document.getElementById('contador1').innerHTML = valor;
 }
 
 function cambioStatus(x){
