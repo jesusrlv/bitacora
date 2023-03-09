@@ -1,6 +1,7 @@
 function calificar(folio,categoria,subcategoria,id){
     /* var observaciones = document.getElementById('observaciones'+id+subcategoria).value; */
     var likert = document.getElementById('likert'+id+subcategoria).value;
+    var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
     var calificacion = 0;
 
     if (likert == 1) {
@@ -27,7 +28,8 @@ function calificar(folio,categoria,subcategoria,id){
             likert:likert,
             folio:folio,
             categoria:categoria,
-            subcategoria:subcategoria
+            subcategoria:subcategoria,
+            observaciones:observaciones
         },
         success: function(data) {
             // $('#calificacionActual').fadeIn(1000).html(data);
@@ -51,6 +53,7 @@ function calificar(folio,categoria,subcategoria,id){
 function editarCalificacion(folio,categoria,subcategoria,id){
    /*  var observaciones = document.getElementById('observaciones'+id+subcategoria).value; */
     var likert = document.getElementById('likert'+id+subcategoria).value;
+    var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
 
 
     $.ajax({
@@ -61,7 +64,8 @@ function editarCalificacion(folio,categoria,subcategoria,id){
             likert:likert,
             folio:folio,
             categoria:categoria,
-            subcategoria:subcategoria
+            subcategoria:subcategoria,
+            observaciones:observaciones
         },
         success: function(data) {
             // var likert = data.likert;

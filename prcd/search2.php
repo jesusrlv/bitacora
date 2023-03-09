@@ -172,13 +172,20 @@ if($numRows > 0){
                                                 $seleccion = $rowLikert['likert'];
                                             }
 
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
+
                                             echo'
                                             
                                             <input id="numero'.$rowSearch['id'].'" value="1" hidden>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li class="ps-3">Internet</li></span>
                                                 
-                                                <input type="text" class="form-control" id="observaciones'.$rowSearch['id'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control" id="observaciones'.$rowSearch['id'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -270,13 +277,19 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <input id="numero'.$rowSearch['id'].'" value="2" hidden>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Periférico</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'2" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'2" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -354,13 +367,19 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <input id="numero'.$rowSearch['id'].'" value="3" hidden>
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Limpieza de equipo</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['hardware'].'3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['hardware'].'3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -437,12 +456,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Mouse</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">                            
+                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">                            
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -518,12 +543,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Falla en el monitor</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -599,12 +630,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra1_desc'].'</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -751,12 +788,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de office</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -832,12 +875,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de sistema operativo</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['software'].'8" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="observaciones'.$rowSearch['software'].'8" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -912,12 +961,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Actualizar software: '.$rowSearch['actualizar_sw2'].'</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['software'].'9" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="observaciones'.$rowSearch['software'].'9" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -992,12 +1047,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Formateo completo</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['software'].'10" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['software'].'10" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1072,12 +1133,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Limpieza de virus</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['software'].'11" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['software'].'11" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1152,12 +1219,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Instalar software</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['software'].'12" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="observaciones'.$rowSearch['software'].'12" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1232,12 +1305,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra_sw_desc'].'</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['software'].'13" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="observaciones'.$rowSearch['software'].'13" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1384,12 +1463,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Escanear</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['otros'].'14" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="observaciones'.$rowSearch['otros'].'14" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1464,12 +1549,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Impresión a color</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['otros'].'15" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="observaciones'.$rowSearch['otros'].'15" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1555,12 +1646,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Grabar información en CDs o DVDs</li></span>
 
-                                                <input type="text" id="observaciones'.$rowSearch['otros'].'16" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="observaciones'.$rowSearch['otros'].'16" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1644,12 +1741,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Publicar información en el sitio web oficial</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['otros'].'17"  class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="observaciones'.$rowSearch['otros'].'17"  class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1734,12 +1837,18 @@ if($numRows > 0){
                                             else {
                                                 $seleccion = $rowLikert['likert'];
                                             }
+                                            if (empty($rowLikert['observaciones_dti']) || $rowLikert['observaciones_dti'] == null){
+                                                $observaciones = "Sin observaciones";
+                                            }
+                                            else {
+                                                $observaciones = $rowLikert['observaciones_dti'];
+                                            }
 
                                             echo'
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra2_desc'].'</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['otros'].'18" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1">
+                                                <input type="text" id="observaciones'.$rowSearch['otros'].'18" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
