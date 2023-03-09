@@ -49,8 +49,11 @@ if($numRows > 0){
                             $indicaProm = $rowIndicador['likert'];
                             $calif = $calif + $indicaProm;
                             $x++;
-                            $prom = $calif / $x;
+                            $prom1 = $calif / $x;
                         }
+                        $prom = ROUND($prprom1omHD);
+
+                        
                         if($prom == 0){
                             echo'
                             <td>
@@ -81,7 +84,7 @@ if($numRows > 0){
                         }
                         echo'
                         <script>
-                            console.log('.$prom.');
+                            console.log("Promedio "+'.$prom.');
                             </script>
                         ';
                     }
