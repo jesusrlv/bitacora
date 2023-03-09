@@ -209,42 +209,42 @@ if($numRows > 0){
                                             if($seleccion == 1){
                                                 echo '<p class="border border-danger p-2 text-end" id="calificacionActual1'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" >0%</p>
                                                 
-                                                <input value="'.$seleccion.'" id="valores" >
+                                                <input value="'.$seleccion.'" id="valores" hidden>
                                                 ';
                                                     
                                             }
                                             else if($seleccion == 2){
                                                 echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" name="valores">25%</p>
 
-                                                <input value="'.$seleccion.'" id="valores" >
+                                                <input value="'.$seleccion.'" id="valores" hidden>
                                                 ';
 
                                             }
                                             else if($seleccion == 3){
                                                 echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-warning p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" name="valores">50%</p>
 
-                                                <input value="'.$seleccion.'" id="valores" >
+                                                <input value="'.$seleccion.'" id="valores" hidden>
                                                 ';
         
                                             }
                                             else if($seleccion == 4){
                                                 echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-warning-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #d1d1d1; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" name="valores">75%</p>
 
-                                                <input value="'.$seleccion.'" id="valores" >
+                                                <input value="'.$seleccion.'" id="valores" hidden>
                                                 ';
 
                                             }
                                             else if($seleccion == 5){
                                                 echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px #52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #52c660;" name="valores">100%</p>
 
-                                                <input value="'.$seleccion.'" id="valores" >
+                                                <input value="'.$seleccion.'" id="valores" hidden>
                                                 ';
 
                                             }
                                             else if ($seleccion == null) {
                                                 echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-success p-2 text-end" style="box-shadow: -8px 0px 0px 0px #52c660; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #52c660;">0%</p>
                                                 
-                                                <input value="'.$seleccion.'" id="valores" >
+                                                <input value="'.$seleccion.'" id="valores" hidden>
                                                 ';
                                             }
                                         }
