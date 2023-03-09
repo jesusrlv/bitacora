@@ -48,10 +48,10 @@ if($numRows > 0){
                         while($rowIndicador = $resultadoIndicador->fetch_assoc()){
                             $indicaProm = $rowIndicador['likert'];
                             $calif = $calif + $indicaProm;
-                            $x++;
+                            /* $x++; */
                             
                         }
-                        $prom1 = $calif / $x;
+                        $prom1 = $calif / $numRowsIndicador;
                         $prom = ROUND($prom1);
 
                         echo '
