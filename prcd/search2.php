@@ -43,8 +43,8 @@ if($numRows > 0){
                     }
                     // else if (($rowSearch['solucionado'] == 1)){
                     else if ($numRowsIndicador > 0){
-                        $calif = 0;                                                                                                                                                                            
-                        LÑ_z<                           $x = 0;
+                        $calif = 0;
+                        $x = 0;
                         while($rowIndicador = $resultadoIndicador->fetch_assoc()){
                             $indicaProm = $rowIndicador['likert'];
                             $calif = $calif + $indicaProm;
@@ -185,7 +185,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li class="ps-3">Internet</li></span>
                                                 
-                                                <input type="text" class="form-control" id="observaciones'.$rowSearch['id'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" class="form-control" id="observaciones'.$rowSearch['id'].'1" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -289,7 +289,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Periférico</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'2" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'2" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -379,7 +379,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Limpieza de equipo</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['hardware'].'3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -467,7 +467,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Mouse</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">                            
+                                                <input type="text" id="numero'.$rowSearch['id'].'4" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">                            
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -554,7 +554,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Falla en el monitor</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="numero'.$rowSearch['id'].'5" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -641,9 +641,9 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra1_desc'].'</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="numero'.$rowSearch['id'].'6" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
-                                                
+                                                /* Aquí voy con los onfocus para borrar */
                                                 if ($seleccion == null){
                                                     echo '
                                                     <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'6" aria-label="Default select example" onchange="calificar(
@@ -799,7 +799,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de office</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="numero'.$rowSearch['id'].'7" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -886,7 +886,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de sistema operativo</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['software'].'8" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'8" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -972,7 +972,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Actualizar software: '.$rowSearch['actualizar_sw2'].'</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['software'].'9" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'9" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1058,7 +1058,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Formateo completo</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['software'].'10" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'10" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1074,7 +1074,7 @@ if($numRows > 0){
                                                     <select class="form-select bg-secondary bg-opacity-25" style="max-width:100px;" id="likert'.$rowSearch['id'].'10" aria-label="Default select example" onchange="editarCalificacion(
                                                         ';
                                                         ?>
-                                                        '<?php echo $rowSearch['folio']?>',2,1,<?php echo $rowSearch['id']?>
+                                                        '<?php echo $rowSearch['folio']?>',2,10,<?php echo $rowSearch['id']?>
                                                         <?php echo ')">
                                                     ';
                                                 }
@@ -1144,7 +1144,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Limpieza de virus</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['software'].'11" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'11" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1230,7 +1230,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Instalar software</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['software'].'12" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'12" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1316,7 +1316,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra_sw_desc'].'</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['software'].'13" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'13" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1474,7 +1474,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Escanear</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['otros'].'14" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'14" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1560,7 +1560,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Impresión a color</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['otros'].'15" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'15" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1657,7 +1657,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Grabar información en CDs o DVDs</li></span>
 
-                                                <input type="text" id="observaciones'.$rowSearch['otros'].'16" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'16" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1752,7 +1752,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Publicar información en el sitio web oficial</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['otros'].'17"  class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'17"  class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1848,7 +1848,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra2_desc'].'</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['otros'].'18" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'18" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){

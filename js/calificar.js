@@ -34,7 +34,7 @@ function calificar(folio,categoria,subcategoria,id){
         success: function(data) {
             // $('#calificacionActual').fadeIn(1000).html(data);
             document.getElementById('likert'+id+subcategoria).setAttribute ("onchange","editarcCalificacion('.$rowSearch['folio'].',1,1,'.$rowSearch['id'].')");
-/*             document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = calificacion; */
+            document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = calificacion;
             // document.getElementById('calificacion'+id+subcategoria).hidden = true;
             // document.getElementById('editadCalf'+id+subcategoria).hidden = false;
             Swal.fire({
@@ -108,3 +108,4 @@ function editarCalificacion(folio,categoria,subcategoria,id){
         }
     });
 }
+
