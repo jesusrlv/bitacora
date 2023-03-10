@@ -494,6 +494,6 @@ function _(el) {
 
 //obtener valores de input
 
-const collection = document.getElementsByClassName("valores");
-for (let i = 0; i < collection.length; i++) {
-  collection[i].style.backgroundColor = "red";
+// const collection = document.getElementsByClassName("valores");
+// for (let i = 0; i < collection.length; i++) {
+//   collection[i].style.backgroundColor = "red";
