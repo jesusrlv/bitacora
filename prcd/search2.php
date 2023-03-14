@@ -223,12 +223,12 @@ if($numRows > 0){
                                             if($seleccion == 1){
                                                 echo '<p class="border border-danger p-2 text-end" id="calificacionActual1'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px ##dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" >0%</p>
                                                 
-                                                <input value="'.$seleccion.'" id="valores" hidden>
+                                                <input value="'.$seleccion.'" id="valores1'.$rowSearch['folio'].'" hidden>
                                                 ';
                                                     
                                             }
                                             else if($seleccion == 2){
-                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-danger-subtle p-2 text-end" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" name="valores">25%</p>
+                                                echo '<p id="calificacionActual1'.$rowSearch['folio'].'" class="border border-danger-subtle p-2" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;" name="valores">'.$observaciones.'<span class="text-end"> 25%</span></p>
 
                                                 <input value="'.$seleccion.'" id="valores" hidden>
                                                 ';
@@ -467,7 +467,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Mouse</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'4" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">                            
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'4" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">                            
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -554,7 +554,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Falla en el monitor</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'5" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'5" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -641,7 +641,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra1_desc'].'</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'6" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'6" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 /* Aquí voy con los onfocus para borrar */
                                                 if ($seleccion == null){
@@ -799,7 +799,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de office</li></span>
                                                 
-                                                <input type="text" id="numero'.$rowSearch['id'].'7" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'7" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1"';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'" >
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -886,7 +886,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Activación de sistema operativo</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['id'].'8" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'8" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -972,7 +972,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Actualizar software: '.$rowSearch['actualizar_sw2'].'</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['id'].'9" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'9" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1058,7 +1058,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Formateo completo</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'10" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'10" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1144,7 +1144,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Limpieza de virus</li></span>
                                                 
-                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'11" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" class="form-control ms-3" id="observaciones'.$rowSearch['id'].'11" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1230,7 +1230,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Instalar software</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['id'].'12" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'12" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1316,7 +1316,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra_sw_desc'].'</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['id'].'13" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'13" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1474,7 +1474,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Escanear</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['id'].'14" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'14" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo '  value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1560,7 +1560,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Impresión a color</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['id'].'15" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'15" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo '  value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1657,7 +1657,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Grabar información en CDs o DVDs</li></span>
 
-                                                <input type="text" id="observaciones'.$rowSearch['id'].'16" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'16" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo '  value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1752,7 +1752,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Publicar información en el sitio web oficial</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['id'].'17"  class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'17"  class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" ';?> onfocus="this.value=''" <?php  echo '  value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){
@@ -1848,7 +1848,7 @@ if($numRows > 0){
                                             <div class="input-group mb-3">
                                                 <span class="input-group-text bg-white border-white" id="basic-addon1"><li>Otro: '.$rowSearch['otra2_desc'].'</li></span>
                                                 
-                                                <input type="text" id="observaciones'.$rowSearch['id'].'18" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1" value="'.$observaciones.'">
+                                                <input type="text" id="observaciones'.$rowSearch['id'].'18" class="form-control ms-3" placeholder="Observaciones DTI" aria-label="Username" aria-describedby="basic-addon1"  ';?> onfocus="this.value=''" <?php  echo ' value="'.$observaciones.'">
                                                 ';
                                                 
                                                 if ($seleccion == null){

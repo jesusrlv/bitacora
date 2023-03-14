@@ -1,9 +1,9 @@
 function calificar(folio,categoria,subcategoria,id){
-    /* var observaciones = document.getElementById('observaciones'+id+subcategoria).value; */
+    
     var likert = document.getElementById('likert'+id+subcategoria).value;
     var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
-    var calificacion = 0;
-
+    /* var calificacion = 0; */
+/* 
     if (likert == 1) {
         calificacion == 0;
     }
@@ -18,7 +18,7 @@ function calificar(folio,categoria,subcategoria,id){
     }
     else if (likert == 5) {
         calificacion == 100;
-    }
+    } */
     // let folio = folio;
     $.ajax({
         type: "POST",
@@ -32,9 +32,29 @@ function calificar(folio,categoria,subcategoria,id){
             observaciones:observaciones
         },
         success: function(data) {
+            if (likert == 1) {
+                var calificacion = 0;
+            }
+            else if (likert == 2) {
+                var calificacion = 25;
+            }
+            else if (likert == 3) {
+                var calificacion = 50;
+            }
+            else if (likert == 4) {
+                var calificacion = 75;
+            }
+            else if (likert == 5) {
+                var calificacion = 100;
+            }
+            
             // $('#calificacionActual').fadeIn(1000).html(data);
+            document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = "";
             document.getElementById('likert'+id+subcategoria).setAttribute ("onchange","editarcCalificacion('.$rowSearch['folio'].',1,1,'.$rowSearch['id'].')");
             document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = calificacion;
+            console.log("Esta es la calificación editable"+calificacion);
+            console.log("Subcategoría"+subcategoria);
+            console.log("Folio"+folio);
             // document.getElementById('calificacion'+id+subcategoria).hidden = true;
             // document.getElementById('editadCalf'+id+subcategoria).hidden = false;
             Swal.fire({
@@ -51,7 +71,7 @@ function calificar(folio,categoria,subcategoria,id){
 }
 
 function editarCalificacion(folio,categoria,subcategoria,id){
-   /*  var observaciones = document.getElementById('observaciones'+id+subcategoria).value; */
+    var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
     var likert = document.getElementById('likert'+id+subcategoria).value;
     var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
 
@@ -60,7 +80,7 @@ function editarCalificacion(folio,categoria,subcategoria,id){
         type: "POST",
         url: "prcd/editarCalificacion.php",
         data: {
-            /* observaciones:observaciones, */
+            observaciones:observaciones,
             likert:likert,
             folio:folio,
             categoria:categoria,
