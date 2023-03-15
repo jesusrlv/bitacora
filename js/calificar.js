@@ -51,7 +51,7 @@ function calificar(folio,categoria,subcategoria,id){
             // $('#calificacionActual').fadeIn(1000).html(data);
             document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = "";
             document.getElementById('likert'+id+subcategoria).setAttribute ("onchange","editarcCalificacion('.$rowSearch['folio'].',1,1,'.$rowSearch['id'].')");
-            document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = calificacion;
+            document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = observaciones + " " +calificacion;
             console.log("Esta es la calificación editable"+calificacion);
             console.log("Subcategoría"+subcategoria);
             console.log("Folio"+folio);
@@ -112,6 +112,7 @@ function editarCalificacion(folio,categoria,subcategoria,id){
             //$('#calificacionActual').fadeIn(1000).html(data);
             document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = "";
             document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = calificacion;
+            document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = observaciones + " " +calificacion;
             // document.getElementById('calificacion'+documento).hidden = true;
             // document.getElementById('editadCalf'+documento).hidden = false;
             Swal.fire({
