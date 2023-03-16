@@ -1228,7 +1228,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
-/* aquí voy con el cambio de color e indices */
+
                                         }
                                         if($rowSearch['activar_so']==1){
                                             $indicadorHD = "";
@@ -1359,7 +1359,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual8'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #e9ecef; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #e9ecef;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual8'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1370,6 +1370,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
+
                                         }
                                         if($rowSearch['actualizar_sw']==1){
                                             $indicadorHD = "";
@@ -1431,7 +1432,7 @@ if($numRows > 0){
                                             ';
                                             if($seleccion == 1){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1445,7 +1446,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 2){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger-subtle p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 bg-danger-subtle p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1459,7 +1460,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 3){
                                                 echo '
-                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1473,7 +1474,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 4){
                                                 echo '
-                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;">
                                                     <div class="col-sm-10 text-start">
                                                         '.$observaciones.'
                                                     </div>
@@ -1487,7 +1488,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 5){
                                                 echo '                                                
-                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1500,7 +1501,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #e9ecef; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #e9ecef;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual9'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1511,6 +1512,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
+
                                         }
                                         if($rowSearch['formateo_completo']==1){
                                             $indicadorHD = "";
@@ -1572,7 +1574,7 @@ if($numRows > 0){
                                             ';
                                             if($seleccion == 1){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1586,7 +1588,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 2){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger-subtle p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 bg-danger-subtle p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1600,7 +1602,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 3){
                                                 echo '
-                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1614,7 +1616,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 4){
                                                 echo '
-                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;">
                                                     <div class="col-sm-10 text-start">
                                                         '.$observaciones.'
                                                     </div>
@@ -1628,7 +1630,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 5){
                                                 echo '                                                
-                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1641,7 +1643,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #e9ecef; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #e9ecef;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual10'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1652,6 +1654,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
+
                                         }
                                         if($rowSearch['limpieza_virus']==1){
                                             $indicadorHD = "";
@@ -1713,7 +1716,7 @@ if($numRows > 0){
                                             ';
                                             if($seleccion == 1){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1727,7 +1730,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 2){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger-subtle p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 bg-danger-subtle p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1741,7 +1744,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 3){
                                                 echo '
-                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1755,7 +1758,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 4){
                                                 echo '
-                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;">
                                                     <div class="col-sm-10 text-start">
                                                         '.$observaciones.'
                                                     </div>
@@ -1769,7 +1772,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 5){
                                                 echo '                                                
-                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1782,7 +1785,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #e9ecef; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #e9ecef;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual11'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1793,6 +1796,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
+
                                         }
                                         if($rowSearch['instalar_sw']==1){
                                             $indicadorHD = "";
@@ -1854,7 +1858,7 @@ if($numRows > 0){
                                             ';
                                             if($seleccion == 1){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1868,7 +1872,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 2){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger-subtle p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 bg-danger-subtle p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1882,7 +1886,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 3){
                                                 echo '
-                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1896,7 +1900,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 4){
                                                 echo '
-                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;">
                                                     <div class="col-sm-10 text-start">
                                                         '.$observaciones.'
                                                     </div>
@@ -1910,7 +1914,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 5){
                                                 echo '                                                
-                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1923,7 +1927,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #e9ecef; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #e9ecef;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual12'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1934,6 +1938,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
+
                                         }
                                         if($rowSearch['otra_sw']==1){
                                             $indicadorHD = "";
@@ -1995,7 +2000,7 @@ if($numRows > 0){
                                             ';
                                             if($seleccion == 1){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2009,7 +2014,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 2){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger-subtle p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 bg-danger-subtle p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2023,7 +2028,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 3){
                                                 echo '
-                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2037,7 +2042,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 4){
                                                 echo '
-                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;">
                                                     <div class="col-sm-10 text-start">
                                                         '.$observaciones.'
                                                     </div>
@@ -2051,7 +2056,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 5){
                                                 echo '                                                
-                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2064,7 +2069,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #e9ecef; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #e9ecef;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual13'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2075,6 +2080,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
+
                                         }
                                         echo'
                                         </ol>
@@ -2208,7 +2214,7 @@ if($numRows > 0){
                                             ';
                                             if($seleccion == 1){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2222,7 +2228,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 2){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger-subtle p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 bg-danger-subtle p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2236,7 +2242,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 3){
                                                 echo '
-                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2250,7 +2256,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 4){
                                                 echo '
-                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;">
                                                     <div class="col-sm-10 text-start">
                                                         '.$observaciones.'
                                                     </div>
@@ -2264,7 +2270,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 5){
                                                 echo '                                                
-                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2277,7 +2283,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #e9ecef; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #e9ecef;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual14'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2288,6 +2294,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
+
                                         }
                                         if($rowSearch['printcolor']==1){
                                             $indicadorHD = "";
@@ -2360,7 +2367,7 @@ if($numRows > 0){
                                             ';
                                             if($seleccion == 1){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2374,7 +2381,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 2){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger-subtle p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 bg-danger-subtle p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2388,7 +2395,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 3){
                                                 echo '
-                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2402,7 +2409,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 4){
                                                 echo '
-                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;">
                                                     <div class="col-sm-10 text-start">
                                                         '.$observaciones.'
                                                     </div>
@@ -2416,7 +2423,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 5){
                                                 echo '                                                
-                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2429,7 +2436,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual15'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2440,6 +2447,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
+
                                         }
                                         if($rowSearch['rw_cd']==1){
                                             $indicadorHD = "";
@@ -2510,7 +2518,7 @@ if($numRows > 0){
                                             ';
                                             if($seleccion == 1){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2524,7 +2532,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 2){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger-subtle p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 bg-danger-subtle p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2538,7 +2546,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 3){
                                                 echo '
-                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2552,7 +2560,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 4){
                                                 echo '
-                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;">
                                                     <div class="col-sm-10 text-start">
                                                         '.$observaciones.'
                                                     </div>
@@ -2566,7 +2574,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 5){
                                                 echo '                                                
-                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2579,7 +2587,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual16'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2590,6 +2598,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
+
                                         }
                                         if($rowSearch['web']==1){
                                             $indicadorHD = "";
@@ -2660,7 +2669,7 @@ if($numRows > 0){
                                             ';
                                             if($seleccion == 1){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2674,7 +2683,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 2){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger-subtle p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 bg-danger-subtle p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2688,7 +2697,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 3){
                                                 echo '
-                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2702,7 +2711,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 4){
                                                 echo '
-                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;">
                                                     <div class="col-sm-10 text-start">
                                                         '.$observaciones.'
                                                     </div>
@@ -2716,7 +2725,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 5){
                                                 echo '                                                
-                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2725,10 +2734,11 @@ if($numRows > 0){
                                                         </div>
                                                     </div>
                                                 ';
+
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual17'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2736,8 +2746,10 @@ if($numRows > 0){
                                                             0%
                                                         </div>
                                                     </div>
+
                                                 ';
                                             }
+
                                         }
                                         
                                         if($rowSearch['otra2']==1){
@@ -2800,7 +2812,7 @@ if($numRows > 0){
                                             ';
                                             if($seleccion == 1){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2814,7 +2826,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 2){
                                                 echo '
-                                                    <div class="row mb-3 border border-danger-subtle p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 bg-danger-subtle p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2828,7 +2840,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 3){
                                                 echo '
-                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-warning p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2842,7 +2854,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 4){
                                                 echo '
-                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                <div class="row mb-3 border border-success-subtle p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;">
                                                     <div class="col-sm-10 text-start">
                                                         '.$observaciones.'
                                                     </div>
@@ -2856,7 +2868,7 @@ if($numRows > 0){
                                             }
                                             else if($seleccion == 5){
                                                 echo '                                                
-                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-success p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2869,7 +2881,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #d1d1d1;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual18'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -2880,6 +2892,7 @@ if($numRows > 0){
 
                                                 ';
                                             }
+
                                         }
                                         echo'
                                         </ol>
