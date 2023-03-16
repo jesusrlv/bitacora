@@ -4,7 +4,6 @@ include('qc.php');
 
 $fecha = ($_POST['dateSearch']);
 
-// $search = "SELECT * FROM bitacora WHERE fecha = '$fecha'";
 $search = "SELECT * FROM bitacora WHERE fecha = '$fecha' ORDER BY fecha ASC, hora ASC, solucionado DESC";
 $resultadoSearch = $conn->query($search);
 $numRows = $resultadoSearch->num_rows;

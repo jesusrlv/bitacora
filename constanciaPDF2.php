@@ -10,9 +10,69 @@ $rowSQL = $resultadoSql->fetch_assoc();
 
 $sql2 = "SELECT * FROM observaciones WHERE folio = '$folio'";
 $resultadoSql2 = $conn->query($sql2);
-$rowSQL2 = $resultadoSql2->fetch_assoc();
+/* $rowSQL2 = $resultadoSql2->fetch_assoc(); */
 
+while ($rowSQL2 = $resultadoSql2->fetch_assoc()){
+  if ($rowSQL['internet']==1){
+    $internet = $rowSQL2['observaciones_dti'];
+  } 
+  if ($rowSQL['inst_periferico']==1){
+    $inst_periferico = $rowSQL2['observaciones_dti'];
+  }  
+  if ($rowSQL['limp_equipo']==1){
+    $limp_equipo = $rowSQL2['observaciones_dti'];
+  }  
+  if ($rowSQL['tec_mouse']==1){
+    $tec_mouse = $rowSQL2['observaciones_dti'];
+  }  else {
+    $tec_mouse = "";
+  }
 
+  if ($rowSQL['falla_monitor']==1){
+    $falla_monitor = $rowSQL2['observaciones_dti'];
+  }  else {
+    $falla_monitor = "";
+  }
+  if ($rowSQL['otra1']==1){
+    $otra1 = $rowSQL2['observaciones_dti'];
+  }  
+  if ($rowSQL['act_office']==1){
+    $act_office = $rowSQL2['observaciones_dti'];
+  }  
+  if ($rowSQL['activar_so']==1){
+    $activar_so = $rowSQL2['observaciones_dti'];
+  }  
+  if ($rowSQL['actualizar_sw']==1){
+    $actualizar_sw = $rowSQL2['observaciones_dti'];
+  }  
+  if ($rowSQL['formateo_completo']==1){
+    $formateo_completo = $rowSQL2['observaciones_dti'];
+  }  
+  if ($rowSQL['limpieza_virus']==1){
+    $limpieza_virus = $rowSQL2['observaciones_dti'];
+  }
+    if ($rowSQL['instalar_sw']==1){
+    $instalar_sw = $rowSQL2['observaciones_dti'];
+  }
+    if ($rowSQL['otra_sw']==1){
+    $otra_sw = $rowSQL2['observaciones_dti'];
+  }
+    if ($rowSQL['escanear']==1){
+    $escanear = $rowSQL2['observaciones_dti'];
+  }
+    if ($rowSQL['printcolor']==1){
+    $printcolor = $rowSQL2['observaciones_dti'];
+  }
+    if ($rowSQL['rw_cd']==1){
+    $rw_cd = $rowSQL2['observaciones_dti'];
+  }
+    if ($rowSQL['web']==1){
+    $web = $rowSQL2['observaciones_dti'];
+  }
+    if ($rowSQL['otra2']==1){
+    $otra2 = $rowSQL2['observaciones_dti'];
+  }
+}
 class PDF extends FPDF
 {
 // Cabecera de página
@@ -78,43 +138,33 @@ $pdf->Cell(91,5,'Trabajo realizado',1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(10,5,'1',1,0,'C');
-$pdf->Cell(90,5,'Sopletear PC',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(90,5,'Revisar conexión a internet',1,0,'L');
+$pdf->Cell(91,5,$internet,1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'2',1,0,'C');
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(90,5,'Sopletear fuente de poder',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(90,5,'Instalar impresora/scanner',1,0,'L');
+$pdf->Cell(91,5,$inst_periferico,1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'3',1,0,'C');
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(90,5,'Limpiar el gabinete',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(90,5,'Limpieza interna de equipo',1,0,'L');
+$pdf->Cell(91,5,$limp_equipo,1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'4',1,0,'C');
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(90,5,'Sopletear teclado y mouse',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(90,5,'Mouse/teclado no funciona',1,0,'L');
+$pdf->Cell(91,5,$tec_mouse,1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'5',1,0,'C');
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(90,5,'Limpiar teclado y mouse',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(90,5,'Falla del monitor/pantalla',1,0,'L');
+$pdf->Cell(91,5,$falla_monitor,1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'6',1,0,'C');
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(90,5,'Limpiar pantalla y monitor',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
-$pdf->Ln();
-$pdf->Cell(10,5,'7',1,0,'C');
-$pdf->SetFont('Arial','',8);
-$pdf->Cell(90,5,'Limpiar componentes del monitor',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
-$pdf->Ln();
-$pdf->Cell(10,5,'7',1,0,'C');
-$pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,'Otra',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(91,5,$otra1,1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(191,8,'MANTENIMIENTO PREVENTIVO/CORRECTIVO DE SOFTWARE',1,0,'C');
@@ -122,32 +172,65 @@ $pdf->Ln();
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(10,5,'1',1,0,'C');
 $pdf->Cell(90,5,utf8_decode('Activación Office'),1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(91,5,$act_office,1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'2',1,0,'C');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,utf8_decode('Activación de Sistema Operativo'),1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(91,5,$activar_so,1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'3',1,0,'C');
 $pdf->SetFont('Arial','',8);
-$pdf->Cell(90,5,utf8_decode('Activación de Software'),1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(90,5,utf8_decode('Actualizar Software'),1,0,'L');
+$pdf->Cell(91,5,utf8_decode($actualizar_sw),1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'4',1,0,'C');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,'Formateo completo',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(91,5,utf8_decode($formateo_completo),1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'5',1,0,'C');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,'Limpieza de virus',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(91,5,utf8_decode($limpieza_virus),1,0,'C');
+$pdf->Ln();
+$pdf->Cell(10,5,'6',1,0,'C');
+$pdf->SetFont('Arial','',8);
+$pdf->Cell(90,5,utf8_decode('Instalación de software'),1,0,'L');
+$pdf->Cell(91,5,utf8_decode($instalar_sw),1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'6',1,0,'C');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,'Otra',1,0,'L');
-$pdf->Cell(91,5,'',1,0,'C');
+$pdf->Cell(91,5,utf8_decode($otra_sw),1,0,'C');
+$pdf->Ln();
+$pdf->SetFont('Arial','B',10);
+$pdf->Cell(191,8,'OTRAS',1,0,'C');
+$pdf->Ln();
+$pdf->Cell(10,5,'3',1,0,'C');
+$pdf->SetFont('Arial','',8);
+$pdf->Cell(90,5,utf8_decode('Escaneo de documentos y/o imágenes'),1,0,'L');
+$pdf->Cell(91,5,utf8_decode($escanear),1,0,'C');
+$pdf->Ln();
+$pdf->Cell(10,5,'4',1,0,'C');
+$pdf->SetFont('Arial','',8);
+$pdf->Cell(90,5,utf8_decode('Impresión a color'),1,0,'L');
+$pdf->Cell(91,5,utf8_decode($printcolor),1,0,'C');
+$pdf->Ln();
+$pdf->Cell(10,5,'5',1,0,'C');
+$pdf->SetFont('Arial','',8);
+$pdf->Cell(90,5,utf8_decode('Grabar información en CDs o DVDs'),1,0,'L');
+$pdf->Cell(91,5,utf8_decode($rw_cd),1,0,'C');
+$pdf->Ln();
+$pdf->Cell(10,5,'6',1,0,'C');
+$pdf->SetFont('Arial','',8);
+$pdf->Cell(90,5,utf8_decode('Publicar información en el sitio web oficial'),1,0,'L');
+$pdf->Cell(91,5,utf8_decode($web),1,0,'C');
+$pdf->Ln();
+$pdf->Cell(10,5,'6',1,0,'C');
+$pdf->SetFont('Arial','',8);
+$pdf->Cell(90,5,'Otra',1,0,'L');
+$pdf->Cell(91,5,utf8_decode($otra_2),1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',8);
 $pdf->Cell(191,27,'OBSERVACIONES:',1,0,'L');
@@ -158,7 +241,7 @@ $pdf->Cell(91,5,'Recibe de conformidad',1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',8);
 $pdf->Cell(100,30,'',1,0,'C');
-$pdf->Cell(91,30,'',1,0,'C');
+$pdf->Cell(91,30,utf8_decode($rowSQL['datos_usr']),1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',8);
 $pdf->Cell(100,5,'Nombre y firma',1,0,'C');

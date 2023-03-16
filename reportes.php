@@ -91,7 +91,9 @@ $fecha_sistema = strftime("%Y-%m-%d");
         width: 180px;
       }
     </style>
-
+    <?php
+      include ('prcd/notiticket.php');
+    ?>
     
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
@@ -107,13 +109,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
   
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <div class="btn-group" role="group" aria-label="Basic example">
-              <!-- <button class="btn btn-light position-relative" type="buton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"><i class="bi bi-cart-plus"></i> <span id="esconder">Tickets</span>
-                <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger" id="notificacionBadge">
-          0
-                <span class="visually-hidden">unread messages</span>
-              </span>
-            </button>
-              <button type="button" class="btn btn-light">Reportes</button> -->
+
             </div>
           </ul>
   
@@ -121,7 +117,9 @@ $fecha_sistema = strftime("%Y-%m-%d");
             <a href="busqueda.php" target="_self" class="btn btn-light position-relative" type="buton"  aria-expanded="false"><i class="bi bi-clipboard-check"></i>
               <span id="esconder">Tickets</span>
               <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger" id="notificacionBadge">
-                0
+                <?php
+                  echo $notificaciones;
+                ?>
                 <span class="visually-hidden">unread messages</span>
               </span>
             </a>
@@ -174,19 +172,41 @@ $fecha_sistema = strftime("%Y-%m-%d");
               <div class="invalid-feedback">
                 * Campo requerido.
               </div>
+            </div>  
+            <div class="col-sm-4">
+              <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Ingresa Folio o Nombre...">
+              <datalist id="datalistOptions">
+                <option value="San Francisco">
+                <option value="New York">
+                <option value="Seattle">
+                <option value="Los Angeles">
+                <option value="Chicago">
+              </datalist>
             </div>
+            <div class="col-sm-5">
+              <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                <label class="btn btn-outline-success" for="btncheck1"><small>Solucionado</small></label>
 
-            <div class="dropdown text-end">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-clipboard-data"></i>
-                Generar Reporte
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Tickets del periodo</a></li>
-                <li><a class="dropdown-item" href="#">Detallado</a></li>
-                <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-              </ul>
+                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                <label class="btn btn-outline-warning" for="btncheck2"><small>En proceso</small></label>
+
+                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                <label class="btn btn-outline-danger" for="btncheck3"><small>No Solucionado</small></label>
+              </div>
             </div>
-
+            <div class="col-sm-2">
+              <div class="dropdown text-end">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-clipboard-data"></i>
+                  Generar Reporte
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Tickets del periodo</a></li>
+                  <li><a class="dropdown-item" href="#">Detallado</a></li>
+                  <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                </ul>
+              </div>
+            </div>
             <!-- table -->
             <div class="container mt-5">
                 <table class="table align-middle table-borderless rounded">

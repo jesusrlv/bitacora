@@ -84,7 +84,10 @@
       }
     </style>
 
-    
+    <?php
+    include ('prcd/notiticket.php');
+    ?>
+
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
   </head>
@@ -106,7 +109,9 @@
               <a href="busqueda.php" class="btn btn-light position-relative" type="buton"  aria-expanded="false"><i class="bi bi-clipboard-check"></i>
                 <span id="esconder">Tickets</span>
                 <span class="position-absolute top-100 start-0 translate-middle badge rounded-pill bg-danger" id="notificacionBadge">
-                  0
+                  <?php
+                  echo $notificaciones;
+                  ?>
                   <span class="visually-hidden">unread messages</span>
                 </span>
               </a>
