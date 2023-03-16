@@ -165,7 +165,6 @@
                         <th scope="col">Hora</th>
                         <th scope="col">Datos</th>
                         <th scope="col">Usuario</th>
-                        <!-- <th scope="col">Detalles</th> -->
                         <th scope="col">Estatus</th>
                         <th scope="col">Reporte</th>
                         </tr>

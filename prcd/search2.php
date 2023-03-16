@@ -291,7 +291,7 @@ if($numRows > 0){
                                             }
                                             else if ($seleccion == null) {
                                                 echo '
-                                                    <div class="row mb-3 border border-secondary p-2 text-end" id="calificacionActual1'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
+                                                    <div class="row mb-3 border border-danger p-2 text-end" id="calificacionActual1'.$rowSearch['folio'].'" style="box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545;">
                                                         <div class="col-sm-10 text-start">
                                                             '.$observaciones.'
                                                         </div>
@@ -1130,7 +1130,7 @@ if($numRows > 0){
                                                         ';
                                                         ?>
                                                         '<?php echo $rowSearch['folio']?>',2,7,<?php echo $rowSearch['id']?>
-                                                        <?php echo ')">
+                                                        <?php echo ')"> 
                                                     ';
                                                 }
 

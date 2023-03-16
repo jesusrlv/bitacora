@@ -34,20 +34,29 @@ function calificar(folio,categoria,subcategoria,id){
         success: function(data) {
             if (likert == 1) {
                 var calificacion = 0;
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("class","row mb-3 border border-danger p-2 text-end");
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("style","box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545");
             }
             else if (likert == 2) {
                 var calificacion = 25;
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("class","row mb-3 bg-danger-subtle p-2 text-end");
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("style","box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;");
             }
             else if (likert == 3) {
                 var calificacion = 50;
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("class","row mb-3 border border-warning p-2 text-end");
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("style","box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;");
             }
             else if (likert == 4) {
                 var calificacion = 75;
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("class","row mb-3 border border-success-subtle p-2 text-end");
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("style","box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;");
             }
             else if (likert == 5) {
                 var calificacion = 100;
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("class","row mb-3 border border-success p-2 text-end");
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("style","box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;");
             }
-            
             // $('#calificacionActual').fadeIn(1000).html(data);
             document.getElementById('calificacionActual'+subcategoria+folio).innerHTML = "";
             document.getElementById('likert'+id+subcategoria).setAttribute ("onchange","editarcCalificacion('.$rowSearch['folio'].',1,1,'.$rowSearch['id'].')");
@@ -73,7 +82,7 @@ function calificar(folio,categoria,subcategoria,id){
 function editarCalificacion(folio,categoria,subcategoria,id){
     var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
     var likert = document.getElementById('likert'+id+subcategoria).value;
-    var observaciones = document.getElementById('observaciones'+id+subcategoria).value;
+/*     var observaciones = document.getElementById('observaciones'+id+subcategoria).value; */
 
 
     $.ajax({
@@ -91,22 +100,32 @@ function editarCalificacion(folio,categoria,subcategoria,id){
             // var likert = data.likert;
             if (likert == 1) {
                 var calificacion = 0;
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("class","row mb-3 border border-danger p-2 text-end");
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("style","box-shadow: -8px 0px 0px 0px #dc3545; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #dc3545");
             }
             else if (likert == 2) {
                 var calificacion = 25;
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("class","row mb-3 bg-danger-subtle p-2 text-end");
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("style","box-shadow: -8px 0px 0px 0px #f8d7da; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #f8d7da;");
             }
             else if (likert == 3) {
                 var calificacion = 50;
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("class","row mb-3 border border-warning p-2 text-end");
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("style","box-shadow: -8px 0px 0px 0px #ffc107; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #ffc107;");
             }
             else if (likert == 4) {
                 var calificacion = 75;
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("class","row mb-3 border border-success-subtle p-2 text-end");
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("style","box-shadow: -8px 0px 0px 0px #a3cfbb; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #a3cfbb;");
             }
             else if (likert == 5) {
                 var calificacion = 100;
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("class","row mb-3 border border-success p-2 text-end");
+                document.getElementById('calificacionActual'+subcategoria+folio).setAttribute ("style","box-shadow: -8px 0px 0px 0px #198754; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border: 1px solid #198754;");
             }
-/*             console.log(folio);
+            //console.log(folio);
             console.log(likert);
-            console.log(subcategoria); */
+            //console.log(subcategoria);
             console.log(calificacion);
 
             //$('#calificacionActual').fadeIn(1000).html(data);

@@ -199,6 +199,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <th scope="col">Datos</th>
                         <th scope="col">Usuario</th>
                         <th scope="col">Estatus</th>
+                        <th scope="col">Reporte</th>
                         </tr>
                     </thead>
                     <tbody id="searchDate1">
