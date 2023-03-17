@@ -174,7 +174,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
               </div>
             </div>  
             <div class="col-sm-4">
-              <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Ingresa Folio o Nombre...">
+              <input class="form-control" list="datalistOptions" id="filtroTable" placeholder="Ingresa Folio o Nombre...">
               <datalist id="datalistOptions">
                 <option value="San Francisco">
                 <option value="New York">
@@ -192,7 +192,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                 <label class="btn btn-outline-warning" for="btncheck2"><small>En proceso</small></label>
 
                 <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                <label class="btn btn-outline-danger" for="btncheck3"><small>No Solucionado</small></label>
+                <label class="btn btn-outline-danger" onclick="checksnosolucionados()" for="btncheck3"><small>No Solucionado</small></label>
               </div>
             </div>
             <div class="col-sm-2">
@@ -227,7 +227,6 @@ $fecha_sistema = strftime("%Y-%m-%d");
                 </table>
             </div>
             <!-- table -->
-          
       </div>
     </div>
   </main>
@@ -246,9 +245,30 @@ $fecha_sistema = strftime("%Y-%m-%d");
   $(document).ready(function () {
         $("#filtroTable").on("keyup", function () {
             var value = $(this).val().toLowerCase();
-            $("#searchDate tr").filter(function () {
+            $("#searchDate1 tr").filter(function () {
                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
     });
+</script>
+<script>
+  function checksnosolucionados(){
+    document.getElementById('searchDate1').innerHTML = "";
+    var fecha_ini = document.getElementById('fechainicial').value;
+    var fecha_fin = document.getElementById('fechafinal').value;
+
+    $.ajax ({
+      url: 'prcd/checksnosolucionados.php',
+      type: "POST",
+      dataType: 'html',
+      data: {
+        fecha_ini:fecha_ini,
+        fecha_fin:fecha_fin
+      },
+      success: function(response){
+        $("#searchDate1").html(response);
+      }
+    })
+  }
+
 </script>

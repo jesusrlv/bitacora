@@ -13,66 +13,103 @@ $resultadoSql2 = $conn->query($sql2);
 /* $rowSQL2 = $resultadoSql2->fetch_assoc(); */
 
 while ($rowSQL2 = $resultadoSql2->fetch_assoc()){
-  if ($rowSQL['internet']==1){
+  if ($rowSQL2['sub_cat']==1){
     $internet = $rowSQL2['observaciones_dti'];
-  } 
-  if ($rowSQL['inst_periferico']==1){
+  }  else if ($rowSQL2['sub_cat']== null){
+    $internet = "";
+  }
+  if ($rowSQL2['sub_cat']==2){
     $inst_periferico = $rowSQL2['observaciones_dti'];
-  }  
-  if ($rowSQL['limp_equipo']==1){
+  }   else if ($rowSQL2['sub_cat']== null){
+    $inst_periferico = "";
+  }
+  if ($rowSQL2['sub_cat']==3){
     $limp_equipo = $rowSQL2['observaciones_dti'];
-  }  
-  if ($rowSQL['tec_mouse']==1){
+  }   else if ($rowSQL2['sub_cat']== null){
+    $limp_equipo = "";
+  }
+  if ($rowSQL2['sub_cat']==4){
     $tec_mouse = $rowSQL2['observaciones_dti'];
-  }  else {
+  }  else if ($rowSQL2['sub_cat']== null){
     $tec_mouse = "";
   }
-
-  if ($rowSQL['falla_monitor']==1){
+  if ($rowSQL2['sub_cat']==5){
     $falla_monitor = $rowSQL2['observaciones_dti'];
-  }  else {
+  }  else if ($rowSQL2['sub_cat']== null){
     $falla_monitor = "";
   }
-  if ($rowSQL['otra1']==1){
+  if ($rowSQL2['sub_cat']==6){
     $otra1 = $rowSQL2['observaciones_dti'];
-  }  
-  if ($rowSQL['act_office']==1){
+  }  else if ($rowSQL2['sub_cat']== null){
+    $otra1 = "";
+  }
+  if ($rowSQL2['sub_cat']==7){
     $act_office = $rowSQL2['observaciones_dti'];
-  }  
-  if ($rowSQL['activar_so']==1){
+  }  else if ($rowSQL2['sub_cat']== null){
+    $act_office = "";
+  }
+  if ($rowSQL2['sub_cat']==8){
     $activar_so = $rowSQL2['observaciones_dti'];
-  }  
-  if ($rowSQL['actualizar_sw']==1){
+  }   else if ($rowSQL2['sub_cat']== null){
+    $activar_so = "";
+  }
+  if ($rowSQL2['sub_cat']==9){
     $actualizar_sw = $rowSQL2['observaciones_dti'];
-  }  
-  if ($rowSQL['formateo_completo']==1){
+  }   else if ($rowSQL2['sub_cat']== null){
+    $actualizar_sw = "";
+  }
+  if ($rowSQL2['sub_cat']==10){
     $formateo_completo = $rowSQL2['observaciones_dti'];
-  }  
-  if ($rowSQL['limpieza_virus']==1){
+  }   else if ($rowSQL2['sub_cat']== null){
+    $formateo_completo = "";
+  }
+  if ($rowSQL2['sub_cat']==11){
     $limpieza_virus = $rowSQL2['observaciones_dti'];
+  }  else if ($rowSQL2['sub_cat']== null){
+    $limpieza_virus = "";
   }
-    if ($rowSQL['instalar_sw']==1){
+    if ($rowSQL2['sub_cat']==12){
     $instalar_sw = $rowSQL2['observaciones_dti'];
+  }  else if ($rowSQL2['sub_cat']== null){
+    $instalar_sw = "";
   }
-    if ($rowSQL['otra_sw']==1){
+    if ($rowSQL2['sub_cat']==13){
     $otra_sw = $rowSQL2['observaciones_dti'];
+  }  else if ($rowSQL2['sub_cat']== null){
+    $otra_sw = "";
   }
-    if ($rowSQL['escanear']==1){
+    if ($rowSQL2['sub_cat']==14){
     $escanear = $rowSQL2['observaciones_dti'];
+  }  else if ($rowSQL2['sub_cat']== null){
+    $escanear = "";
   }
-    if ($rowSQL['printcolor']==1){
+    if ($rowSQL2['sub_cat']==15){
     $printcolor = $rowSQL2['observaciones_dti'];
+  }  else if ($rowSQL2['sub_cat']== null){
+    $printcolor = "";
   }
-    if ($rowSQL['rw_cd']==1){
+    if ($rowSQL2['sub_cat']==16){
     $rw_cd = $rowSQL2['observaciones_dti'];
+  }  else if ($rowSQL2['sub_cat']== null){
+    $rw_cd = "";
   }
-    if ($rowSQL['web']==1){
+    if ($rowSQL2['sub_cat']==17){
     $web = $rowSQL2['observaciones_dti'];
+  }  else if ($rowSQL2['sub_cat']== null){
+    $web = "";
   }
-    if ($rowSQL['otra2']==1){
-    $otra2 = $rowSQL2['observaciones_dti'];
+    if ($rowSQL2['sub_cat']==18){
+    $otra_2 = $rowSQL2['observaciones_dti'];
+  }  else if ($rowSQL2['sub_cat']== null){
+    $otra_2 = "";
   }
+/*   echo '
+  <script>
+  console.log('.$rowSQL2['observaciones_dti'].');
+  </script>
+  '; */
 }
+
 class PDF extends FPDF
 {
 // Cabecera de página
@@ -138,33 +175,33 @@ $pdf->Cell(91,5,'Trabajo realizado',1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(10,5,'1',1,0,'C');
-$pdf->Cell(90,5,'Revisar conexión a internet',1,0,'L');
-$pdf->Cell(91,5,$internet,1,0,'C');
+$pdf->Cell(90,5,utf8_decode('Revisar conexión a internet'),1,0,'L');
+$pdf->Cell(91,5,utf8_decode($internet),1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'2',1,0,'C');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,'Instalar impresora/scanner',1,0,'L');
-$pdf->Cell(91,5,$inst_periferico,1,0,'C');
+$pdf->Cell(91,5,utf8_decode($inst_periferico),1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'3',1,0,'C');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,'Limpieza interna de equipo',1,0,'L');
-$pdf->Cell(91,5,$limp_equipo,1,0,'C');
+$pdf->Cell(91,5,utf8_decode($limp_equipo),1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'4',1,0,'C');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,'Mouse/teclado no funciona',1,0,'L');
-$pdf->Cell(91,5,$tec_mouse,1,0,'C');
+$pdf->Cell(91,5,utf8_decode($tec_mouse),1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'5',1,0,'C');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,'Falla del monitor/pantalla',1,0,'L');
-$pdf->Cell(91,5,$falla_monitor,1,0,'C');
+$pdf->Cell(91,5,utf8_decode($falla_monitor),1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'6',1,0,'C');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,'Otra',1,0,'L');
-$pdf->Cell(91,5,$otra1,1,0,'C');
+$pdf->Cell(91,5,utf8_decode($otra1),1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',10);
 $pdf->Cell(191,8,'MANTENIMIENTO PREVENTIVO/CORRECTIVO DE SOFTWARE',1,0,'C');
@@ -172,12 +209,12 @@ $pdf->Ln();
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(10,5,'1',1,0,'C');
 $pdf->Cell(90,5,utf8_decode('Activación Office'),1,0,'L');
-$pdf->Cell(91,5,$act_office,1,0,'C');
+$pdf->Cell(91,5,utf8_decode($act_office),1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'2',1,0,'C');
 $pdf->SetFont('Arial','',8);
 $pdf->Cell(90,5,utf8_decode('Activación de Sistema Operativo'),1,0,'L');
-$pdf->Cell(91,5,$activar_so,1,0,'C');
+$pdf->Cell(91,5,utf8_decode($activar_so),1,0,'C');
 $pdf->Ln();
 $pdf->Cell(10,5,'3',1,0,'C');
 $pdf->SetFont('Arial','',8);
@@ -233,15 +270,15 @@ $pdf->Cell(90,5,'Otra',1,0,'L');
 $pdf->Cell(91,5,utf8_decode($otra_2),1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',8);
-$pdf->Cell(191,27,'OBSERVACIONES:',1,0,'L');
+$pdf->Cell(191,10,'OBSERVACIONES:',1,0,'L');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',8);
 $pdf->Cell(100,5,'Realiza mantenimiento',1,0,'C');
 $pdf->Cell(91,5,'Recibe de conformidad',1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',8);
-$pdf->Cell(100,30,'',1,0,'C');
-$pdf->Cell(91,30,utf8_decode($rowSQL['datos_usr']),1,0,'C');
+$pdf->Cell(100,20,'',1,0,'C');
+$pdf->Cell(91,20,utf8_decode($rowSQL['datos_usr']),1,0,'C');
 $pdf->Ln();
 $pdf->SetFont('Arial','B',8);
 $pdf->Cell(100,5,'Nombre y firma',1,0,'C');
@@ -257,7 +294,7 @@ $pdf->Output($nombre_archivo,$modo);
     require('html_table.php');
     $nombre='canorioss';
     $htmlTable='
-     
+    
     <table width="36%" height="100%" border="1" align="right" style="border-spacing:0px; border-color:#000">
       <tr>
         <td>Nombre</td>
