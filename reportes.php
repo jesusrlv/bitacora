@@ -185,14 +185,14 @@ $fecha_sistema = strftime("%Y-%m-%d");
             </div>
             <div class="col-sm-5">
               <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" onclick="checksolucionado()">
                 <label class="btn btn-outline-success" for="btncheck1"><small>Solucionado</small></label>
 
-                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" onclick="checksenproceso()">
                 <label class="btn btn-outline-warning" for="btncheck2"><small>En proceso</small></label>
 
-                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-                <label class="btn btn-outline-danger" onclick="checksnosolucionados()" for="btncheck3"><small>No Solucionado</small></label>
+                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" onclick="checksnosolucionados()">
+                <label class="btn btn-outline-danger" for="btncheck3"><small>No Solucionado</small></label>
               </div>
             </div>
             <div class="col-sm-2">
@@ -259,6 +259,42 @@ $fecha_sistema = strftime("%Y-%m-%d");
 
     $.ajax ({
       url: 'prcd/checksnosolucionados.php',
+      type: "POST",
+      dataType: 'html',
+      data: {
+        fecha_ini:fecha_ini,
+        fecha_fin:fecha_fin
+      },
+      success: function(response){
+        $("#searchDate1").html(response);
+      }
+    })
+  }
+  function checksenproceso(){
+    document.getElementById('searchDate1').innerHTML = "";
+    var fecha_ini = document.getElementById('fechainicial').value;
+    var fecha_fin = document.getElementById('fechafinal').value;
+
+    $.ajax ({
+      url: 'prcd/checksenproceso.php',
+      type: "POST",
+      dataType: 'html',
+      data: {
+        fecha_ini:fecha_ini,
+        fecha_fin:fecha_fin
+      },
+      success: function(response){
+        $("#searchDate1").html(response);
+      }
+    })
+  }
+  function checksolucionado(){
+    document.getElementById('searchDate1').innerHTML = "";
+    var fecha_ini = document.getElementById('fechainicial').value;
+    var fecha_fin = document.getElementById('fechafinal').value;
+
+    $.ajax ({
+      url: 'prcd/checkssolucionado.php',
       type: "POST",
       dataType: 'html',
       data: {

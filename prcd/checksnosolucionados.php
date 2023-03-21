@@ -24,14 +24,14 @@ while($rowSearch = $resultadoSearch->fetch_assoc()){
 
 
     if ($numRowsIndicador == 0){
-        $prom == 0;
+        $prom = 0;
         echo 'valor nulo';
         $indicador2 = "SELECT * FROM bitacora WHERE folio = '$folio'";
                     $resultadoIndicador2 = $conn->query($indicador2);
                     $numRowsIndicador2 = $resultadoIndicador2->num_rows;
 
     } else if ($numRowsIndicador == null){
-        $prom == 0;
+        $prom = 0;
         echo 'valor nulo';
         $indicador2 = "SELECT * FROM bitacora WHERE folio = '$folio'";
                     $resultadoIndicador2 = $conn->query($indicador2);
@@ -62,7 +62,9 @@ while($rowSearch = $resultadoSearch->fetch_assoc()){
                     <td>'.$rowSearch['hora'].'</td>
                     <td>'.$rowSearch['datos_pc'].'</td>
                     <td>'.$rowSearch['datos_usr'].'</td>
-                    <td>No solucionado</td>
+                    <td><span class="badge text-bg-danger">
+                    <i class="bi bi-x-circle-fill"></i> No Solucionado
+                </span></td>
                     
                     ';
 
