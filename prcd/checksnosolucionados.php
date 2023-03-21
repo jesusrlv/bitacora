@@ -5,21 +5,54 @@ include('qc.php');
 $fecha1= $_POST['fecha_ini'];
 $fecha2= $_POST['fecha_fin'];
 
-$search = "SELECT * FROM bitacora WHERE fecha BETWEEN '$fecha1' AND '$fecha2' ORDER BY fecha ASC, hora ASC, solucionado DESC";
+$search = "SELECT * FROM bitacora WHERE fecha BETWEEN '$fecha1' AND '$fecha2' ORDER BY fecha ASC, hora ASC";
 //$search = "SELECT * FROM bitacora ORDER BY fecha ASC, hora ASC";
 $resultadoSearch = $conn->query($search);
 /* $numRows = $resultadoSearch->num_rows; */
-$notificaciones = 0;
+//$notificaciones = 0;
 $x = 0;
+$calif = 0;
 
 while($rowSearch = $resultadoSearch->fetch_assoc()){
+    
     $folio = $rowSearch['folio'];
     $indicador = "SELECT * FROM observaciones WHERE folio = '$folio'";
     $resultadoIndicador = $conn->query($indicador);
     $numRowsIndicador = $resultadoIndicador->num_rows;
+    //echo $numRowsIndicador;
+    //echo $folio;
 
-    if($numRowsIndicador == 0){
-        while($rowSearch = $resultadoSearch->fetch_assoc()){
+
+    if ($numRowsIndicador == 0){
+        $prom == 0;
+        echo 'valor nulo';
+        $indicador2 = "SELECT * FROM bitacora WHERE folio = '$folio'";
+                    $resultadoIndicador2 = $conn->query($indicador2);
+                    $numRowsIndicador2 = $resultadoIndicador2->num_rows;
+
+    } else if ($numRowsIndicador == null){
+        $prom == 0;
+        echo 'valor nulo';
+        $indicador2 = "SELECT * FROM bitacora WHERE folio = '$folio'";
+                    $resultadoIndicador2 = $conn->query($indicador2);
+                    $numRowsIndicador2 = $resultadoIndicador2->num_rows;
+
+    } else if ($numRowsIndicador > 0){
+        while($rowIndicador = $resultadoIndicador->fetch_assoc()){
+            $indicaProm = $rowIndicador['likert'];
+            $calif = $calif + $indicaProm;
+            
+            /* $x++; */
+            
+        }
+        $prom1 = $calif / $numRowsIndicador;
+        $prom = ROUND($prom1);
+    } 
+
+    if ($prom = 0 || $prom == null) {
+
+        //if($numRowsIndicador == 0){
+        //while($rowSearch = $resultadoSearch->fetch_assoc()){
             $x++;
             echo'
                 <tr class="table-primary text-center">
@@ -29,17 +62,21 @@ while($rowSearch = $resultadoSearch->fetch_assoc()){
                     <td>'.$rowSearch['hora'].'</td>
                     <td>'.$rowSearch['datos_pc'].'</td>
                     <td>'.$rowSearch['datos_usr'].'</td>
+                    <td>No solucionado</td>
                     
                     ';
-    
-                    $folio = $rowSearch['folio'];
-                    $indicador = "SELECT * FROM observaciones WHERE folio = '$folio'";
-                    $resultadoIndicador = $conn->query($indicador);
-                    $numRowsIndicador = $resultadoIndicador->num_rows;
+
+                    //$folio = $rowSearch['folio'];
+//comentado
+                    //$indicador2 = "SELECT * FROM observaciones WHERE folio = '$folio'";
+                    //$resultadoIndicador2 = $conn->query($indicador2);
+                    //$numRowsIndicador2 = $resultadoIndicador2->num_rows;
+
+
                     // $rowIndicador = $resultadoIndicador->fetch_assoc();
                     
                     // if($rowSearch['solucionado'] == 0){
-                    if($numRowsIndicador == 0){
+                    if($numRowsIndicador2 == 0){
                         echo'
                         <td id="cambioStatus1">
                             <a data-bs-toggle="modal" data-bs-target="#estatus'.$rowSearch['id'].'">
@@ -52,17 +89,17 @@ while($rowSearch = $resultadoSearch->fetch_assoc()){
                         ';
                         }
                         // else if (($rowSearch['solucionado'] == 1)){
-                        else if ($numRowsIndicador > 0){
-                            $calif = 0;
-                            $x = 0;
+                        else if ($numRowsIndicador2 > 0){
+                            // $calif = 0;
+                            //$x = 0;
                             while($rowIndicador = $resultadoIndicador->fetch_assoc()){
                                 $indicaProm = $rowIndicador['likert'];
                                 $calif = $calif + $indicaProm;
                                 /* $x++; */
                                 
-                            }
-                            $prom1 = $calif / $numRowsIndicador;
-                            $prom = ROUND($prom1);
+                            //}
+                            //$prom1 = $calif / $numRowsIndicador;
+                            //$prom = ROUND($prom1);
     
                             echo '
                                 <script>console.log("Promedio General "+'.$prom.')</script>
@@ -131,7 +168,6 @@ while($rowSearch = $resultadoSearch->fetch_assoc()){
                             $promHD = 0;
                         }
                         $hd = ROUND($promHD);
-                            
                         echo'
                         <script>
                                 console.log("Valor de hd: "+'.$hd.');
@@ -2940,7 +2976,11 @@ while($rowSearch = $resultadoSearch->fetch_assoc()){
             ';
         
         }
-    } 
-
+    //} else {
+    //    echo 'no hay datos';
+    //}
+    } else {//fin del if prom
+        echo 'no hay datos';
+    }
 }
 ?>

@@ -47,7 +47,6 @@ if($numRows > 0){
                     // else if (($rowSearch['solucionado'] == 1)){
                     else if ($numRowsIndicador > 0){
                         $calif = 0;
-                        $x = 0;
                         while($rowIndicador = $resultadoIndicador->fetch_assoc()){
                             $indicaProm = $rowIndicador['likert'];
                             $calif = $calif + $indicaProm;
