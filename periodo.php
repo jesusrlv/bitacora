@@ -216,24 +216,24 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <div class="card-body" >
                             <div class="d-flex align-items-center justify-content-between">
                             <div>
-                                <h4 class="fw-normal text-red">$10,500</h4>
+                                <h4 class="fw-normal" style="color: #002b8f">$10,500</h4>
                                 <p class="subtitle text-sm text-muted mb-0">Earnings</p>
                             </div>
-                            <div class="flex-shrink-0 ms-3">
-                                    <svg class="svg-icon text-red">
-                                    <use xlink:href="icons/orion-svg-sprite.71e9f5f2.svg#speed-1"> </use>
-                                    </svg>
-                            </div>
+                              <div class="flex-shrink-0 ms-3">
+                                  <svg class="svg-icon text-red">
+                                  <use xlink:href="icons/orion-svg-sprite.71e9f5f2.svg#speed-1"> </use>
+                                  </svg>
+                              </div>
                             </div>
                         </div>
                         <div class="card-footer py-3 bg-red-light" style="background-color: #cfe2ff;">
-                            <div class="row align-items-center text-red">
+                            <div class="row align-items-center">
                             <div class="col-10">
-                                <p class="mb-0">Hardware</p>
+                                <p class="mb-0" style="color: #002b8f">Hardware</p>
                             </div>
                             <div class="col-2 text-end"><i class="fas fa-caret-up"></i>
-                            </div>
-                            </div>
+                              </div>
+                              </div>
                         </div>
                         </div>
                     </div>
@@ -244,7 +244,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <div class="card-body" >
                             <div class="d-flex align-items-center justify-content-between">
                             <div>
-                                <h4 class="fw-normal text-blue">584</h4>
+                                <h4 class="fw-normal text-blue" style="color: #5a4b7d">584</h4>
                                 <p class="subtitle text-sm text-muted mb-0">Readers</p>
                             </div>
                             <div class="flex-shrink-0 ms-3">
@@ -257,7 +257,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <div class="card-footer py-3 bg-blue-light" style="background-color: #dadcf8;">
                             <div class="row align-items-center text-blue">
                             <div class="col-10">
-                                <p class="mb-0">Software</p>
+                                <p class="mb-0" style="color: #5a4b7d">Software</p>
                             </div>
                             <div class="col-2 text-end"><i class="fas fa-caret-up"></i>
                             </div>
@@ -272,8 +272,8 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between">
                             <div>
-                                <h4 class="fw-normal text-primary">876</h4>
-                                <p class="subtitle text-sm text-muted mb-0">Bookmarks</p>
+                                <h4 class="fw-normal" style="color: #855a8a">876</h4>
+                                <p class="subtitle text-sm text-muted mb-0" style="color: #855a8a">Bookmarks</p>
                             </div>
                             <div class="flex-shrink-0 ms-3">
                                     <svg class="svg-icon text-primary">
@@ -285,7 +285,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <div class="card-footer py-3 bg-primary-light" style="background-color: #f5daf8;">
                             <div class="row align-items-center text-primary">
                             <div class="col-10" >
-                                <p class="mb-0">10% increase</p>
+                                <p class="mb-0" style="color: #855a8a">Otros</p>
                             </div>
                             <div class="col-2 text-end"><i class="fas fa-caret-up"></i>
                             </div>
