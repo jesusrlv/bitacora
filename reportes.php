@@ -23,12 +23,9 @@ $fecha_sistema = strftime("%Y-%m-%d");
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="script.js"></script>
     <script src="js/search.js"></script>
-    <!-- <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> -->
-
 
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap');
@@ -162,10 +159,6 @@ $fecha_sistema = strftime("%Y-%m-%d");
               </div>
             </div>
             
-<!--             <div class="col-sm-6">
-              <label for="firstName" class="form-label"><i class="bi bi-funnel"></i> Filtro</label>
-              <input type="text" class="form-control" id="filtroTable" name="filtroTable" placeholder="Filtro...">
-            </div> -->
             <div class="col-sm-6">
               <label for="firstName" class="form-label"><i class="bi bi-calendar-week-fill"></i> Fecha final</label>
               <input type="date" class="form-control" id="fechafinal" name="fechafinal"  onchange="searchDate2()" disabled>
@@ -176,11 +169,6 @@ $fecha_sistema = strftime("%Y-%m-%d");
             <div class="col-sm-4">
               <input class="form-control" list="datalistOptions" id="filtroTable" placeholder="Ingresa Folio o Nombre...">
               <datalist id="datalistOptions">
-                <option value="San Francisco">
-                <option value="New York">
-                <option value="Seattle">
-                <option value="Los Angeles">
-                <option value="Chicago">
               </datalist>
             </div>
             <div class="col-sm-5">
@@ -201,7 +189,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                   Generar Reporte
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Tickets del periodo</a></li>
+                  <li><a class="dropdown-item" href="periodo.php">Tickets del periodo</a></li>
                   <li><a class="dropdown-item" href="#">Detallado</a></li>
                   <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                 </ul>

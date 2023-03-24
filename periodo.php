@@ -161,11 +161,6 @@ $fecha_sistema = strftime("%Y-%m-%d");
                 * Campo requerido.
               </div>
             </div>
-            
-<!--             <div class="col-sm-6">
-              <label for="firstName" class="form-label"><i class="bi bi-funnel"></i> Filtro</label>
-              <input type="text" class="form-control" id="filtroTable" name="filtroTable" placeholder="Filtro...">
-            </div> -->
             <div class="col-sm-6">
               <label for="firstName" class="form-label"><i class="bi bi-calendar-week-fill"></i> Fecha final</label>
               <input type="date" class="form-control" id="fechafinal" name="fechafinal"  onchange="searchDate2()" disabled>
@@ -174,26 +169,8 @@ $fecha_sistema = strftime("%Y-%m-%d");
               </div>
             </div>  
             <div class="col-sm-4">
-<!--               <input class="form-control" list="datalistOptions" id="filtroTable" placeholder="Ingresa Folio o Nombre...">
-              <datalist id="datalistOptions">
-                <option value="San Francisco">
-                <option value="New York">
-                <option value="Seattle">
-                <option value="Los Angeles">
-                <option value="Chicago">
-              </datalist> -->
             </div>
             <div class="col-sm-5">
-<!--               <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" onclick="checksolucionado()">
-                <label class="btn btn-outline-success" for="btncheck1"><small>Solucionado</small></label>
-
-                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" onclick="checksenproceso()">
-                <label class="btn btn-outline-warning" for="btncheck2"><small>En proceso</small></label>
-
-                <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" onclick="checksnosolucionados()">
-                <label class="btn btn-outline-danger" for="btncheck3"><small>No Solucionado</small></label>
-                </div> -->
             </div>
             <div class="col-sm-2">
                 <div class="dropdown text-end">
@@ -201,9 +178,8 @@ $fecha_sistema = strftime("%Y-%m-%d");
                     Generar Reporte
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Tickets del periodo</a></li>
+                    <li><a class="dropdown-item" href="periodo.php">Tickets del periodo</a></li>
                     <li><a class="dropdown-item" href="#">Detallado</a></li>
-                    <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                 </ul>
                 </div>
             </div>
@@ -216,8 +192,8 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <div class="card-body" >
                             <div class="d-flex align-items-center justify-content-between">
                             <div>
-                                <h4 class="fw-normal" style="color: #002b8f">$10,500</h4>
-                                <p class="subtitle text-sm text-muted mb-0">Earnings</p>
+                                <h4 class="fw-normal" style="color: #002b8f">500</h4>
+                                <p class="subtitle text-sm text-muted mb-0">Tickets</p>
                             </div>
                               <div class="flex-shrink-0 ms-3">
                                   <svg class="svg-icon text-red">
@@ -245,7 +221,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                             <div class="d-flex align-items-center justify-content-between">
                             <div>
                                 <h4 class="fw-normal text-blue" style="color: #5a4b7d">584</h4>
-                                <p class="subtitle text-sm text-muted mb-0">Readers</p>
+                                <p class="subtitle text-sm text-muted mb-0">Tickets</p>
                             </div>
                             <div class="flex-shrink-0 ms-3">
                                     <svg class="svg-icon text-blue">
@@ -269,32 +245,41 @@ $fecha_sistema = strftime("%Y-%m-%d");
                     <!-- Widget Type 1-->
                     <div class="mb-4 col-sm-6 col-lg-4 mb-4">
                         <div class="card h-100" style="box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between">
-                            <div>
-                                <h4 class="fw-normal" style="color: #855a8a">876</h4>
-                                <p class="subtitle text-sm text-muted mb-0" style="color: #855a8a">Bookmarks</p>
-                            </div>
-                            <div class="flex-shrink-0 ms-3">
-                                    <svg class="svg-icon text-primary">
-                                    <use xlink:href="icons/orion-svg-sprite.71e9f5f2.svg#bookmark-1"> </use>
-                                    </svg>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="card-footer py-3 bg-primary-light" style="background-color: #f5daf8;">
+                          <div class="card-body">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h4 class="fw-normal" style="color: #855a8a">876</h4>
+                                    <p class="subtitle text-sm text-muted mb-0">Tickets</p>
+                                </div>
+                                <div class="flex-shrink-0 ms-3">
+                                        <svg class="svg-icon text-primary">
+                                        <use xlink:href="icons/orion-svg-sprite.71e9f5f2.svg#bookmark-1"> </use>
+                                        </svg>
+                                </div>
+                              </div>
+                          </div>
+                          <div class="card-footer py-3 bg-primary-light" style="background-color: #f5daf8;">
                             <div class="row align-items-center text-primary">
-                            <div class="col-10" >
-                                <p class="mb-0" style="color: #855a8a">Otros</p>
+                              <div class="col-10" >
+                                  <p class="mb-0" style="color: #855a8a">Otros</p>
+                              </div>
+                              <div class="col-2 text-end"><i class="fas fa-caret-up"></i>
+                              </div>
                             </div>
-                            <div class="col-2 text-end"><i class="fas fa-caret-up"></i>
-                            </div>
-                            </div>
-                        </div>
+                          </div>
                         </div>
                     </div>
                     <!-- /Widget Type 1-->
-
+                    <div class="mb-4 col-sm-6 col-lg-8 mb-4 mt-4">
+                    </div>
+                    <div class="mb-4 col-sm-6 col-lg-4 mb-4 mt-4 text-end">
+                      <button type="button" class="btn btn-secondary" style="background-color:mediumpurple; box-shadow:dimgrey" onclick="window.print()">
+                        <i class="bi bi-printer"></i> Imprimir
+                      </button>
+                      <button type="button" class="btn btn-secondary" style="background-color:#5a4b7d">
+                        <i class="bi bi-download"></i> Exportar
+                      </button>
+                    </div>
                 </div>
             </div>
 
@@ -322,7 +307,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
         });
     });
 </script>
-<script>
+<!-- <script>
   function checksnosolucionados(){
     document.getElementById('searchDate1').innerHTML = "";
     var fecha_ini = document.getElementById('fechainicial').value;
@@ -378,4 +363,4 @@ $fecha_sistema = strftime("%Y-%m-%d");
     })
   }
 
-</script>
+</script> -->
