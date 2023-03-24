@@ -87,7 +87,7 @@ function editarCalificacion(folio,categoria,subcategoria,id){
 
     $.ajax({
         type: "POST",
-        url: "prcd/editarCalificacion.php",
+        url: "prcd/editarcalificacion.php",
         data: {
             observaciones:observaciones,
             likert:likert,
