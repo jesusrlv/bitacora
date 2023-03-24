@@ -4,6 +4,25 @@ require('prcd/fpdf/fpdf.php');
 include('prcd/qc.php');
 
 $folio = $_REQUEST['folio'];
+$internet = 0;
+$inst_periferico = 0;
+$limp_equipo = 0;
+$tec_mouse = 0;
+$falla_monitor = 0;
+$otra1 = 0;
+$act_office = 0;
+$activar_so = 0;
+$actualizar_sw = 0;
+$formateo_completo = 0;
+$limpieza_virus = 0;
+$instalar_sw = 0;
+$otra_sw = 0;
+$escanear = 0;
+$printcolor = 0;
+$rw_cd = 0;
+$web = 0;
+$otra_2 = 0;
+
 $sql = "SELECT * FROM bitacora WHERE folio = '$folio'";
 $resultadoSql = $conn->query($sql);
 $rowSQL = $resultadoSql->fetch_assoc();
@@ -285,7 +304,7 @@ $pdf->Cell(100,5,'Nombre y firma',1,0,'C');
 $pdf->Cell(91,5,'Nombre y firma',1,0,'C');
 $modo="I";
 $nombre_archivo="reporte_servicio.pdf";
-$pdf->Output($nombre_archivo,$modo);  
+$pdf->Output($nombre_archivo,$modo);
 
 ?>
 
