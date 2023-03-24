@@ -163,7 +163,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
             </div>
             <div class="col-sm-6">
               <label for="firstName" class="form-label"><i class="bi bi-calendar-week-fill"></i> Fecha final</label>
-              <input type="date" class="form-control" id="fechafinal" name="fechafinal"  onchange="searchDate2()" disabled>
+              <input type="date" class="form-control" id="fechafinal" name="fechafinal"  onchange="checkglobal()" disabled>
               <div class="invalid-feedback">
                 * Campo requerido.
               </div>
@@ -192,7 +192,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <div class="card-body" >
                             <div class="d-flex align-items-center justify-content-between">
                             <div>
-                                <h4 class="fw-normal" style="color: #002b8f">500</h4>
+                                <h4 class="fw-normal" style="color: #002b8f"><span id=hardware></span>32</h4>
                                 <p class="subtitle text-sm text-muted mb-0">Tickets</p>
                             </div>
                               <div class="flex-shrink-0 ms-3">
@@ -220,7 +220,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                         <div class="card-body" >
                             <div class="d-flex align-items-center justify-content-between">
                             <div>
-                                <h4 class="fw-normal text-blue" style="color: #5a4b7d">584</h4>
+                                <h4 class="fw-normal text-blue" style="color: #5a4b7d"><span id=software>15</span></h4>
                                 <p class="subtitle text-sm text-muted mb-0">Tickets</p>
                             </div>
                             <div class="flex-shrink-0 ms-3">
@@ -248,7 +248,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
                           <div class="card-body">
                               <div class="d-flex align-items-center justify-content-between">
                                 <div>
-                                    <h4 class="fw-normal" style="color: #855a8a">876</h4>
+                                    <h4 class="fw-normal" style="color: #855a8a"><span id=otros>23</span></h4>
                                     <p class="subtitle text-sm text-muted mb-0">Tickets</p>
                                 </div>
                                 <div class="flex-shrink-0 ms-3">
@@ -307,60 +307,36 @@ $fecha_sistema = strftime("%Y-%m-%d");
         });
     });
 </script>
-<!-- <script>
-  function checksnosolucionados(){
-    document.getElementById('searchDate1').innerHTML = "";
+<script>
+  function checkglobal(){
+  /*   document.getElementById('fechafinal').innerHTML = ""; */
     var fecha_ini = document.getElementById('fechainicial').value;
     var fecha_fin = document.getElementById('fechafinal').value;
 
     $.ajax ({
-      url: 'prcd/checksnosolucionados.php',
+      url: 'prcd/ticketsglobal.php',
       type: "POST",
-      dataType: 'html',
+      dataType: 'json',
       data: {
         fecha_ini:fecha_ini,
         fecha_fin:fecha_fin
       },
       success: function(response){
-        $("#searchDate1").html(response);
-      }
-    })
-  }
-  function checksenproceso(){
-    document.getElementById('searchDate1').innerHTML = "";
-    var fecha_ini = document.getElementById('fechainicial').value;
-    var fecha_fin = document.getElementById('fechafinal').value;
+        /* $("#searchDate1").html(response); */
+        var jsonData = JSON.parse(JSON.stringify(response));
+        var hardware = jsonData.hardware;
+        var software = jsonData.softdware;
+        var otros = jsonData.otros;
 
-    $.ajax ({
-      url: 'prcd/checksenproceso.php',
-      type: "POST",
-      dataType: 'html',
-      data: {
-        fecha_ini:fecha_ini,
-        fecha_fin:fecha_fin
-      },
-      success: function(response){
-        $("#searchDate1").html(response);
-      }
-    })
-  }
-  function checksolucionado(){
-    document.getElementById('searchDate1').innerHTML = "";
-    var fecha_ini = document.getElementById('fechainicial').value;
-    var fecha_fin = document.getElementById('fechafinal').value;
+        console.log(jsonData.hardware);
 
-    $.ajax ({
-      url: 'prcd/checkssolucionado.php',
-      type: "POST",
-      dataType: 'html',
-      data: {
-        fecha_ini:fecha_ini,
-        fecha_fin:fecha_fin
-      },
-      success: function(response){
-        $("#searchDate1").html(response);
+        document.getElementById('hardware').value = hardware;
+        document.getElementById('software').value = software;
+        document.getElementById('otros').value = otros;
+        console.log(hardware);
+
       }
     })
   }
 
-</script> -->
+</script>
