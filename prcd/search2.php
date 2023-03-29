@@ -2933,11 +2933,16 @@ if($numRows > 0){
 
 }
 else{
-    echo'
+    echo"
     <script>
-        alert("No hay datos");
-    </>
-    ';
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'No hay tickets en la fecha seleccionada',
+        footer: '<a>INCLUSION</a>'
+    })
+    </script>
+    ";
 }
 
 

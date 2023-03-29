@@ -101,9 +101,6 @@ function reservation(){
                   url:"prcd/save.php",
                   data:formData,
                   dataType: "html",
-                  contentType:false,
-                  processData:false,
-                  cache: false,
                     success: function(data) {
                       Swal.fire({
                         icon: 'success',
@@ -115,7 +112,7 @@ function reservation(){
                         text: '# de Ticket',
                         confirmButtonColor: '#3085d6',
                         footer: 'INCLUSIÓN'
-                    }).then(function(){window.location='schedule.php';});         
+                    }).then(function(){window.location='index.html';});         
                     }               
                   });
                   
