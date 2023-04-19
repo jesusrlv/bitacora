@@ -238,3 +238,95 @@ function reservation(){
                 
             }
         }
+
+        // LOGIN
+$(document).ready(function() {
+  $('#pwdForm').submit(function(e) {
+      var usr = document.getElementById("usr").value;
+      var pwd = document.getElementById("pwd").value;
+
+/*       e.preventDefault(); */
+      $.ajax({
+          type: "POST",
+          url: 'prcd/login.php',
+          dataType:'json',
+          data: {
+            usr:usr,
+            pwd:pwd
+          },
+          /* data: $(this).serialize(), */
+          success: function(response)
+          {
+              // var jsonData = JSON.parse(response);
+              var jsonData = JSON.parse(JSON.stringify(response));
+
+              // user is logged in successfully in the back-end
+              // let's redirect
+              if (jsonData.success == "1")
+              {
+                  // location.href = 'my_profile.php';
+                  Swal.fire({
+                      icon: 'success',
+                      imageUrl: 'img/Logo.png',
+                      imageHeight: 200,
+                      title: 'Usuario correcto',
+                      text: 'Credenciales correctas',
+                      confirmButtonColor: '#3085d6',
+                      footer: 'INCLUSIÓN'
+                  }).then(function(){window.location='busqueda.php';});
+              }
+/*               else if (jsonData.success == "2")
+              {
+                  // location.href = 'my_profile.php';
+                  Swal.fire({
+                      icon: 'success',
+                      imageUrl: 'img/logo_consejo_04.png',
+                      imageHeight: 200,
+                      title: 'Usuario Admin correcto',
+                      text: 'Credenciales correctas',
+                      confirmButtonColor: '#3085d6',
+                      footer: 'INJUVENTUD'
+                  }).then(function(){window.location='sistema/admin/index.php';});
+              } */
+/*               else if (jsonData.success == "3")
+              {
+                  // location.href = 'my_profile.php';
+                  Swal.fire({
+                      icon: 'success',
+                      imageUrl: 'img/logo_consejo_04.png',
+                      imageHeight: 200,
+                      title: 'Usuario Jurado correcto',
+                      text: 'Credenciales correctas',
+                      confirmButtonColor: '#3085d6',
+                      footer: 'INJUVENTUD'
+                  }).then(function(){window.location='sistema/jurado/index.php';});
+              } */
+  /*             else if (jsonData.success == "4")
+              {
+                  // location.href = 'my_profile.php';
+                  Swal.fire({
+                      icon: 'success',
+                      imageUrl: 'img/logo_consejo_04.png',
+                      imageHeight: 200,
+                      title: 'Usuario Migrtante correcto',
+                      text: 'Credenciales correctas',
+                      confirmButtonColor: '#3085d6',
+                      footer: 'INCLUSIÓN'
+                  }).then(function(){window.location='sistema/migrante/index.php';});
+              } */
+              else
+              {
+                  // alert('Invalid Credentials!');
+                  Swal.fire({
+                      icon: 'error',
+                      title: 'Datos incorrectos',
+                      text: 'Credenciales incorrectas',
+                      confirmButtonColor: '#3085d6',
+                      footer: 'INJUVENTUD'
+                  }).then(function(){window.location='login.html';});
+                  // });
+              }
+        }
+    });
+  });
+});

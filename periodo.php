@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+$usr = $_SESSION['usr'];
+if (isset($usr)){
+
+}
+else{
+  header('Location: login.html');
+  die();
+}
+
 date_default_timezone_set('America/Mexico_City');
 setlocale(LC_TIME, 'es_MX.UTF-8');
 $fecha_sistema = strftime("%Y-%m-%d");
@@ -135,7 +146,7 @@ $fecha_sistema = strftime("%Y-%m-%d");
               <li><a class="dropdown-item" href="reportes.php">Reportes</a></li>
               <li><a class="dropdown-item" href="#">Contraseña</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+              <li><a class="dropdown-item" href="prcd/sort.php">Cerrar Sesión</a></li>
             </ul>
           </div>
         </div>

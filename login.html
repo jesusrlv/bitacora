@@ -18,9 +18,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/4d63b5ef28.js" crossorigin="anonymous"></script>
-    
-
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -88,16 +88,16 @@
   <body class="text-center" style="background-image: url(img/4850037.jpg); background-repeat: no-repeat;background-attachment: fixed; background-size: cover;">
     
 <main class="form-signin w-100 m-auto">
-  <form action="prcd/acceso.php" method="post">
+  <form action="#" id="pwdForm">
     <img class="mb-4" src="img/TICKET.png" alt="" width="90%" height="auto">
 <!--     <h1><strong>TICKETS</strong></h1>
     <p>Sistema de Tickets de TI's</p> -->
 <!--     <hr> -->
     <h5 class="h3 mt-5 mb-4 fw-normal">Ingresar</h5>
     <label for="inputEmail" class="sr-only">Usuario</label>
-    <input type="text" id="inputEmail" class="form-control" placeholder="Usuario" name="usr" required autofocus>
+    <input type="text"class="form-control" placeholder="Usuario" name="usr" id="usr" required autofocus>
     <label for="inputPassword" class="sr-only">Contraseña</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="pwd" required>
+    <input type="password" class="form-control" placeholder="Contraseña" name="pwd" id="pwd" required>
 
 <!--     <div class="checkbox mb-3">
       <label>
