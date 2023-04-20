@@ -1,6 +1,11 @@
 <?php
-ini_set('memory_limit', '1024M');
-require('prcd/fpdf/fpdf.php');
+//ob_start();
+//ini_set('display_startup_errors',1);
+//ini_set('display_errors',1);
+//error_reporting(-1);
+ini_set('max_execution_time', '0');
+ini_set('memory_limit', '2048M');
+
 include('prcd/qc.php');
 
 $folio = $_REQUEST['folio'];
@@ -128,7 +133,7 @@ while ($rowSQL2 = $resultadoSql2->fetch_assoc()){
   </script>
   '; */
 }
-
+require('prcd/fpdf/fpdf.php');
 class PDF extends FPDF
 {
 // Cabecera de página
@@ -136,7 +141,7 @@ function Header()
 {
     // Logo
 
-    $this->Image('img/logo_completo.png',72,15,63);
+    $this->Image('img/logo_completo.jpg',72,15,63);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Movernos a la derecha
@@ -305,34 +310,8 @@ $pdf->Cell(91,5,'Nombre y firma',1,0,'C');
 $modo="I";
 $nombre_archivo="reporte_servicio.pdf";
 $pdf->Output($nombre_archivo,$modo);
+//$pdf->Output($modo,$nombre_archivo);
+
+                                  //ob_end_flush();
 
 ?>
-
-<!-- 
-
-    require('html_table.php');
-    $nombre='canorioss';
-    $htmlTable='
-    
-    <table width="36%" height="100%" border="1" align="right" style="border-spacing:0px; border-color:#000">
-      <tr>
-        <td>Nombre</td>
-        <td>edad</td>
-        <td align="center">domicilio</td>
-      </tr>
-      <tr>
-        <td>'.$nombre.'</td>
-        <td>26</td>
-        <td align="center">Santa Ana</td>
-      </tr>
-    </table>
-    ';
-     
-    $pdf = new  PDF_HTML_Table();
-    $pdf->AddPage('L','A4');
-    $pdf->SetFont('Arial','',12);
-    $pdf->WriteHTML("$htmlTable");
-    //$pdf->AddPage('L','Legal');
-    $pdf->Output();
-     
- -->
