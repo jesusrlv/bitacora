@@ -132,41 +132,44 @@
               <div class="accordion-body">
 
                 <h5>Mantenimimiento preventivo y/o correctivo de hardware</h5>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="internet" name="internet[]" >
-            <label class="form-check-label" for="same-address">Revisar conexión a internet</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="inst_periferico" name="inst_periferico[]"  >
-            <label class="form-check-label" for="same-address">Instalar impresora/scanner</label>
-          </div>
-
+        <div role="group">
+          <ul class="checkboxes" style="list-style:none">
+            
+              <div class="form-check" aria-label="Casilla 1">
+                <input type="checkbox" class="form-check-input" id="internet" name="internet[]" >
+                <label class="form-check-label" for="internet">Revisar conexión a internet</label>
+              </div>
+    
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="inst_periferico" name="inst_periferico[]"  >
+                <label class="form-check-label" for="inst_periferico">Instalar impresora/scanner</label>
+              </div>
+            
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="limp_equipo" name="limp_equipo[]" >
-            <label class="form-check-label" for="save-info">Limpiar equipo</label>
+            <label class="form-check-label" for="limp_equipo">Limpiar equipo</label>
           </div>
 
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="tec_mouse" name="tec_mouse[]" >
-            <label class="form-check-label" for="save-info">Mouse/teclado no funciona</label>
+            <label class="form-check-label" for="tec_mouse">Mouse/teclado no funciona</label>
           </div>
 
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="falla_monitor" name="falla_monitor[]" >
-            <label class="form-check-label" for="save-info">Falla del monitor/pantalla</label>
+            <label class="form-check-label" for="falla_monitor">Falla del monitor/pantalla</label>
           </div>
           
-          <div class="form-check">
+          <div class="form-check"  aria-label="Se abrirar un input">
             <input type="checkbox" class="form-check-input" id="checkOtra" name="otra1[]" onchange="cambioCheck1()">
-            <label class="form-check-label" for="save-info">Otra:</label>
+            <label class="form-check-label" for="checkOtra">Otra:</label>
           </div>
           <div class="form-check">
             <input type="text" class="form-control" id="otra" placeholder="Especifique..." name="otra1_desc" disabled>
           </div>
 
-                
+          </ul>
+        </div>        
               </div>
               
           </div>
