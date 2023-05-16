@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-$usr = $_REQUEST['usr'];
+/* $usr = $_REQUEST['usr'];
 $pwd = $_REQUEST['pwd'];
-
+ */
 /* if (!isset($usr) & !isset($pwd)){
   header('Location: login.html');
   die();
