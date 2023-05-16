@@ -230,7 +230,19 @@ $(document).ready(function() {
 
             return;
         } 
-        
+
+        var validacion = internet + inst_periferico + limp_equipo + tec_mouse + falla_monitor + checkOtra + otra + act_office + activar_so + otra4 + checkOtra4 + formateo_completo + limpieza_virus + instalar_sw + checkOtra2 + otra2 + escanear + printColor + numpagdoc + noimpresiones + archivoimprimir + rw_cd + nocopias + archivocd + web + archivoweb + checkOtra3 + otra3 + observaciones + hardware + software + otrosap;
+
+        if (validacion==0){
+            Swal.fire({
+                icon: 'error',
+                title: 'Incorrecto',
+                text: 'No haz seleccionado una opción',
+                footer: 'INCLUSIÓN'
+            });
+            return;
+        }
+        else {
             $.ajax({
                 url: 'prcd/save.php',
                 type: "POST",
@@ -539,7 +551,7 @@ $(document).ready(function() {
                     }
                 }
             });
-        
+        } //cierra else antes de ajax
         
     });
 });

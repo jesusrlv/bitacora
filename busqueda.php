@@ -1,18 +1,24 @@
 <?php
 session_start();
 
-$usr = $_SESSION['usr'];
-if (isset($usr)){
+$usr = $_REQUEST['usr'];
+$pwd = $_REQUEST['pwd'];
 
-}
-else{
+/* if (!isset($usr) & !isset($pwd)){
   header('Location: login.html');
   die();
 }
+else{
+  echo '
+  <script>
+  console.log("Acceso correcto")
+  </script>
+  ';
+} */
 
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

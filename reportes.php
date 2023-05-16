@@ -1,14 +1,4 @@
 <?php
-session_start();
-
-$usr = $_SESSION['usr'];
-if (isset($usr)){
-
-}
-else{
-  header('Location: login.html');
-  die();
-}
 
 date_default_timezone_set('America/Mexico_City');
 setlocale(LC_TIME, 'es_MX.UTF-8');

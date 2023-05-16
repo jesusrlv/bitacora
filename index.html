@@ -22,6 +22,10 @@
     <!--  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
     <script type="text/javascript" src="script.js"></script>
     <script src="js/script.js"></script>
+
+
+	<script src="js/desktopify.js"></script>
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap');
       body{
@@ -88,77 +92,84 @@
     <link href="form-validation.css" rel="stylesheet">
   </head>
   <body class="bg-light" >
+    
     <div class="container">
       <main>
         <div class="py-5 text-center">
           <img class="d-block mx-auto mb-4" src="img/logo_completo.png" alt="" width="300" height="">
           <h2>Departamento de Tecnologías de la Información</h2>
-          <p class="lead">Sistema de Tickets para servicio, apoyo o soporte técnico</p>
+          <p class="lead">Sistema de Tickets para servicio, apoyo y/o soporte técnico</p>
         </div>
+
         <div class="row g-5 border rounded-2 bg-white p-2">
           <div class="col-md-12 col-lg-12">
             <!-- <form action="prcd/save.php" method="post"> -->
             <form id="pwdForm">
-              <div class="row g-3">
-                <div class="col-sm-6">
-                  <label for="datos_usr" class="form-label"><i class="bi bi-person"></i> Nombre del Usuario:</label>
-                  <input type="text" class="form-control" id="datos_usr" name="datos_usr" placeholder="Nombre del usuario solicitante" required>
-                  <div class="invalid-feedback">
-                    * Campo requerido.
-                  </div>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="firstName" class="form-label"><i class="bi bi-person"></i> Nombre del Usuario:</label>
+                <input type="text" class="form-control" id="datos_usr" name="datos_usr" placeholder="Nombre del usuario solicitante" required>
+                <div class="invalid-feedback">
+                  * Campo requerido.
                 </div>
-                <div class="col-sm-12">
-                  <label for="datos_pc" class="form-label"><i class="bi bi-pc-display"></i> Datos del equipo:</label>
-                  <input type="text" class="form-control" id="datos_pc" name="datos_pc" placeholder="Marca y/o modelo del equipo" required>
-                  <div class="invalid-feedback">
-                    * Campo requerido.
-                  </div>
+              </div>
+              <div class="col-sm-12">
+                <label for="firstName" class="form-label"><i class="bi bi-pc-display"></i> Datos del equipo:</label>
+                <input type="text" class="form-control" id="datos_pc" name="datos_pc" placeholder="Marca y/o modelo del equipo" required>
+                <div class="invalid-feedback">
+                  * Campo requerido.
                 </div>
-                <div class="col-sm-6">
-                </div>
-                <br>
-                <h5>Seleccione una o varias de las siguientes opciones:</h5>
-                <div class="accordion accordion-flush" id="accordionFlushExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header border-bottom" id="flush-headingOne">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <i class="bi bi-pc-display-horizontal me-2" style="font-size: larger;"> </i> Hardware
-                      </button>
-                    </h2>
-                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">
-                        <h4>Mantenimimiento preventivo o correctivo de hardware</h4>
-                        <div role="group">
-                          <div class="form-check" aria-label="Casilla 1">
-                            <input type="checkbox" class="form-check-input" id="internet" name="internet[]" >
-                            <label class="form-check-label" for="internet">Revisar conexión a internet</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="inst_periferico" name="inst_periferico[]"  >
-                            <label class="form-check-label" for="inst_periferico">Instalar impresora/scanner</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="limp_equipo" name="limp_equipo[]" >
-                            <label class="form-check-label" for="limp_equipo">Limpiar equipo</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="tec_mouse" name="tec_mouse[]" >
-                            <label class="form-check-label" for="tec_mouse">Mouse/teclado no funciona</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="falla_monitor" name="falla_monitor[]" >
-                            <label class="form-check-label" for="falla_monitor">Falla del monitor/pantalla</label>
-                          </div>
-                          <div class="form-check"  aria-label="Se abrirar un input">
-                            <input type="checkbox" class="form-check-input" id="checkOtra" name="otra1[]" onchange="cambioCheck1()">
-                            <label class="form-check-label" for="checkOtra">Otra:</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="text" class="form-control" id="otra" placeholder="Especifique..." name="otra1_desc" disabled>
-                          </div>
-                        </div>        
+              </div>
+              <div class="col-sm-6">
+              
+              </div>
+              <br>
+              <h5>Seleccione una o varias de las siguientes opciones:</h5>
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header border-bottom" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      <i class="bi bi-pc-display-horizontal me-2" style="font-size: larger;"> </i> Hardware
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      <h5>Mantenimimiento preventivo y/o correctivo de hardware</h5>
+
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="internet" name="internet[]" >
+                        <label class="form-check-label" for="same-address">Revisar conexión a internet</label>
+                      </div>
+
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="inst_periferico" name="inst_periferico[]"  >
+                        <label class="form-check-label" for="same-address">Instalar impresora/scanner</label>
+                      </div>
+
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="limp_equipo" name="limp_equipo[]" >
+                        <label class="form-check-label" for="save-info">Limpiar equipo</label>
+                      </div>
+
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="tec_mouse" name="tec_mouse[]" >
+                        <label class="form-check-label" for="save-info">Mouse/teclado no funciona</label>
+                      </div>
+
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="falla_monitor" name="falla_monitor[]" >
+                        <label class="form-check-label" for="save-info">Falla del monitor/pantalla</label>
+                      </div>
+                      
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="checkOtra" name="otra1[]" onchange="cambioCheck1()">
+                        <label class="form-check-label" for="save-info">Otra:</label>
+                      </div>
+                      <div class="form-check">
+                        <input type="text" class="form-control" id="otra" placeholder="Especifique..." name="otra1_desc" disabled>
                       </div>
                     </div>
+                  </div>
                   <div class="accordion-item">
                     <h2 class="accordion-header border-bottom" id="flush-headingTwo">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo"><i class="bi bi-windows me-2" style="font-size: larger;"></i>
@@ -168,41 +179,43 @@
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body">
                         <h5>Mantenimimiento preventivo y/o correctivo de software</h5>
-                        <div role="group">
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="act_office" name="act_office[]">
-                            <label class="form-check-label" for="save-info">Activación office</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="activar_so" name="activar_so[]">
-                            <label class="form-check-label" for="save-info">Activación Sistema Operativo</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="checkOtra4" name="actualizar_sw[]" onchange="cambioCheck4()">
-                            <label class="form-check-label" for="save-info">Actualizar software</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="text" class="form-control" id="otra4" placeholder="Especifique..." name="actualizar_sw2" disabled>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="formateo_completo" name="formateo_completo[]">
-                            <label class="form-check-label" for="save-info">Formateo completo</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="limpieza_virus" name="limpieza_virus[]">
-                            <label class="form-check-label" for="save-info">Limpieza de virus</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="instalar_sw" name="instalar_sw[]">
-                            <label class="form-check-label" for="save-info">Instalación de software</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="checkOtra2" name="otra_sw[]" onchange="cambioCheck2()">
-                            <label class="form-check-label" for="save-info">Otra:</label>
-                          </div>
-                          <div class="form-check">
-                            <input type="text" class="form-control" id="otra2" placeholder="Especifique..." name="otra_sw_desc" disabled>
-                          </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="act_office" name="act_office[]">
+                          <label class="form-check-label" for="save-info">Activación office</label>
+                        </div>
+
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="activar_so" name="activar_so[]">
+                          <label class="form-check-label" for="save-info">Activación Sistema Operativo</label>
+                        </div>
+
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="checkOtra4" name="actualizar_sw[]" onchange="cambioCheck4()">
+                          <label class="form-check-label" for="save-info">Actualizar software</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="text" class="form-control" id="otra4" placeholder="Especifique..." name="actualizar_sw2" disabled>
+                        </div>
+
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="formateo_completo" name="formateo_completo[]">
+                          <label class="form-check-label" for="save-info">Formateo completo</label>
+                        </div>
+
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="limpieza_virus" name="limpieza_virus[]">
+                          <label class="form-check-label" for="save-info">Limpieza de virus</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="instalar_sw" name="instalar_sw[]">
+                          <label class="form-check-label" for="save-info">Instalación de software</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="checkOtra2" name="otra_sw[]" onchange="cambioCheck2()">
+                          <label class="form-check-label" for="save-info">Otra:</label>
+                        </div>
+                        <div class="form-check">
+                          <input type="text" class="form-control" id="otra2" placeholder="Especifique..." name="otra_sw_desc" disabled>
                         </div>
                       </div>
                     </div>
@@ -215,10 +228,12 @@
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body">
+
                         <div class="form-check">
                           <input type="checkbox" class="form-check-input" id="escanear" name="escanear[]">
                           <label class="form-check-label" for="save-info">Escaneo de documento(s) y/o imágenes</label>
                         </div>
+              
                         <div class="form-check">
                           <input type="checkbox" class="form-check-input" id="printColor" name="printColor[]" onchange="mostrarInputs()">
                           <label class="form-check-label" for="save-info">Impresión a color</label>
@@ -234,7 +249,8 @@
                             <div class="col-sm-6">
                               <input type="file" class="form-control" id="archivoimprimir" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
                             </div>
-                          </div><!-- https://stackoverflow.com/questions/43533062/bootstrap-tooltip-placement-right-on-input-group link para código de tooltip con jquery -->
+                          </div>
+                          <!-- https://stackoverflow.com/questions/43533062/bootstrap-tooltip-placement-right-on-input-group link para código de tooltip con jquery -->
                         </div>
                         <div class="form-check">
                           <input type="checkbox" class="form-check-input" id="rw_cd" name="rw_cd[]" onchange="mostrarInputs2()">
@@ -273,16 +289,17 @@
                     </div>
                     <button type="submit" id="botonSubmit" class="w-100 btn btn-primary btn-lg mt-3 mb-4" ><i class="bi bi-cloud-check-fill"></i> Realizar solicitud</button>
                     <span id="resp"></span>
-                    </form>
-                  </div>
-      </div>
-              </main>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </main>
 
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <img class="d-block mx-auto mb-4" src="img/logo_completo.png" id="imgFoot">
-    <p class="mb-1">&copy; 2023 INCLUSIÓN</p>
-  </footer>
-</div>
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <img class="d-block mx-auto mb-4" src="img/logo_completo.png" alt="" id="imgFoot">
+        <p class="mb-1">&copy; 2023 INCLUSIÓN</p>
+      </footer>
+    </div>
 
 
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>

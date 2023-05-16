@@ -2,7 +2,7 @@
 
 include('qc.php');
 
-    date_default_timezone_set('America/Mexico_City');
+    date_default_timezone_set('America/Mazatlan');
     setlocale(LC_TIME, 'es_MX.UTF-8');
     // $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
     $fecha_sistema = strftime("%Y-%m-%d");
